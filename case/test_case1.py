@@ -36,7 +36,7 @@ class Test1(unittest.TestCase):
         time.sleep(1)
         self.assertEqual('CRI指数 - 产业高质量发展平台', self.driver.title, '用例执行错误')
         WebGetDemo.Runmian(self.driver).quit()
-    # @unittest.skip('跳过')
+    @unittest.skip('跳过')
     def test_02(self):
         '''首页跳转企业总量页面'''
         WebGetDemo.Runmian(self.driver).login('ihqd-test', 'ihqd-test@6688')
