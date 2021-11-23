@@ -5,7 +5,6 @@ from PublicMethod import WebGetDemo
 import warnings
 class Test1(unittest.TestCase):
     @classmethod
-    #123
     def setUpClass(cls):
         warnings.simplefilter('ignore', ResourceWarning)
     @classmethod
