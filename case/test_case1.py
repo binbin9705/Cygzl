@@ -22,7 +22,7 @@ class Test1(unittest.TestCase):
         '''首页跳转CRL指数页面'''
         WebGetDemo.Runmian(self.driver).login('ihqd-test', 'ihqd-test@6688')
         try:
-            WebGetDemo.Runmian(self.driver).click('xpath','//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[2]/li/div/span')
+            WebGetDemo.Runmian(self.driver).click('xpath','//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[2]/li/div/spa1n')
             time.sleep(1)
         except:
             #如果发生错误截图当前页面
