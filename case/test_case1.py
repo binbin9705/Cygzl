@@ -51,7 +51,7 @@ class Test1(unittest.TestCase):
         print(self.driver.title)
         time.sleep(1)
         try:
-            self.assertEqual('企业总量 - 产业高质量发展平台1', self.driver.title, '用例执行错误')
+            self.assertEqual('企业总量 - 产业高质量发展平台', self.driver.title, '用例执行错误')
             WebGetDemo.Runmian(self.driver).quit()
         except:
             WebGetDemo.Runmian(self.driver).jietu("D:\pycharm\Jjdn\error_png\\test_02\error02.png")
