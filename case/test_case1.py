@@ -17,7 +17,7 @@ class Test1(unittest.TestCase):
         WebGetDemo.Runmian(self.driver).open('http://ihd.wanvdata.cn/')
     def tearDown(self):
         pass
-    @unittest.skip('调试')
+    # @unittest.skip('调试')
     def test_01(self):
         '''首页跳转CRL指数页面'''
         WebGetDemo.Runmian(self.driver).login('ihqd-test', 'ihqd-test@6688')
@@ -48,13 +48,14 @@ class Test1(unittest.TestCase):
             WebGetDemo.Runmian(self.driver).jietu("D:\pycharm\Cygzl\error_png\\test_02\error01.png")
         #
         try:
-            WebGetDemo.Runmian(self.driver).click('xpath','/html/body/div[2]/ul/div[2]/a/li/span')
+            WebGetDemo.Runmian(self.driver).click('xpath','/html/body/div[2]/ul/div[2]/a/li/spa1n')
             time.sleep(1)
         except:
             WebGetDemo.Runmian(self.driver).jietu("D:\pycharm\Cygzl\error_png\\test_02\error02.png")
+            WebGetDemo.Runmian(self.driver).quit()
         print(self.driver.title)
         time.sleep(1)
-        self.assertEqual('123企业总量 - 产业高质量发展平台', self.driver.title, '用例执行错误')
+        self.assertEqual('企业总量 - 产业高质量发展平台', self.driver.title, '用例执行错误')
         WebGetDemo.Runmian(self.driver).quit()
 if __name__ == '__main__':
     login_url='http://ihd.wanvdata.cn/'

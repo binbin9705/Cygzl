@@ -419,9 +419,9 @@ function hide_img(obj){
 </script>
 <div class='heading'>
 <h1>自动化测试报告</h1>
-<p class='attribute'><strong>开始时间:</strong> 2021-11-24 15:20:31</p>
-<p class='attribute'><strong>耗时:</strong> 0:00:24.000199</p>
-<p class='attribute'><strong>状态:</strong> <span class="tj passCase">Pass</span>:1 <span class="tj failCase">Failure</span>:1 <span class="tj">通过率</span>:50.0%</p>
+<p class='attribute'><strong>开始时间:</strong> 2021-11-24 15:44:39</p>
+<p class='attribute'><strong>耗时:</strong> 0:00:10.774503</p>
+<p class='attribute'><strong>状态:</strong> <span class="tj failCase">Failure</span>:1 <span class="tj skipCase">Skip</span>:1 <span class="tj">通过率</span>:0.0%</p>
 
 <p class='description'>用例执行情况</p>
 </div>
@@ -434,11 +434,11 @@ function hide_img(obj){
 </div>
 
 <div id='show_detail_line' style=" float: left;  width: 100%;">
-<a class="abstract detail_button" href='javascript:showCase(0,1)'>概要[50.00%]</a>
-<a class="passed  detail_button" href='javascript:showCase(1,1)'>通过[1]</a>
+<a class="abstract detail_button" href='javascript:showCase(0,1)'>概要[0.00%]</a>
+<a class="passed  detail_button" href='javascript:showCase(1,1)'>通过[0]</a>
 <a class="failed  detail_button" href='javascript:showCase(2,1)'>失败[1]</a>
 <a class="errored  detail_button" href='javascript:showCase(3,1)'>错误[0]</a>
-<a class="skiped  detail_button"  href='javascript:showCase(4,1)'>跳过[0]</a>
+<a class="skiped  detail_button"  href='javascript:showCase(4,1)'>跳过[1]</a>
 <a class="all detail_button" href='javascript:showCase(5,1)'>所有[2]</a>
 </div>
 
@@ -464,32 +464,31 @@ function hide_img(obj){
 
 <tr class='failClass'>
     <td>test_case1.Test1</td>
-    <td>2</td>
-    <td>1</td>
     <td>1</td>
     <td>0</td>
-    <td><a href="javascript:showClassDetail('c1.1',2)">详情</a></td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1.1',1)">详情</a></td>
     <td>&nbsp;</td>
 </tr>
 
-<tr id='pt1.1.1' class='hiddenRow'>
+<tr id='st1.1.1' class='none'>
     <td ><div class='testcase'>test_01: 首页跳转CRL指数页面</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
     <span class='status passCase'>
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1.1')" >
-        通过</a></span>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_st1.1.1')" >
+        跳过</a></span>
 
-    <div id='div_pt1.1.1' class="popup_window">
+    <div id='div_st1.1.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_st1.1.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt1.1.1: CRI指数 - 产业高质量发展平台
-
+st1.1.1: 调试
 
         </pre>
     </div>
@@ -517,11 +516,11 @@ pt1.1.1: CRI指数 - 产业高质量发展平台
         
 ft1.1.2: 企业总量 - 产业高质量发展平台
 Traceback (most recent call last):
-  File "D:\pycharm\Cygzl\case\test_case1.py", line 58, in test_02
-    self.assertEqual('企业总量 - 产业高质量发展平台1', self.driver.title, '用例执行错误')
-AssertionError: '企业总量 - 产业高质量发展平台1' != '企业总量 - 产业高质量发展平台'
-- 企业总量 - 产业高质量发展平台1
-?                 -
+  File "D:\pycharm\Cygzl\case\test_case1.py", line 57, in test_02
+    self.assertEqual('123企业总量 - 产业高质量发展平台', self.driver.title, '用例执行错误')
+AssertionError: '123企业总量 - 产业高质量发展平台' != '企业总量 - 产业高质量发展平台'
+- 123企业总量 - 产业高质量发展平台
+? ---
 + 企业总量 - 产业高质量发展平台
  : 用例执行错误
 
@@ -545,7 +544,7 @@ AssertionError: '企业总量 - 产业高质量发展平台1' != '企业总量 -
 <tr id='total_row'>
     <th>统计</th>
     <th>2</th>
-    <th>1</th>
+    <th>0</th>
     <th>1</th>
     <th>0</th>
     <th>&nbsp;</th>
@@ -554,7 +553,7 @@ AssertionError: '企业总量 - 产业高质量发展平台1' != '企业总量 -
 </table>
 <script>
     showCase(0,1);
-    drawCircle('circle1',1, 1, 0,  0);
+    drawCircle('circle1',0, 1, 0,  1);
 </script>
 
 <div id='ending'>&nbsp;</div>
