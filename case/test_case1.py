@@ -46,17 +46,15 @@ class Test1(unittest.TestCase):
         except:
             #如果发生错误截图当前页面
             WebGetDemo.Runmian(self.driver).jietu("D:\pycharm\Jjdn\error_png\\test_02\error01.png")
-        #
-        try:
-            WebGetDemo.Runmian(self.driver).click('xpath','/html/body/div[2]/ul/div[2]/a/li/spa1n')
-            time.sleep(1)
-        except:
-            WebGetDemo.Runmian(self.driver).jietu("D:\pycharm\Jjdn\error_png\\test_02\error02.png")
-
+        WebGetDemo.Runmian(self.driver).click('xpath','/html/body/div[2]/ul/div[2]/a/li/span')
+        time.sleep(1)
         print(self.driver.title)
         time.sleep(1)
-        self.assertEqual('企业总量 - 产业高质量发展平台', self.driver.title, '用例执行错误')
-        WebGetDemo.Runmian(self.driver).quit()
+        try:
+            self.assertEqual('企业总量 - 产业高质量发展平台1', self.driver.title, '用例执行错误')
+            WebGetDemo.Runmian(self.driver).quit()
+        except:
+            WebGetDemo.Runmian(self.driver).jietu("D:\pycharm\Jjdn\error_png\\test_02\error02.png")
 if __name__ == '__main__':
     login_url='http://ihd.wanvdata.cn/'
     name='ihqd-test'
