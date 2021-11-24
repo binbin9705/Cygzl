@@ -22,7 +22,7 @@ class Test1(unittest.TestCase):
         '''首页跳转CRL指数页面'''
         WebGetDemo.Runmian(self.driver).login('ihqd-test', 'ihqd-test@6688')
         try:
-            WebGetDemo.Runmian(self.driver).click('xpath','//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[2]/li/div/spa1n')
+            WebGetDemo.Runmian(self.driver).click('xpath','//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[2]/li/div/span')
             time.sleep(1)
         except:
             #如果发生错误截图当前页面
@@ -36,7 +36,7 @@ class Test1(unittest.TestCase):
         time.sleep(1)
         self.assertEqual('CRI指数 - 产业高质量发展平台', self.driver.title, '用例执行错误')
         WebGetDemo.Runmian(self.driver).quit()
-    @unittest.skip('跳过')
+    # @unittest.skip('跳过')
     def test_02(self):
         '''首页跳转企业总量页面'''
         WebGetDemo.Runmian(self.driver).login('ihqd-test', 'ihqd-test@6688')
@@ -48,7 +48,7 @@ class Test1(unittest.TestCase):
             WebGetDemo.Runmian(self.driver).jietu("D:\pycharm\Jjdn\error_png\\test_02\error01.png")
         #
         try:
-            WebGetDemo.Runmian(self.driver).click('xpath','/html/body/div[2]/ul/div[2]/a/li/span')
+            WebGetDemo.Runmian(self.driver).click('xpath','/html/body/div[2]/ul/div[2]/a/li/spa1n')
             time.sleep(1)
         except:
             WebGetDemo.Runmian(self.driver).jietu("D:\pycharm\Jjdn\error_png\\test_02\error02.png")
