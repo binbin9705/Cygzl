@@ -52,7 +52,6 @@ class Test1(unittest.TestCase):
             time.sleep(1)
         except:
             WebGetDemo.Runmian(self.driver).jietu("D:\pycharm\Cygzl\error_png\\test_02\error02.png")
-            WebGetDemo.Runmian(self.driver).quit()
         print(self.driver.title)
         time.sleep(1)
         self.assertEqual('企业总量 - 产业高质量发展平台', self.driver.title, '用例执行错误')
