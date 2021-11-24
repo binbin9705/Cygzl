@@ -48,7 +48,7 @@ class Test1(unittest.TestCase):
             WebGetDemo.Runmian(self.driver).jietu("D:\pycharm\Cygzl\error_png\\test_02\error01.png")
         #
         try:
-            WebGetDemo.Runmian(self.driver).click('xpath','/html/body/div[2]/ul/div[2]/a/li/span')
+            WebGetDemo.Runmian(self.driver).click('xpath','/html/body/div[2]/ul/div[2]/a/li/sp1an')
             time.sleep(1)
         except:
             WebGetDemo.Runmian(self.driver).jietu("D:\pycharm\Cygzl\error_png\\test_02\error02.png")
