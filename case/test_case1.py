@@ -17,7 +17,7 @@ class Test1(unittest.TestCase):
         WebGetDemo.Runmian(self.driver).open('http://ihd.wanvdata.cn/')
     def tearDown(self):
         pass
-    # @unittest.skip('调试')
+    @unittest.skip('调试')
     def test_01(self):
         '''首页跳转CRL指数页面'''
         WebGetDemo.Runmian(self.driver).login('ihqd-test', 'ihqd-test@6688')
@@ -26,12 +26,12 @@ class Test1(unittest.TestCase):
             time.sleep(1)
         except:
             #如果发生错误截图当前页面
-            WebGetDemo.Runmian(self.driver).jietu("D:\pycharm\Jjdn\error_png\\test_01\error01.png")
+            WebGetDemo.Runmian(self.driver).jietu("D:\pycharm\Cygzl\error_png\\test_01\error01.png")
         try:
             WebGetDemo.Runmian(self.driver).click('xpath','/html/body/div[2]/ul/div[1]/a/li/span')
             time.sleep(1)
         except:
-            WebGetDemo.Runmian(self.driver).jietu("D:\pycharm\Jjdn\error_png\\test_01\error02.png")
+            WebGetDemo.Runmian(self.driver).jietu("D:\pycharm\Cygzl\error_png\\test_01\error02.png")
         print(self.driver.title)
         time.sleep(1)
         self.assertEqual('CRI指数 - 产业高质量发展平台', self.driver.title, '用例执行错误')
@@ -45,16 +45,17 @@ class Test1(unittest.TestCase):
             time.sleep(1)
         except:
             #如果发生错误截图当前页面
-            WebGetDemo.Runmian(self.driver).jietu("D:\pycharm\Jjdn\error_png\\test_02\error01.png")
-        WebGetDemo.Runmian(self.driver).click('xpath','/html/body/div[2]/ul/div[2]/a/li/span')
-        time.sleep(1)
+            WebGetDemo.Runmian(self.driver).jietu("D:\pycharm\Cygzl\error_png\\test_02\error01.png")
+        #
+        try:
+            WebGetDemo.Runmian(self.driver).click('xpath','/html/body/div[2]/ul/div[2]/a/li/span')
+            time.sleep(1)
+        except:
+            WebGetDemo.Runmian(self.driver).jietu("D:\pycharm\Cygzl\error_png\\test_02\error02.png")
         print(self.driver.title)
         time.sleep(1)
-        try:
-            self.assertEqual('企业总量 - 产业高质量发展平台', self.driver.title, '用例执行错误')
-            WebGetDemo.Runmian(self.driver).quit()
-        except:
-            WebGetDemo.Runmian(self.driver).jietu("D:\pycharm\Jjdn\error_png\\test_02\error02.png")
+        self.assertEqual('123企业总量 - 产业高质量发展平台', self.driver.title, '用例执行错误')
+        WebGetDemo.Runmian(self.driver).quit()
 if __name__ == '__main__':
     login_url='http://ihd.wanvdata.cn/'
     name='ihqd-test'
