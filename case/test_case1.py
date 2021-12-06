@@ -1,14 +1,13 @@
-import traceback
 import unittest
 import time
 from selenium import webdriver
-from selenium.webdriver.common.by import By
 
 from PublicMethod import WebGetDemo
 import warnings
 
 
 class Test1(unittest.TestCase):
+    '''页面跳转'''
 
     @classmethod
     def setUpClass(cls):
@@ -238,6 +237,7 @@ class Test1(unittest.TestCase):
             WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
         self.assertEqual('招商图谱 - 产业高质量发展平台', self.driver.title, '用例执行错误')
         WebGetDemo.Runmian(self.driver).quit()
+
     @unittest.skip('跳过')
     def test_13(self):
         '''首页跳转资本流动页面'''
@@ -254,6 +254,95 @@ class Test1(unittest.TestCase):
         except Exception as e:
             WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
         self.assertEqual('资本流动 - 产业高质量发展平台', self.driver.title, '用例执行错误')
+        WebGetDemo.Runmian(self.driver).quit()
+
+    @unittest.skip('跳过')
+    def test_14(self):
+        '''首页跳转开发发展-结构分析页面'''
+        WebGetDemo.Runmian(self.driver).login('ihqd-test', 'ihqd-test@6688')
+        try:
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[3]/div[3]/li/div/span')
+            time.sleep(1)
+            WebGetDemo.Runmian(self.driver).click('xpath', '/html/body/div[2]/ul/div[1]/a/li/span')
+            time.sleep(1)
+        except AssertionError as e:
+            # 调用封装好的截图方法，进行截图并保存在本地磁盘
+            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
+        except Exception as e:
+            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
+        self.assertEqual('结构分析 - 产业高质量发展平台', self.driver.title, '用例执行错误')
+        WebGetDemo.Runmian(self.driver).quit()
+
+    @unittest.skip('跳过')
+    def test_15(self):
+        '''首页跳转地域分析页面'''
+        WebGetDemo.Runmian(self.driver).login('ihqd-test', 'ihqd-test@6688')
+        try:
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[3]/div[3]/li/div/span')
+            time.sleep(1)
+            WebGetDemo.Runmian(self.driver).click('xpath', '/html/body/div[2]/ul/div[2]/a/li/span')
+            time.sleep(1)
+        except AssertionError as e:
+            # 调用封装好的截图方法，进行截图并保存在本地磁盘
+            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
+        except Exception as e:
+            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
+        self.assertEqual('地域分析 - 产业高质量发展平台', self.driver.title, '用例执行错误')
+        WebGetDemo.Runmian(self.driver).quit()
+
+    @unittest.skip('跳过')
+    def test_16(self):
+        '''首页跳转企业分析页面'''
+        WebGetDemo.Runmian(self.driver).login('ihqd-test', 'ihqd-test@6688')
+        try:
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[3]/div[3]/li/div/span')
+            time.sleep(1)
+            WebGetDemo.Runmian(self.driver).click('xpath', '/html/body/div[2]/ul/div[3]/a/li/span')
+            time.sleep(1)
+        except AssertionError as e:
+            # 调用封装好的截图方法，进行截图并保存在本地磁盘
+            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
+        except Exception as e:
+            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
+        self.assertEqual('企业分析 - 产业高质量发展平台', self.driver.title, '用例执行错误')
+        WebGetDemo.Runmian(self.driver).quit()
+
+    @unittest.skip('跳过')
+    def test_17(self):
+        '''首页跳转总体概览页面'''
+        WebGetDemo.Runmian(self.driver).login('ihqd-test', 'ihqd-test@6688')
+        try:
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[3]/div[4]/li/div/span')
+            time.sleep(1)
+            WebGetDemo.Runmian(self.driver).click('xpath', '/html/body/div[2]/ul/div[1]/a/li/span')
+            time.sleep(2)
+        except AssertionError as e:
+            # 调用封装好的截图方法，进行截图并保存在本地磁盘
+            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
+        except Exception as e:
+            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
+        self.assertEqual('总体概览 - 产业高质量发展平台', self.driver.title, '用例执行错误')
+        WebGetDemo.Runmian(self.driver).quit()
+
+    def test_18(self):
+        '''首页跳转结构分析页面'''
+        WebGetDemo.Runmian(self.driver).login('ihqd-test', 'ihqd-test@6688')
+        try:
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[3]/div[4]/li/div/span')
+            time.sleep(1)
+            WebGetDemo.Runmian(self.driver).click('xpath', '/html/body/div[2]/ul/div[2]/a/li/span')
+            time.sleep(2)
+        except AssertionError as e:
+            # 调用封装好的截图方法，进行截图并保存在本地磁盘
+            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
+        except Exception as e:
+            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
+        self.assertEqual('结构分析 - 产业高质量发展平台', self.driver.title, '用例执行错误')
         WebGetDemo.Runmian(self.driver).quit()
 if __name__ == '__main__':
     login_url = 'http://ihd.wanvdata.cn/'
