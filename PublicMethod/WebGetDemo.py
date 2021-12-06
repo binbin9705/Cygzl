@@ -7,10 +7,13 @@ import time
 from datetime import datetime
 from selenium.webdriver.support.wait import WebDriverWait
 import sys
+
+
 class Runmian():
-    def __init__(self,driver):
+    def __init__(self, driver):
         self.driver = driver
-    #浏览器参数设置
+
+    # 浏览器参数设置
     def options(self):
         # Options类实例化
         option = Options()
@@ -24,20 +27,22 @@ class Runmian():
         prefs["profile.password_manager_enabled"] = False
         option.add_experimental_option("prefs", prefs)
         return option
-    #登录
+
+    # 登录
     def login(self, username, password):
         '''输入用户名和密码,点击登录'''
-        Runmian(self.driver).input_data("name","username",username)
+        Runmian(self.driver).input_data("name", "username", username)
         # self.driver.find_element(By.NAME, 'username').send_keys(username)
         time.sleep(1)
         # self.driver.find_element(By.NAME, 'password').send_keys(password)
         Runmian(self.driver).input_data('name', 'password', password)
         time.sleep(1)
         # self.driver.find_element(By.XPATH, '//*[@id="app"]/div/form/button').click()
-        Runmian(self.driver).click('xpath','//*[@id="app"]/div/form/button')
+        Runmian(self.driver).click('xpath', '//*[@id="app"]/div/form/button')
         time.sleep(1)
+
     # 打开网页功能
-    def open(self,url):
+    def open(self, url):
         self.driver.get(url)
         self.driver.implicitly_wait(5)
 
@@ -54,31 +59,40 @@ class Runmian():
     # 定位元素
     def locateElement(self, type, value):
         if type == "id":
-            el = self.driver.find_element(By.ID,value)
+            el = self.driver.find_element(By.ID, value)
         elif type == "name":
-            el = self.driver.find_element(By.NAME,value)
+            el = self.driver.find_element(By.NAME, value)
         elif type == "class_name":
-            el = self.driver.find_element(By.CLASS_NAME,value)
+            el = self.driver.find_element(By.CLASS_NAME, value)
         elif type == "tag_name":
-            el = self.driver.find_element(By.TAG_NAME,value)
+            el = self.driver.find_element(By.TAG_NAME, value)
         elif type == "link_text":
-            el = self.driver.find_element(By.LINK_TEXT,value)
+            el = self.driver.find_element(By.LINK_TEXT, value)
         elif type == "partial_link_text":
-            el = self.driver.find_element(By.PARTIAL_LINK_TEXT,value)
+            el = self.driver.find_element(By.PARTIAL_LINK_TEXT, value)
         elif type == "xpath":
-            el = self.driver.find_element(By.XPATH,value)
+            el = self.driver.find_element(By.XPATH, value)
         elif type == "css_selector":
-            el = self.driver.find_element(By.CSS_SELECTOR,value)
+            el = self.driver.find_element(By.CSS_SELECTOR, value)
         return el
-    #对定位到元素进行点击
-    def click(self,type,value):
+
+    # 对定位到元素进行点击
+    def click(self, type, value):
         # 调用locateElement定位元素
-        el=self.locateElement(type,value)
-        #调用click()进行点击操作
+        el = self.locateElement(type, value)
+        # 调用click()进行点击操作
         el.click()
 
+    #获取元素text文本
+    def obtaintest(self,type,value):
+        # 调用locateElement定位元素
+        el = self.locateElement(type, value)
+        #获取文本
+        return el.text
+
+
     # 对定位到元素进行输入
-    def input_data(self, type, value,data):
+    def input_data(self, type, value, data):
         # 调用locateElement定位元素
         el = self.locateElement(type, value)
         # 调用send_keys进行输入
@@ -91,10 +105,10 @@ class Runmian():
         # 返回文本内容
         return el.text
 
-    #截图
-    def jietu(self,url):
+    # 截图
+    def jietu(self, url):
         self.driver.get_screenshot_as_file(url)
-        #WebGetDemo.Runmian(self.driver).jietu("D:\pycharm\Cygzl\error_png\\test_01\error02.png")
+        # WebGetDemo.Runmian(self.driver).jietu("D:\pycharm\Cygzl\error_png\\test_01\error02.png")
 
     # 构造今天的日期字符串
     def currentDate(self):
@@ -108,7 +122,7 @@ class Runmian():
         now = timeStr.strftime('%H - %M - %S')
         return now
 
-    #创建图片存储路径
+    # 创建图片存储路径
     def createDir(self):
         # 获取当前文件所在目录的绝对路径
         # currentPath = os.path.dirname(os.path.abspath(__file__))
@@ -124,11 +138,10 @@ class Runmian():
         now = Runmian(self).currentTime()
         # 构造以当前时间命名的目录的绝对路径
         timeDir = os.path.join(dateDir, now)
-        print(timeDir,"3")
+        print(timeDir, "3")
         # if not os.path.exists(timeDir):
         #     os.mkdir(timeDir)
         return timeDir
-
 
     # 封装截屏方法
     def takeScreenshot(self, savePath, picName):
@@ -140,6 +153,3 @@ class Runmian():
             self.driver.get_screenshot_as_file(picPath)
         except Exception as e:
             print(traceback.print_exc())
-
-
-

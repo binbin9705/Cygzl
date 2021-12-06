@@ -5,6 +5,8 @@ from selenium import webdriver
 from PublicMethod import WebGetDemo
 import warnings
 
+from selenium.webdriver.common.by import By
+
 
 class Test1(unittest.TestCase):
     '''页面跳转'''
@@ -328,6 +330,7 @@ class Test1(unittest.TestCase):
         self.assertEqual('总体概览 - 产业高质量发展平台', self.driver.title, '用例执行错误')
         WebGetDemo.Runmian(self.driver).quit()
 
+    @unittest.skip('跳过')
     def test_18(self):
         '''首页跳转结构分析页面'''
         WebGetDemo.Runmian(self.driver).login('ihqd-test', 'ihqd-test@6688')
@@ -344,6 +347,29 @@ class Test1(unittest.TestCase):
             WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
         self.assertEqual('结构分析 - 产业高质量发展平台', self.driver.title, '用例执行错误')
         WebGetDemo.Runmian(self.driver).quit()
+
+    def test_19(self):
+        '''切换城市'''
+        WebGetDemo.Runmian(self.driver).login('ihqd-test', 'ihqd-test@6688')
+        try:
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="placePop"]/span/button/span')
+            time.sleep(2)
+            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="tip"]/div/ul/span[10]/span')
+            time.sleep(3)
+        except AssertionError as e:
+            # 调用封装好的截图方法，进行截图并保存在本地磁盘
+            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
+        except Exception as e:
+            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
+        Sftext = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                            '// *[ @ id = "leftTopChart"] / div[1] / p[2] / small / span')
+        self.assertEqual('河南省', Sftext, '用例执行错误')
+        Sftext2 = WebGetDemo.Runmian(self.driver).obtaintest('xpath', '//*[@id="placePop"]/span/button/span')
+        self.assertEqual('郑州市', Sftext2, '用例执行错误')
+        WebGetDemo.Runmian(self.driver).quit()
+
+
 if __name__ == '__main__':
     login_url = 'http://ihd.wanvdata.cn/'
     name = 'ihqd-test'
