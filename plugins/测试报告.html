@@ -419,9 +419,9 @@ function hide_img(obj){
 </script>
 <div class='heading'>
 <h1>自动化测试报告</h1>
-<p class='attribute'><strong>开始时间:</strong> 2021-12-06 09:18:12</p>
-<p class='attribute'><strong>耗时:</strong> 0:00:13.547934</p>
-<p class='attribute'><strong>状态:</strong> <span class="tj failCase">Failure</span>:1 <span class="tj skipCase">Skip</span>:2 <span class="tj">通过率</span>:0.0%</p>
+<p class='attribute'><strong>开始时间:</strong> 2021-12-06 15:28:57</p>
+<p class='attribute'><strong>耗时:</strong> 0:03:33.497376</p>
+<p class='attribute'><strong>状态:</strong> <span class="tj passCase">Pass</span>:18 <span class="tj failCase">Failure</span>:1 <span class="tj">通过率</span>:94.7%</p>
 
 <p class='description'>用例执行情况</p>
 </div>
@@ -434,12 +434,12 @@ function hide_img(obj){
 </div>
 
 <div id='show_detail_line' style=" float: left;  width: 100%;">
-<a class="abstract detail_button" href='javascript:showCase(0,1)'>概要[0.00%]</a>
-<a class="passed  detail_button" href='javascript:showCase(1,1)'>通过[0]</a>
+<a class="abstract detail_button" href='javascript:showCase(0,1)'>概要[94.74%]</a>
+<a class="passed  detail_button" href='javascript:showCase(1,1)'>通过[18]</a>
 <a class="failed  detail_button" href='javascript:showCase(2,1)'>失败[1]</a>
 <a class="errored  detail_button" href='javascript:showCase(3,1)'>错误[0]</a>
-<a class="skiped  detail_button"  href='javascript:showCase(4,1)'>跳过[2]</a>
-<a class="all detail_button" href='javascript:showCase(5,1)'>所有[3]</a>
+<a class="skiped  detail_button"  href='javascript:showCase(4,1)'>跳过[0]</a>
+<a class="all detail_button" href='javascript:showCase(5,1)'>所有[19]</a>
 </div>
 
 <table id='result_table'>
@@ -463,104 +463,38 @@ function hide_img(obj){
 </tr>
 
 <tr class='failClass'>
-    <td>test_case1.Test1</td>
+    <td>test_case1.Test1: 页面跳转</td>
+    <td>19</td>
+    <td>18</td>
     <td>1</td>
     <td>0</td>
-    <td>1</td>
-    <td>0</td>
-    <td><a href="javascript:showClassDetail('c1.1',1)">详情</a></td>
+    <td><a href="javascript:showClassDetail('c1.1',19)">详情</a></td>
     <td>&nbsp;</td>
 </tr>
 
-<tr id='st1.1.1' class='none'>
+<tr id='ft1.1.1' class='none'>
     <td ><div class='testcase'>test_01: 首页跳转CRL指数页面</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <span class='status passCase'>
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_st1.1.1')" >
-        跳过</a></span>
-
-    <div id='div_st1.1.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_st1.1.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-st1.1.1: 调试
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td>无截图</td>
-</tr>
-
-<tr id='ft1.1.2' class='none'>
-    <td ><div class='testcase'>test_02: 首页跳转企业总量页面</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
     <span class='status failCase'>
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1.2')" >
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1.1')" >
         失败</a></span>
 
-    <div id='div_ft1.1.2' class="popup_window">
+    <div id='div_ft1.1.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1.2').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-ft1.1.2: Traceback (most recent call last):
-  File "D:\pycharm\Cygzl\case\test_case1.py", line 51, in test_02
-    WebGetDemo.Runmian(self.driver).click('xpath','//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[2]/li/div/sp1an')
-  File "D:\pycharm\Cygzl\PublicMethod\WebGetDemo.py", line 96, in click
-    el=self.locateElement(type,value)
-  File "D:\pycharm\Cygzl\PublicMethod\WebGetDemo.py", line 69, in locateElement
-    el = self.driver.find_element(By.XPATH,value)
-  File "C:\Users\74480\AppData\Local\Programs\Python\Python38-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 1238, in find_element
-    return self.execute(Command.FIND_ELEMENT, {
-  File "C:\Users\74480\AppData\Local\Programs\Python\Python38-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 418, in execute
-    self.error_handler.check_response(response)
-  File "C:\Users\74480\AppData\Local\Programs\Python\Python38-32\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 243, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[2]/li/div/sp1an"}
-  (Session info: chrome=96.0.4664.45)
-Stacktrace:
-Backtrace:
-	Ordinal0 [0x00E26903+2517251]
-	Ordinal0 [0x00DBF8E1+2095329]
-	Ordinal0 [0x00CC2848+1058888]
-	Ordinal0 [0x00CED448+1233992]
-	Ordinal0 [0x00CED63B+1234491]
-	Ordinal0 [0x00D17812+1406994]
-	Ordinal0 [0x00D0650A+1336586]
-	Ordinal0 [0x00D15BBF+1399743]
-	Ordinal0 [0x00D0639B+1336219]
-	Ordinal0 [0x00CE27A7+1189799]
-	Ordinal0 [0x00CE3609+1193481]
-	GetHandleVerifier [0x00FB5904+1577972]
-	GetHandleVerifier [0x01060B97+2279047]
-	GetHandleVerifier [0x00EB6D09+534521]
-	GetHandleVerifier [0x00EB5DB9+530601]
-	Ordinal0 [0x00DC4FF9+2117625]
-	Ordinal0 [0x00DC98A8+2136232]
-	Ordinal0 [0x00DC99E2+2136546]
-	Ordinal0 [0x00DD3541+2176321]
-	BaseThreadInitThunk [0x7673FA29+25]
-	RtlGetAppContainerNamedObjectPath [0x77957A9E+286]
-	RtlGetAppContainerNamedObjectPath [0x77957A6E+238]
-
-None
+ft1.1.1: D:\pycharm\Cygzl\error_png\2021-12-6\15 - 29 - 08 3
 Traceback (most recent call last):
-  File "D:\pycharm\Cygzl\case\test_case1.py", line 63, in test_02
-    self.assertEqual('企业总量 - 产业高质量发展平台', self.driver.title, '用例执行错误')
-AssertionError: '企业总量 - 产业高质量发展平台' != '首页 - 产业高质量发展平台'
-- 企业总量 - 产业高质量发展平台
-? ^^^^
+  File "D:\pycharm\Cygzl\case\test_case1.py", line 46, in test_01
+    self.assertEqual('CRI指数 - 产业高质量发展平台', self.driver.title, '用例执行错误')
+AssertionError: 'CRI指数 - 产业高质量发展平台' != '首页 - 产业高质量发展平台'
+- CRI指数 - 产业高质量发展平台
+? ^^^^^
 + 首页 - 产业高质量发展平台
 ? ^^
  : 用例执行错误
@@ -582,36 +516,118 @@ AssertionError: '企业总量 - 产业高质量发展平台' != '首页 - 产业
     </td>
 </tr>
 
-<tr id='st1.1.3' class='none'>
-    <td ><div class='testcase'>test_03: 首页跳转行业分析页面</div></td>
-    <td colspan='5' align='center'>
+<tr id='pt1.1.2' class='hiddenRow'>
+    <td><div class='testcase'>test_02: 首页跳转企业总量页面</div></td>
+    <td colspan='5' align='center'><span class='status passCase'>通过</span></td>
+    <td>无截图</td>
+</tr>
 
-    <!--css div popup start-->
-    <span class='status passCase'>
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_st1.1.3')" >
-        跳过</a></span>
+<tr id='pt1.1.3' class='hiddenRow'>
+    <td><div class='testcase'>test_03: 首页跳转行业分析页面</div></td>
+    <td colspan='5' align='center'><span class='status passCase'>通过</span></td>
+    <td>无截图</td>
+</tr>
 
-    <div id='div_st1.1.3' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_st1.1.3').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-st1.1.3: 跳过
+<tr id='pt1.1.4' class='hiddenRow'>
+    <td><div class='testcase'>test_04: 首页跳转结构分析页面</div></td>
+    <td colspan='5' align='center'><span class='status passCase'>通过</span></td>
+    <td>无截图</td>
+</tr>
 
-        </pre>
-    </div>
-    <!--css div popup end-->
+<tr id='pt1.1.5' class='hiddenRow'>
+    <td><div class='testcase'>test_05: 首页跳转重点企业页面</div></td>
+    <td colspan='5' align='center'><span class='status passCase'>通过</span></td>
+    <td>无截图</td>
+</tr>
 
-    </td>
+<tr id='pt1.1.6' class='hiddenRow'>
+    <td><div class='testcase'>test_06: 首页跳转总体监测页面</div></td>
+    <td colspan='5' align='center'><span class='status passCase'>通过</span></td>
+    <td>无截图</td>
+</tr>
+
+<tr id='pt1.1.7' class='hiddenRow'>
+    <td><div class='testcase'>test_07: 首页跳转产业分析页面</div></td>
+    <td colspan='5' align='center'><span class='status passCase'>通过</span></td>
+    <td>无截图</td>
+</tr>
+
+<tr id='pt1.1.8' class='hiddenRow'>
+    <td><div class='testcase'>test_08: 首页跳转产业地图页面</div></td>
+    <td colspan='5' align='center'><span class='status passCase'>通过</span></td>
+    <td>无截图</td>
+</tr>
+
+<tr id='pt1.1.9' class='hiddenRow'>
+    <td><div class='testcase'>test_09: 首页跳转创新主体页面</div></td>
+    <td colspan='5' align='center'><span class='status passCase'>通过</span></td>
+    <td>无截图</td>
+</tr>
+
+<tr id='pt1.1.10' class='hiddenRow'>
+    <td><div class='testcase'>test_10: 首页跳转创新成果页面</div></td>
+    <td colspan='5' align='center'><span class='status passCase'>通过</span></td>
+    <td>无截图</td>
+</tr>
+
+<tr id='pt1.1.11' class='hiddenRow'>
+    <td><div class='testcase'>test_11: 首页跳转产业链图谱页面</div></td>
+    <td colspan='5' align='center'><span class='status passCase'>通过</span></td>
+    <td>无截图</td>
+</tr>
+
+<tr id='pt1.1.12' class='hiddenRow'>
+    <td><div class='testcase'>test_12: 首页跳转招商图谱页面</div></td>
+    <td colspan='5' align='center'><span class='status passCase'>通过</span></td>
+    <td>无截图</td>
+</tr>
+
+<tr id='pt1.1.13' class='hiddenRow'>
+    <td><div class='testcase'>test_13: 首页跳转资本流动页面</div></td>
+    <td colspan='5' align='center'><span class='status passCase'>通过</span></td>
+    <td>无截图</td>
+</tr>
+
+<tr id='pt1.1.14' class='hiddenRow'>
+    <td><div class='testcase'>test_14: 首页跳转开发发展-结构分析页面</div></td>
+    <td colspan='5' align='center'><span class='status passCase'>通过</span></td>
+    <td>无截图</td>
+</tr>
+
+<tr id='pt1.1.15' class='hiddenRow'>
+    <td><div class='testcase'>test_15: 首页跳转地域分析页面</div></td>
+    <td colspan='5' align='center'><span class='status passCase'>通过</span></td>
+    <td>无截图</td>
+</tr>
+
+<tr id='pt1.1.16' class='hiddenRow'>
+    <td><div class='testcase'>test_16: 首页跳转企业分析页面</div></td>
+    <td colspan='5' align='center'><span class='status passCase'>通过</span></td>
+    <td>无截图</td>
+</tr>
+
+<tr id='pt1.1.17' class='hiddenRow'>
+    <td><div class='testcase'>test_17: 首页跳转总体概览页面</div></td>
+    <td colspan='5' align='center'><span class='status passCase'>通过</span></td>
+    <td>无截图</td>
+</tr>
+
+<tr id='pt1.1.18' class='hiddenRow'>
+    <td><div class='testcase'>test_18: 首页跳转结构分析页面</div></td>
+    <td colspan='5' align='center'><span class='status passCase'>通过</span></td>
+    <td>无截图</td>
+</tr>
+
+<tr id='pt1.1.19' class='hiddenRow'>
+    <td><div class='testcase'>test_19: 切换城市</div></td>
+    <td colspan='5' align='center'><span class='status passCase'>通过</span></td>
     <td>无截图</td>
 </tr>
 
 <tr id='total_row'>
     <th>统计</th>
-    <th>3</th>
-    <th>0</th>
+    <th>19</th>
+    <th>18</th>
     <th>1</th>
     <th>0</th>
     <th>&nbsp;</th>
@@ -620,7 +636,7 @@ st1.1.3: 跳过
 </table>
 <script>
     showCase(0,1);
-    drawCircle('circle1',0, 1, 0,  2);
+    drawCircle('circle1',18, 1, 0,  0);
 </script>
 
 <div id='ending'>&nbsp;</div>
