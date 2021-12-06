@@ -1,6 +1,12 @@
-import time
+import os
+import traceback
+
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
+import time
+from datetime import datetime
+from selenium.webdriver.support.wait import WebDriverWait
+import sys
 class Runmian():
     def __init__(self,driver):
         self.driver = driver
@@ -64,7 +70,6 @@ class Runmian():
         elif type == "css_selector":
             el = self.driver.find_element(By.CSS_SELECTOR,value)
         return el
-
     #对定位到元素进行点击
     def click(self,type,value):
         # 调用locateElement定位元素
@@ -89,10 +94,52 @@ class Runmian():
     #截图
     def jietu(self,url):
         self.driver.get_screenshot_as_file(url)
+        #WebGetDemo.Runmian(self.driver).jietu("D:\pycharm\Cygzl\error_png\\test_01\error02.png")
+
+    # 构造今天的日期字符串
+    def currentDate(self):
+        date = time.localtime()
+        today = str(date.tm_year) + "-" + str(date.tm_mon) + "-" + str(date.tm_mday)
+        return today
+
+    # 构造当前时间字符串
+    def currentTime(self):
+        timeStr = datetime.now()
+        now = timeStr.strftime('%H - %M - %S')
+        return now
+
+    #创建图片存储路径
+    def createDir(self):
+        # 获取当前文件所在目录的绝对路径
+        # currentPath = os.path.dirname(os.path.abspath(__file__))
+        # 获取今天的日期字符串
+        today = Runmian(self).currentDate()
+        # print(today,"1")
+        # 构造以今天日期命名的目录的绝对路径
+        dateDir = os.path.join('D:\pycharm\Cygzl\error_png', today)
+        # print(dateDir,"2")
+        if not os.path.exists(dateDir):
+            # 如果以今天日期命名的目录不存在则创建
+            os.mkdir(dateDir)
+        now = Runmian(self).currentTime()
+        # 构造以当前时间命名的目录的绝对路径
+        timeDir = os.path.join(dateDir, now)
+        print(timeDir,"3")
+        # if not os.path.exists(timeDir):
+        #     os.mkdir(timeDir)
+        return timeDir
 
 
-
-
+    # 封装截屏方法
+    def takeScreenshot(self, savePath, picName):
+        # 构造屏幕截图路径及图片名
+        picPath = os.path.join(savePath + '.png')
+        try:
+            # 调用WebDriver提供的get_screenshot_as_file()方法
+            # 将截取的屏幕图片保存为本地文件
+            self.driver.get_screenshot_as_file(picPath)
+        except Exception as e:
+            print(traceback.print_exc())
 
 
 
