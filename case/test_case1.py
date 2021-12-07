@@ -31,7 +31,7 @@ class Test1(unittest.TestCase):
         WebGetDemo.Runmian(self.driver).login('ihqd-test', 'ihqd-test@6688')
         try:
             WebGetDemo.Runmian(self.driver).click('xpath',
-                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[2]/li/div/s1pan')
+                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[2]/li/div/span')
             time.sleep(1)
             WebGetDemo.Runmian(self.driver).click('xpath', '/html/body/div[2]/ul/div[1]/a/li/span')
             time.sleep(1)
