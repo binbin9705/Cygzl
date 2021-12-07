@@ -15,17 +15,32 @@ class Runmian():
 
     # 浏览器参数设置
     def options(self):
-        # Options类实例化
-        option = Options()
-        # 关闭“chrome正受到自动测试软件的控制”
-        option.add_experimental_option('excludeSwitches', ['enable-automation'])
-        # 不自动关闭浏览器
-        option.add_experimental_option("detach", True)
-        # 关掉浏览器记住密码弹窗
-        prefs = {"": ""}
-        prefs["credentials_enable_service"] = False
-        prefs["profile.password_manager_enabled"] = False
-        option.add_experimental_option("prefs", prefs)
+        ''' 1、判断是在什么环境下运行2、linux系统下默认为界面模式'''
+        if 'linux' in sys.platform:
+            option = Options()
+            option.add_argument('headless')  # 浏览器不提供可视化页面
+            option.add_argument('no-sandbox')  # 以最高权限运行
+            option.add_argument('--start-maximized')  # 最大化运行（全屏窗口）设置元素定位比较准确
+            option.add_argument('--disable-gpu')  # 谷歌文档提到需要加上这个属性来规避bug
+            # 关掉浏览器记住密码弹窗
+            prefs = {"": ""}
+            prefs["credentials_enable_service"] = False
+            prefs["profile.password_manager_enabled"] = False
+            option.add_experimental_option("prefs", prefs)
+        else:
+            # Options类实例化
+            option = Options()
+            # 无痕模式
+            # option.add_argument('--incognito')
+            # 关闭“chrome正受到自动测试软件的控制”
+            option.add_experimental_option('excludeSwitches', ['enable-automation'])
+            # 不自动关闭浏览器
+            option.add_experimental_option("detach", True)
+            # 关掉浏览器记住密码弹窗
+            prefs = {"": ""}
+            prefs["credentials_enable_service"] = False
+            prefs["profile.password_manager_enabled"] = False
+            option.add_experimental_option("prefs", prefs)
         return option
 
     # 登录
@@ -83,13 +98,12 @@ class Runmian():
         # 调用click()进行点击操作
         el.click()
 
-    #获取元素text文本
-    def obtaintest(self,type,value):
+    # 获取元素text文本
+    def obtaintest(self, type, value):
         # 调用locateElement定位元素
         el = self.locateElement(type, value)
-        #获取文本
+        # 获取文本
         return el.text
-
 
     # 对定位到元素进行输入
     def input_data(self, type, value, data):
