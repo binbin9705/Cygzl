@@ -1,40 +1,31 @@
 import os
 import traceback
-
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 import time
 from datetime import datetime
-from selenium.webdriver.support.wait import WebDriverWait
-import sys
-
 
 class Runmian():
     def __init__(self, driver):
         self.driver = driver
-
     # 浏览器参数设置
-    def options(self,no_ui=False):
-        ''' 1、判断是在什么环境下运行
-                2、no_ui win系统下默认为界面模式，无界面设为：True
-            '''
-        if 'linux' in sys.platform:
-            option = Options()# Options类实例化
-            option.add_argument('headless')  # 浏览器不提供可视化页面
-            option.add_argument('no-sandbox')  # 以最高权限运行
-            option.add_argument('--start-maximized')  # 最大化运行（全屏窗口）设置元素定位比较准确
-            option.add_argument('--disable-gpu') # 谷歌文档提到需要加上这个属性来规避bug
-        else:
-            option = Options()# Options类实例化
-            # option.add_argument('--incognito')# 无痕模式
-            # 关闭“chrome正受到自动测试软件的控制”
-            option.add_experimental_option('excludeSwitches', ['enable-automation'])
-            option.add_experimental_option("detach", True)# 不自动关闭浏览器
-            # 关掉浏览器记住密码弹窗
-            prefs = {"": ""}
-            prefs["credentials_enable_service"] = False
-            prefs["profile.password_manager_enabled"] = False
-            option.add_experimental_option("prefs", prefs)
+    def options(self):
+        # if 'linux' in sys.platform:
+        #     option = Options()# Options类实例化
+        #     option.add_argument('headless')  # 浏览器不提供可视化页面
+        #     option.add_argument('no-sandbox')  # 以最高权限运行
+        #     option.add_argument('--start-maximized')  # 最大化运行（全屏窗口）设置元素定位比较准确
+        #     option.add_argument('--disable-gpu') # 谷歌文档提到需要加上这个属性来规避bug
+        option = Options()# Options类实例化
+        # option.add_argument('--incognito')# 无痕模式
+        # 关闭“chrome正受到自动测试软件的控制”
+        option.add_experimental_option('excludeSwitches', ['enable-automation'])
+        option.add_experimental_option("detach", True)# 不自动关闭浏览器
+        # 关掉浏览器记住密码弹窗
+        prefs = {"": ""}
+        prefs["credentials_enable_service"] = False
+        prefs["profile.password_manager_enabled"] = False
+        option.add_experimental_option("prefs", prefs)
         return option
 
     # 登录
