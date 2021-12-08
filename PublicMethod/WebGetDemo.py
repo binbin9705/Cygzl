@@ -39,7 +39,6 @@ class Runmian():
     def login(self, username, password):
         '''输入用户名和密码,点击登录'''
         Runmian(self.driver).input_data("name", "username", username)
-        # self.driver.find_element(By.NAME, 'username').send_keys(username)
         time.sleep(1)
         # self.driver.find_element(By.NAME, 'password').send_keys(password)
         Runmian(self.driver).input_data('name', 'password', password)
@@ -94,8 +93,16 @@ class Runmian():
     def obtaintest(self, type, value):
         # 调用locateElement定位元素
         el = self.locateElement(type, value)
-        # 获取文本
+        # 返回
         return el.text
+
+    # 获取元素值
+    def obtainvalue(self, valuename,type, value):
+        '''class,title,name'''
+        # 调用locateElement定位元素
+        el = self.locateElement(type, value)
+        # 返回
+        return el.get_attribute(valuename)
 
     # 对定位到元素进行输入
     def input_data(self, type, value, data):
@@ -130,23 +137,16 @@ class Runmian():
 
     # 创建图片存储路径
     def createDir(self):
-        # 获取当前文件所在目录的绝对路径
-        # currentPath = os.path.dirname(os.path.abspath(__file__))
         # 获取今天的日期字符串
         today = Runmian(self).currentDate()
-        # print(today,"1")
         # 构造以今天日期命名的目录的绝对路径
         dateDir = os.path.join('D:\pycharm\Cygzl\error_png', today)
-        # print(dateDir,"2")
         if not os.path.exists(dateDir):
             # 如果以今天日期命名的目录不存在则创建
             os.mkdir(dateDir)
         now = Runmian(self).currentTime()
         # 构造以当前时间命名的目录的绝对路径
         timeDir = os.path.join(dateDir, now)
-        print(timeDir, "3")
-        # if not os.path.exists(timeDir):
-        #     os.mkdir(timeDir)
         return timeDir
 
     # 封装截屏方法
