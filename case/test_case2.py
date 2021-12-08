@@ -4,7 +4,6 @@ from selenium import webdriver
 from PublicMethod import WebGetDemo
 import warnings
 
-
 class Test2(unittest.TestCase):
     '''首页页面交互'''
 
