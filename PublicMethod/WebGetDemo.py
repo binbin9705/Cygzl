@@ -96,7 +96,7 @@ class Runmian():
         # 返回
         return el.text
 
-    # 获取元素值
+    # 获取任意元素值
     def obtainvalue(self, valuename,type, value):
         '''class,title,name'''
         # 调用locateElement定位元素
@@ -104,7 +104,7 @@ class Runmian():
         # 返回
         return el.get_attribute(valuename)
 
-    # 对定位到元素进行输入
+    # 输入
     def input_data(self, type, value, data):
         # 调用locateElement定位元素
         el = self.locateElement(type, value)
