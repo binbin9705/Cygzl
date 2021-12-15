@@ -89,28 +89,28 @@ class Test2(unittest.TestCase):
             WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
         self.assertEqual('天津市', ys, '用例执行错误')
 
-        #@unittest.skip('跳过')
-        def test_04(self):
-            '''切换地区-沈阳市'''
-            self.driver.implicitly_wait(5)
-            try:
-                WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
-                time.sleep(3)
-                WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="tip"]/div/ul/span[3]/span')
-                time.sleep(3)
-                ys = WebGetDemo.Runmian(self.driver).obtaintest('xpath', '//*[@id="placePop"]/span/button/span')
-                t1 = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
-                                                                '//*[@id="leftTopChart"]/div[1]/p[2]/small/span')
-                t2 = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
-                                                                '//*[@id="bottomLeftChart"]/div[1]/p[1]/small[2]/span')
-            except AssertionError as e:
-                # 调用封装好的截图方法，进行截图并保存在本地磁盘
-                WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-            except Exception as e:
-                WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-            self.assertEqual('沈阳市', ys, '用例执行错误')
-            self.assertEqual('辽宁省', t1, '用例执行错误')
-            self.assertEqual('辽宁省', t2, '用例执行错误')
+    #@unittest.skip('跳过')
+    def test_04(self):
+        '''切换地区-沈阳市'''
+        self.driver.implicitly_wait(5)
+        try:
+            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
+            time.sleep(3)
+            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="tip"]/div/ul/span[3]/span')
+            time.sleep(3)
+            ys = WebGetDemo.Runmian(self.driver).obtaintest('xpath', '//*[@id="placePop"]/span/button/span')
+            t1 = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                            '//*[@id="leftTopChart"]/div[1]/p[2]/small/span')
+            t2 = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                            '//*[@id="bottomLeftChart"]/div[1]/p[1]/small[2]/span')
+        except AssertionError as e:
+            # 调用封装好的截图方法，进行截图并保存在本地磁盘
+            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
+        except Exception as e:
+            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
+        self.assertEqual('沈阳市', ys, '用例执行错误')
+        self.assertEqual('辽宁省', t1, '用例执行错误')
+        self.assertEqual('辽宁省', t2, '用例执行错误')
 
     #@unittest.skip('跳过')
     def test_05(self):
