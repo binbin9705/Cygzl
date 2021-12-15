@@ -21,8 +21,8 @@ class Test1(unittest.TestCase):
         # 启动浏览并设置相关选项
         self.driver = webdriver.Chrome(options=WebGetDemo.Runmian(self).options())
         self.driver.maximize_window()
-        WebGetDemo.Runmian(self.driver).open(login_url)
-        WebGetDemo.Runmian(self.driver).login(name,password)
+        WebGetDemo.Runmian(self.driver).open('http://ihd.wanvdata.cn/#/login?redirect=%2Fdashboard')
+        WebGetDemo.Runmian(self.driver).login('ihqd-test','ihqd-test@6688')
 
     def tearDown(self):
         WebGetDemo.Runmian(self.driver).quit()
