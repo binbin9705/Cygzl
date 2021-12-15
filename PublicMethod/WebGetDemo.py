@@ -15,16 +15,11 @@ class Runmian():
 
     # 浏览器参数设置
     def options(self):
-
-        # if 'linux' in sys.platform:
-        #     option = Options()# Options类实例化
-        #     option.add_argument('headless')  # 浏览器不提供可视化页面
-        #     option.add_argument('no-sandbox')  # 以最高权限运行
-        #     option.add_argument('--start-maximized')  # 最大化运行（全屏窗口）设置元素定位比较准确
-        #     option.add_argument('--disable-gpu') # 谷歌文档提到需要加上这个属性来规避bug
-        # else:
         option = Options()# Options类实例化
         # option.add_argument('--incognito')# 无痕模式
+        option.add_argument('no-sandbox')  # 以最高权限运行
+        option.add_argument('--start-maximized')  # 最大化运行（全屏窗口）设置元素定位比较准确
+        option.add_argument('--disable-gpu') # 谷歌文档提到需要加上这个属性来规避bug
         # 关闭“chrome正受到自动测试软件的控制”
         option.add_experimental_option('excludeSwitches', ['enable-automation'])
         option.add_experimental_option("detach", True)# 不自动关闭浏览器

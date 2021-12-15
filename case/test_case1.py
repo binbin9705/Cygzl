@@ -20,19 +20,19 @@ class Test1(unittest.TestCase):
     def setUp(self):
         # 启动浏览并设置相关选项
         self.driver = webdriver.Chrome(options=WebGetDemo.Runmian(self).options())
-        self.driver.maximize_window()
+        # self.driver.maximize_window()
         WebGetDemo.Runmian(self.driver).open('http://ihd.wanvdata.cn/#/login?redirect=%2Fdashboard')
+        time.sleep(2)
         WebGetDemo.Runmian(self.driver).login('ihqd-test','ihqd-test@6688')
 
     def tearDown(self):
         WebGetDemo.Runmian(self.driver).quit()
-
     def test_01(self):
         '''首页跳转CRL指数页面'''
         self.driver.implicitly_wait(5)
         try:
             WebGetDemo.Runmian(self.driver).click('xpath',
-                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[2]/li/div/span')
+                                              '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[2]/li/div/span')
             time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '/html/body/div[2]/ul/div[1]/a/li/span')
             time.sleep(2)
