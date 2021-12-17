@@ -33,13 +33,13 @@ class Test3(unittest.TestCase):
         try:
             #点击右上角地区切换按钮
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
-            time.sleep(1)
+            time.sleep(2)
             #点击按城市
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
-            time.sleep(1)
+            time.sleep(2)
             #点击A
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[1]')
-            time.sleep(1)
+            time.sleep(2)
             #获取A的class状态
             classvlue=WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[1]')
         except AssertionError as e:
@@ -55,11 +55,11 @@ class Test3(unittest.TestCase):
         self.driver.implicitly_wait(5)
         try:
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
-            time.sleep(1)
+            time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
-            time.sleep(1)
+            time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[2]')
-            time.sleep(1)
+            time.sleep(2)
             classvlue=WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[2]')
         except AssertionError as e:
             # 调用封装好的截图方法，进行截图并保存在本地磁盘
@@ -74,11 +74,11 @@ class Test3(unittest.TestCase):
         self.driver.implicitly_wait(5)
         try:
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
-            time.sleep(1)
+            time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
-            time.sleep(1)
+            time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[3]')
-            time.sleep(1)
+            time.sleep(2)
             classvlue=WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[3]')
         except AssertionError as e:
             # 调用封装好的截图方法，进行截图并保存在本地磁盘
@@ -93,11 +93,11 @@ class Test3(unittest.TestCase):
         self.driver.implicitly_wait(5)
         try:
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
-            time.sleep(1)
+            time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
-            time.sleep(1)
+            time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[4]')
-            time.sleep(1)
+            time.sleep(2)
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[4]')
         except AssertionError as e:
             # 调用封装好的截图方法，进行截图并保存在本地磁盘
@@ -112,11 +112,11 @@ class Test3(unittest.TestCase):
         self.driver.implicitly_wait(5)
         try:
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
-            time.sleep(1)
+            time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
-            time.sleep(1)
+            time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[5]')
-            time.sleep(1)
+            time.sleep(2)
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[5]')
         except AssertionError as e:
             # 调用封装好的截图方法，进行截图并保存在本地磁盘
@@ -131,11 +131,11 @@ class Test3(unittest.TestCase):
         self.driver.implicitly_wait(5)
         try:
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
-            time.sleep(1)
+            time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
-            time.sleep(1)
+            time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[6]')
-            time.sleep(1)
+            time.sleep(2)
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[6]')
         except AssertionError as e:
             # 调用封装好的截图方法，进行截图并保存在本地磁盘
@@ -150,11 +150,11 @@ class Test3(unittest.TestCase):
         self.driver.implicitly_wait(5)
         try:
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
-            time.sleep(1)
+            time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
-            time.sleep(1)
+            time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[7]')
-            time.sleep(1)
+            time.sleep(2)
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[7]')
         except AssertionError as e:
             # 调用封装好的截图方法，进行截图并保存在本地磁盘
@@ -169,11 +169,11 @@ class Test3(unittest.TestCase):
         self.driver.implicitly_wait(5)
         try:
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
-            time.sleep(1)
+            time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
-            time.sleep(1)
+            time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[8]')
-            time.sleep(1)
+            time.sleep(2)
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[8]')
         except AssertionError as e:
             # 调用封装好的截图方法，进行截图并保存在本地磁盘
@@ -188,11 +188,11 @@ class Test3(unittest.TestCase):
         self.driver.implicitly_wait(5)
         try:
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
-            time.sleep(1)
+            time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
-            time.sleep(1)
+            time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[9]')
-            time.sleep(1)
+            time.sleep(2)
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[9]')
         except AssertionError as e:
             # 调用封装好的截图方法，进行截图并保存在本地磁盘
@@ -207,11 +207,11 @@ class Test3(unittest.TestCase):
         self.driver.implicitly_wait(5)
         try:
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
-            time.sleep(1)
+            time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
-            time.sleep(1)
+            time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[10]')
-            time.sleep(1)
+            time.sleep(2)
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[10]')
         except AssertionError as e:
             # 调用封装好的截图方法，进行截图并保存在本地磁盘
@@ -226,11 +226,11 @@ class Test3(unittest.TestCase):
         self.driver.implicitly_wait(5)
         try:
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
-            time.sleep(1)
+            time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
-            time.sleep(1)
+            time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[11]')
-            time.sleep(1)
+            time.sleep(2)
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[11]')
         except AssertionError as e:
             # 调用封装好的截图方法，进行截图并保存在本地磁盘
@@ -245,11 +245,11 @@ class Test3(unittest.TestCase):
         self.driver.implicitly_wait(5)
         try:
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
-            time.sleep(1)
+            time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
-            time.sleep(1)
+            time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[12]')
-            time.sleep(1)
+            time.sleep(2)
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[12]')
         except AssertionError as e:
             # 调用封装好的截图方法，进行截图并保存在本地磁盘
@@ -264,11 +264,11 @@ class Test3(unittest.TestCase):
         self.driver.implicitly_wait(5)
         try:
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
-            time.sleep(1)
+            time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
-            time.sleep(1)
+            time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[13]')
-            time.sleep(1)
+            time.sleep(2)
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[13]')
         except AssertionError as e:
             # 调用封装好的截图方法，进行截图并保存在本地磁盘
@@ -283,11 +283,11 @@ class Test3(unittest.TestCase):
         self.driver.implicitly_wait(5)
         try:
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
-            time.sleep(1)
+            time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
-            time.sleep(1)
+            time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[14]')
-            time.sleep(1)
+            time.sleep(2)
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[14]')
         except AssertionError as e:
             # 调用封装好的截图方法，进行截图并保存在本地磁盘
@@ -302,11 +302,11 @@ class Test3(unittest.TestCase):
         self.driver.implicitly_wait(5)
         try:
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
-            time.sleep(1)
+            time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
-            time.sleep(1)
+            time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[15]')
-            time.sleep(1)
+            time.sleep(2)
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[15]')
         except AssertionError as e:
             # 调用封装好的截图方法，进行截图并保存在本地磁盘
@@ -321,11 +321,11 @@ class Test3(unittest.TestCase):
         self.driver.implicitly_wait(5)
         try:
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
-            time.sleep(1)
+            time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
-            time.sleep(1)
+            time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[16]')
-            time.sleep(1)
+            time.sleep(2)
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[16]')
         except AssertionError as e:
             # 调用封装好的截图方法，进行截图并保存在本地磁盘
@@ -340,11 +340,11 @@ class Test3(unittest.TestCase):
         self.driver.implicitly_wait(5)
         try:
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
-            time.sleep(1)
+            time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
-            time.sleep(1)
+            time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[17]')
-            time.sleep(1)
+            time.sleep(2)
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[17]')
         except AssertionError as e:
             # 调用封装好的截图方法，进行截图并保存在本地磁盘
@@ -359,11 +359,11 @@ class Test3(unittest.TestCase):
         self.driver.implicitly_wait(5)
         try:
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
-            time.sleep(1)
+            time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
-            time.sleep(1)
+            time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[18]')
-            time.sleep(1)
+            time.sleep(2)
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[18]')
         except AssertionError as e:
             # 调用封装好的截图方法，进行截图并保存在本地磁盘
@@ -378,11 +378,11 @@ class Test3(unittest.TestCase):
         self.driver.implicitly_wait(5)
         try:
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
-            time.sleep(1)
+            time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
-            time.sleep(1)
+            time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[19]')
-            time.sleep(1)
+            time.sleep(2)
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[19]')
         except AssertionError as e:
             # 调用封装好的截图方法，进行截图并保存在本地磁盘
@@ -397,11 +397,11 @@ class Test3(unittest.TestCase):
         self.driver.implicitly_wait(5)
         try:
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
-            time.sleep(1)
+            time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
-            time.sleep(1)
+            time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[20]')
-            time.sleep(1)
+            time.sleep(2)
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[20]')
         except AssertionError as e:
             # 调用封装好的截图方法，进行截图并保存在本地磁盘
@@ -416,11 +416,11 @@ class Test3(unittest.TestCase):
         self.driver.implicitly_wait(5)
         try:
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
-            time.sleep(1)
+            time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
-            time.sleep(1)
+            time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[21]')
-            time.sleep(1)
+            time.sleep(2)
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[21]')
         except AssertionError as e:
             # 调用封装好的截图方法，进行截图并保存在本地磁盘
