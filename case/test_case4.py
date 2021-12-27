@@ -6,7 +6,7 @@ import warnings
 
 
 class Test4(unittest.TestCase):
-    '''首页页面交互1'''
+    '''首页页面交互'''
 
     @classmethod
     def setUpClass(cls):
