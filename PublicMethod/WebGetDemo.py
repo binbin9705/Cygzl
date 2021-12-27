@@ -106,13 +106,6 @@ class Runmian():
         # 调用send_keys进行输入
         el.send_keys(data)
 
-    # 获取定位到的元素中的文本内容<a>text</a>
-    def getText(self, type, value):
-        # 调用locateElement定位元素
-        el = self.locateElement(type, value)
-        # 返回文本内容
-        return el.text
-
     # 截图
     def jietu(self, url):
         self.driver.get_screenshot_as_file(url)

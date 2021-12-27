@@ -4,7 +4,7 @@ from selenium import webdriver
 from PublicMethod import WebGetDemo
 import warnings
 
-
+# @unittest.skip('调试')
 class Test2(unittest.TestCase):
     '''首页页面交互-按省份切换地区'''
 

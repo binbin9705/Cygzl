@@ -4,7 +4,7 @@ from selenium import webdriver
 from PublicMethod import WebGetDemo
 import warnings
 
-
+# @unittest.skip('调试')
 class Test1(unittest.TestCase):
     '''页面跳转'''
 
