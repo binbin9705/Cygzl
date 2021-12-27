@@ -92,7 +92,6 @@ class Test4(unittest.TestCase):
         #新页面操作
         WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="mapMainBox"]/body/div[3]/div[2]/div/div/div/ul[2]/li/div/div[1]/div[1]/ul/li[2]')
         time.sleep(2)
-
         # except AssertionError as e:
         #     # 调用封装好的截图方法，进行截图并保存在本地磁盘
         #     WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
