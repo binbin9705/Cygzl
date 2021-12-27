@@ -1,7 +1,6 @@
 from selenium import webdriver
 import time
 import unittest
-import HTMLTestRunner
 from case import test_case1
 from case import test_case2
 if __name__ == '__main__':
@@ -62,3 +61,10 @@ if __name__ == '__main__':
     # runner=HTMLTestRunner.HTMLTestRunner(stream=piluginpathopen,description='详细结果',title='自动化测试报告',verbosity=2)
     # #调用HTML类下的run方法运行测试套件
     # runner.run(suite)
+    #循环执行测试套件
+    # for i in range(10):
+    #     print(i)
+    # runTimes=input("请输入您要执行的次数：")
+    # i=0
+    # while i <int(runTimes):
+    #     i+=1
