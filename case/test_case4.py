@@ -2,12 +2,11 @@ import unittest
 import time
 from selenium import webdriver
 from PublicMethod import WebGetDemo
-
 import warnings
 
 
 class Test4(unittest.TestCase):
-    '''首页页面交互-统计图切换统计条件'''
+    '''首页页面交互-统计图交互、搜索企业'''
 
     @classmethod
     def setUpClass(cls):
@@ -69,39 +68,146 @@ class Test4(unittest.TestCase):
             WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
         except Exception as e:
             WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        self.assertNotEqual(classvalue, afterclassvalue, '用例执行错误点击后元素值应该发生变化')
+        self.assertNotEqual(classvalue, afterclassvalue, '用例执行错误')
 
-    @unittest.skip('跳过')
+    # @unittest.skip('跳过')
     def test_03(self):
-        '''左上角搜索'''
+        '''左上角搜索-输入内容为华为'''
         self.driver.implicitly_wait(5)
-        # try:
-        WebGetDemo.Runmian(self.driver).click('xpath','//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[1]/input')
-        time.sleep(2)
-        WebGetDemo.Runmian(self.driver).input_data('xpath','//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[1]/input','淘数')
-        time.sleep(3)
-        WebGetDemo.Runmian(self.driver).click('xpath','//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[2]/div[1]/div[1]/ul/li[1]/span')
-        time.sleep(3)
-        #获得所有句丙
-        allhandel=self.driver.window_handles
-        #切换句丙
-        self.driver.switch_to.window(allhandel[1])
-        time.sleep(2)
-        #切换frame
-        self.driver.switch_to.frame('com_frame')
-        #新页面操作
-        WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="mapMainBox"]/body/div[3]/div[2]/div/div/div/ul[2]/li/div/div[1]/div[1]/ul/li[2]')
-        time.sleep(2)
+        try:
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[1]/input')
+            time.sleep(2)
+            WebGetDemo.Runmian(self.driver).input_data('xpath',
+                                                       '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[1]/input',
+                                                       '华为')
+            time.sleep(3)
+            test = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                              '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[2]/div[1]/div[1]/ul/li[1]/span')
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[2]/div[1]/div[1]/ul/li[1]/span')
+            time.sleep(3)
+            # 切换到新title页
+            WebGetDemo.Runmian(self.driver).switch_window_by_title('企业大数据')
+            # 切换到新的frame里
+            WebGetDemo.Runmian(self.driver).switch_window_by_frame('com_frame')
+            newtest = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                 '//*[@id="mapMainBox"]/body/div[3]/div[1]/div[1]/div[2]/h3')
+        except AssertionError as e:
+            # 调用封装好的截图方法，进行截图并保存在本地磁盘
+            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
+        except Exception as e:
+            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
+        # 判断跳转后的页面数据=搜索联想下拉框的第一条数据就通过
+        self.assertEqual(test, newtest, '用例执行失败，跳转页面错误')
 
-        # except AssertionError as e:
-        #     # 调用封装好的截图方法，进行截图并保存在本地磁盘
-        #     WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        # except Exception as e:
-        #     WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        # self.assertEqual('天津市', ys, '用例执行错误')
+    # @unittest.skip('跳过')
+    def test_04(self):
+        '''左上角搜索-输入内容为123456'''
+        self.driver.implicitly_wait(5)
+        try:
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[1]/input')
+            time.sleep(2)
+            WebGetDemo.Runmian(self.driver).input_data('xpath',
+                                                       '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[1]/input',
+                                                       '123456')
+            time.sleep(2)
+            # 获取搜索联想下拉框的第一条数据名称
+            test = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                              '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[2]/p')
+        except AssertionError as e:
+            # 调用封装好的截图方法，进行截图并保存在本地磁盘
+            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
+        except Exception as e:
+            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
+        # 断言如果等于无数据cas就通过
+        self.assertEqual(test, '无数据', '用例执行失败')
 
+    # @unittest.skip('跳过')
+    def test_05(self):
+        '''左上角搜索-输入内容字节长度为1'''
+        self.driver.implicitly_wait(5)
+        try:
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[1]/input')
+            time.sleep(2)
+            WebGetDemo.Runmian(self.driver).input_data('xpath',
+                                                       '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[1]/input',
+                                                       '1')
+            time.sleep(2)
+            # 获取搜索联想下拉框的第一条数据名称
+            test = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                              '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[2]/p')
+            errortest = WebGetDemo.Runmian(self.driver).obtaintest('css_selector',
+                                                                   'body > div.el-message.el-message--error > p')
+        except AssertionError as e:
+            # 调用封装好的截图方法，进行截图并保存在本地磁盘
+            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
+        except Exception as e:
+            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
+        # 断言如果等于无数据case就通过
+        self.assertEqual(test, '无数据', '用例执行失败')
+        # 断言字符串是否包含在警告框中如果在就不通过
+        self.assertNotIn('接口请求失败', errortest, '接口正常报错输入内容字节长度为1位')
 
+    # @unittest.skip('跳过')
+    def test_06(self):
+        '''左上角搜索-输入内容为地区名称：北京'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击搜索输入文本框
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[1]/input')
+            time.sleep(2)
+            WebGetDemo.Runmian(self.driver).input_data('xpath',
+                                                       '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[1]/input',
+                                                       '北京')
+            time.sleep(2)
+            # 获取搜索联想下拉框的第一条数据名称
+            test = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                              '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[2]/p')
+            # 获取警告框中的test
+            errortest = WebGetDemo.Runmian(self.driver).obtaintest('css_selector',
+                                                                   'body > div.el-message.el-message--error > p')
+        except AssertionError as e:
+            # 调用封装好的截图方法，进行截图并保存在本地磁盘
+            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
+        except Exception as e:
+            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
+        # 断言如果等于无数据case就通过
+        self.assertEqual(test, '无数据', '用例执行失败')
+        # 断言字符串是否包含在警告框中如果在就不通过
+        self.assertNotIn('接口请求失败',errortest, '接口正常报错输入内容为地区名称时报错')
 
+    #@unittest.skip('跳过')
+    def test_07(self):
+        '''左上角搜索-输入内容为：~！'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击搜索输入文本框
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[1]/input')
+            time.sleep(2)
+            WebGetDemo.Runmian(self.driver).input_data('xpath',
+                                                       '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[1]/input',
+                                                       '~！')
+            time.sleep(2)
+            # 获取搜索联想下拉框的第一条数据名称
+            test = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                              '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[2]/p')
+            # 获取警告框中的test
+            errortest = WebGetDemo.Runmian(self.driver).obtaintest('css_selector',
+                                                                   'body > div.el-message.el-message--error > p')
+        except AssertionError as e:
+            # 调用封装好的截图方法，进行截图并保存在本地磁盘
+            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
+        except Exception as e:
+            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
+        # 断言如果等于无数据case就通过
+        self.assertEqual(test, '无数据', '用例执行失败')
+        # 断言字符串是否包含在警告框中如果在就不通过
+        self.assertNotIn('接口请求失败',errortest, '接口正常报错输入内容字节长度为1位以上的任意特殊字符')
 
 if __name__ == '__main__':
     login_url = 'http://ihd.wanvdata.cn/#/login?redirect=%2Fdashboard'

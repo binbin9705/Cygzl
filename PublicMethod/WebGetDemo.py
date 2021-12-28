@@ -147,3 +147,13 @@ class Runmian():
             self.driver.get_screenshot_as_file(picPath)
         except Exception as e:
             print(traceback.print_exc())
+
+    #切换title页
+    def switch_window_by_title(self,title):
+        for handle in self.driver.window_handles:
+            self.driver.switch_to.window(handle)
+            if self.driver.title.__contains__(title):
+                break
+    #切换frame
+    def switch_window_by_frame(self,frame):
+        self.driver.switch_to.frame(frame)
