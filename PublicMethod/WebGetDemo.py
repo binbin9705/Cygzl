@@ -73,7 +73,7 @@ class Runmian():
             el = self.driver.find_element(By.PARTIAL_LINK_TEXT, value)
         elif type == "xpath":
             el = self.driver.find_element(By.XPATH, value)
-        elif type == "css_selector":
+        elif type == "css":
             el = self.driver.find_element(By.CSS_SELECTOR, value)
         return el
 

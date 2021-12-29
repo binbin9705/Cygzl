@@ -28,7 +28,6 @@ class Test2(unittest.TestCase):
     def tearDown(self):
         WebGetDemo.Runmian(self.driver).quit()
 
-    # @unittest.skip('跳过')
     def test_01(self):
         '''市场主体统计图切换统计条件-高薪企业'''
         self.driver.implicitly_wait(5)
@@ -49,7 +48,6 @@ class Test2(unittest.TestCase):
             WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
         self.assertNotEqual(classvalue, afterclassvalue, '用例执行错误')
 
-    # @unittest.skip('跳过')
     def test_02(self):
         '''市场主体统计图切换统计条件-战兴企业'''
         self.driver.implicitly_wait(5)
@@ -70,7 +68,6 @@ class Test2(unittest.TestCase):
             WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
         self.assertNotEqual(classvalue, afterclassvalue, '用例执行错误点击后元素值应该发生变化')
 
-    # @unittest.skip('跳过')
     def test_03(self):
         '''切换地区-天津市'''
         self.driver.implicitly_wait(5)
@@ -87,7 +84,6 @@ class Test2(unittest.TestCase):
             WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
         self.assertEqual('天津市', ys, '用例执行错误')
 
-    # @unittest.skip('跳过')
     def test_04(self):
         '''切换地区-沈阳市'''
         self.driver.implicitly_wait(5)
@@ -110,7 +106,6 @@ class Test2(unittest.TestCase):
         self.assertEqual('辽宁省', t1, '用例执行错误')
         self.assertEqual('辽宁省', t2, '用例执行错误')
 
-    # @unittest.skip('跳过')
     def test_05(self):
         '''切换地区-大连市'''
         self.driver.implicitly_wait(5)
@@ -133,7 +128,6 @@ class Test2(unittest.TestCase):
         self.assertEqual('辽宁省', t1, '用例执行错误')
         self.assertEqual('辽宁省', t2, '用例执行错误')
 
-    # @unittest.skip('跳过')
     def test_06(self):
         '''切换地区-上海市'''
         self.driver.implicitly_wait(5)
@@ -150,7 +144,6 @@ class Test2(unittest.TestCase):
             WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
         self.assertEqual('上海市', ys, '用例执行错误')
 
-    # @unittest.skip('跳过')
     def test_07(self):
         '''切换地区-南京市'''
         self.driver.implicitly_wait(5)
@@ -174,7 +167,6 @@ class Test2(unittest.TestCase):
         self.assertEqual('江苏省', t1, '用例执行错误')
         self.assertEqual('江苏省', t2, '用例执行错误')
 
-    # @unittest.skip('跳过')
     def test_08(self):
         '''切换地区-苏州市'''
         self.driver.implicitly_wait(5)
@@ -198,7 +190,6 @@ class Test2(unittest.TestCase):
         self.assertEqual('江苏省', t1, '用例执行错误')
         self.assertEqual('江苏省', t2, '用例执行错误')
 
-    # @unittest.skip('跳过')
     def test_09(self):
         '''切换地区-杭州市'''
         self.driver.implicitly_wait(5)
@@ -220,7 +211,6 @@ class Test2(unittest.TestCase):
         self.assertEqual('浙江省', t1, '用例执行错误')
         self.assertEqual('浙江省', t2, '用例执行错误')
 
-    # @unittest.skip('跳过')
     def test_10(self):
         '''切换地区-青岛市'''
         self.driver.implicitly_wait(5)
@@ -242,7 +232,6 @@ class Test2(unittest.TestCase):
         self.assertEqual('山东省', t1, '用例执行错误')
         self.assertEqual('山东省', t2, '用例执行错误')
 
-    # @unittest.skip('跳过')
     def test_11(self):
         '''切换地区-郑州市'''
         self.driver.implicitly_wait(5)
@@ -264,7 +253,6 @@ class Test2(unittest.TestCase):
         self.assertEqual('河南省', t1, '用例执行错误')
         self.assertEqual('河南省', t2, '用例执行错误')
 
-    # @unittest.skip('跳过')
     def test_12(self):
         '''切换地区-武汉市'''
         self.driver.implicitly_wait(5)
@@ -286,7 +274,6 @@ class Test2(unittest.TestCase):
         self.assertEqual('湖北省', t1, '用例执行错误')
         self.assertEqual('湖北省', t2, '用例执行错误')
 
-    # @unittest.skip('跳过')
     def test_13(self):
         '''切换地区-长沙市'''
         self.driver.implicitly_wait(5)
@@ -308,7 +295,6 @@ class Test2(unittest.TestCase):
         self.assertEqual('湖南省', t1, '用例执行错误')
         self.assertEqual('湖南省', t2, '用例执行错误')
 
-    # @unittest.skip('跳过')
     def test_14(self):
         '''切换地区-广州市'''
         self.driver.implicitly_wait(5)
@@ -330,7 +316,6 @@ class Test2(unittest.TestCase):
         self.assertEqual('广东省', t1, '用例执行错误')
         self.assertEqual('广东省', t2, '用例执行错误')
 
-    # @unittest.skip('跳过')
     def test_15(self):
         '''切换地区-深圳市'''
         self.driver.implicitly_wait(5)
@@ -352,7 +337,6 @@ class Test2(unittest.TestCase):
         self.assertEqual('广东省', t1, '用例执行错误')
         self.assertEqual('广东省', t2, '用例执行错误')
 
-    # @unittest.skip('跳过')
     def test_16(self):
         '''切换地区-重庆市'''
         self.driver.implicitly_wait(5)
@@ -369,7 +353,6 @@ class Test2(unittest.TestCase):
             WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
         self.assertEqual('重庆市', ys, '用例执行错误')
 
-    # @unittest.skip('跳过')
     def test_17(self):
         '''切换地区-成都市'''
         self.driver.implicitly_wait(5)
@@ -391,7 +374,6 @@ class Test2(unittest.TestCase):
         self.assertEqual('四川省', t1, '用例执行错误')
         self.assertEqual('四川省', t2, '用例执行错误')
 
-    # @unittest.skip('跳过')
     def test_18(self):
         '''切换地区-西安市'''
         self.driver.implicitly_wait(5)
@@ -413,7 +395,6 @@ class Test2(unittest.TestCase):
         self.assertEqual('陕西省', t1, '用例执行错误')
         self.assertEqual('陕西省', t2, '用例执行错误')
 
-    # @unittest.skip('跳过')
     def test_19(self):
         '''切换地区-按省份快捷查看-A'''
         self.driver.implicitly_wait(5)
@@ -433,7 +414,6 @@ class Test2(unittest.TestCase):
             WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
         self.assertEqual('安徽省', ys, '用例执行错误')
 
-    # @unittest.skip('跳过')
     def test_20(self):
         '''切换地区-按省份快捷查看-B'''
         self.driver.implicitly_wait(5)
@@ -456,7 +436,6 @@ class Test2(unittest.TestCase):
         self.assertEqual('110000', adcode, '用例执行错误')
         self.assertEqual('北京市', title, '用例执行错误')
 
-    # @unittest.skip('跳过')
     def test_21(self):
         '''切换地区-按省份快捷查看-C'''
         self.driver.implicitly_wait(5)
@@ -479,7 +458,6 @@ class Test2(unittest.TestCase):
         self.assertEqual('500000', adcode, '用例执行错误')
         self.assertEqual('重庆市', title, '用例执行错误')
 
-    # @unittest.skip('跳过')
     def test_22(self):
         '''切换地区-按省份快捷查看-F'''
         self.driver.implicitly_wait(5)
@@ -502,7 +480,6 @@ class Test2(unittest.TestCase):
         self.assertEqual('350000', adcode, '用例执行错误')
         self.assertEqual('福建省', title, '用例执行错误')
 
-    # @unittest.skip('跳过')
     def test_23(self):
         '''切换地区-按省份快捷查看-G'''
         self.driver.implicitly_wait(5)
@@ -525,7 +502,6 @@ class Test2(unittest.TestCase):
         self.assertEqual('440000', adcode, '用例执行错误')
         self.assertEqual('广东省', title, '用例执行错误')
 
-    # @unittest.skip('跳过')
     def test_24(self):
         '''切换地区-按省份快捷查看-H'''
         self.driver.implicitly_wait(5)
@@ -548,7 +524,6 @@ class Test2(unittest.TestCase):
         self.assertEqual('130000', adcode, '用例执行错误')
         self.assertEqual('河北省', title, '用例执行错误')
 
-    # @unittest.skip('跳过')
     def test_25(self):
         '''切换地区-按省份快捷查看-J'''
         self.driver.implicitly_wait(5)
@@ -571,7 +546,6 @@ class Test2(unittest.TestCase):
         self.assertEqual('220000', adcode, '用例执行错误')
         self.assertEqual('吉林省', title, '用例执行错误')
 
-    # @unittest.skip('跳过')
     def test_26(self):
         '''切换地区-按省份快捷查看-L'''
         self.driver.implicitly_wait(5)
@@ -594,7 +568,6 @@ class Test2(unittest.TestCase):
         self.assertEqual('210000', adcode, '用例执行错误')
         self.assertEqual('辽宁省', title, '用例执行错误')
 
-    # @unittest.skip('跳过')
     def test_27(self):
         '''切换地区-按省份快捷查看-N'''
         self.driver.implicitly_wait(5)
@@ -617,7 +590,6 @@ class Test2(unittest.TestCase):
         self.assertEqual('150000', adcode, '用例执行错误')
         self.assertEqual('内蒙古自治区', title, '用例执行错误')
 
-    # @unittest.skip('跳过')
     def test_28(self):
         '''切换地区-按省份快捷查看-Q'''
         self.driver.implicitly_wait(5)
@@ -640,7 +612,6 @@ class Test2(unittest.TestCase):
         self.assertEqual('630000', adcode, '用例执行错误')
         self.assertEqual('青海省', title, '用例执行错误')
 
-    # @unittest.skip('跳过')
     def test_29(self):
         '''切换地区-按省份快捷查看-S'''
         self.driver.implicitly_wait(5)
@@ -663,7 +634,6 @@ class Test2(unittest.TestCase):
         self.assertEqual('140000', adcode, '用例执行错误')
         self.assertEqual('山西省', title, '用例执行错误')
 
-    # @unittest.skip('跳过')
     def test_30(self):
         '''切换地区-按省份快捷查看-T'''
         self.driver.implicitly_wait(5)
@@ -686,7 +656,6 @@ class Test2(unittest.TestCase):
         self.assertEqual('120000', adcode, '用例执行错误')
         self.assertEqual('天津市', title, '用例执行错误')
 
-    # @unittest.skip('跳过')
     def test_31(self):
         '''切换地区-按省份快捷查看-X'''
         self.driver.implicitly_wait(5)
@@ -709,7 +678,6 @@ class Test2(unittest.TestCase):
         self.assertEqual('540000', adcode, '用例执行错误')
         self.assertEqual('西藏自治区', title, '用例执行错误')
 
-    # @unittest.skip('跳过')
     def test_32(self):
         '''切换地区-按省份快捷查看-Y'''
         self.driver.implicitly_wait(5)
@@ -732,7 +700,6 @@ class Test2(unittest.TestCase):
         self.assertEqual('530000', adcode, '用例执行错误')
         self.assertEqual('云南省', title, '用例执行错误')
 
-    # @unittest.skip('跳过')
     def test_33(self):
         '''切换地区-按省份快捷查看-Z'''
         self.driver.implicitly_wait(5)

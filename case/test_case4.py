@@ -4,7 +4,7 @@ from selenium import webdriver
 from PublicMethod import WebGetDemo
 import warnings
 
-
+# @unittest.skip('调试')
 class Test4(unittest.TestCase):
     '''首页页面交互-统计图交互、搜索企业'''
 
@@ -28,11 +28,11 @@ class Test4(unittest.TestCase):
     def tearDown(self):
         WebGetDemo.Runmian(self.driver).quit()
 
-    # @unittest.skip('跳过')
     def test_01(self):
         '''市场主体统计图切换统计条件-高薪企业'''
         self.driver.implicitly_wait(5)
         try:
+            time.sleep(3)
             # 先获取高薪企业class值
             classvalue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath',
                                                                      '//*[@id="app"]/div/div/section/div/div[2]/div[1]/div[1]/label[2]')
@@ -49,11 +49,11 @@ class Test4(unittest.TestCase):
             WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
         self.assertNotEqual(classvalue, afterclassvalue, '用例执行错误')
 
-    # @unittest.skip('跳过')
     def test_02(self):
         '''市场主体统计图切换统计条件-战兴企业'''
         self.driver.implicitly_wait(5)
         try:
+            time.sleep(3)
             # 先获取战兴企业class值
             classvalue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath',
                                                                      '//*[@id="app"]/div/div/section/div/div[2]/div[1]/div[1]/label[3]')
@@ -70,7 +70,6 @@ class Test4(unittest.TestCase):
             WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
         self.assertNotEqual(classvalue, afterclassvalue, '用例执行错误')
 
-    # @unittest.skip('跳过')
     def test_03(self):
         '''左上角搜索-输入内容为华为'''
         self.driver.implicitly_wait(5)
@@ -101,7 +100,6 @@ class Test4(unittest.TestCase):
         # 判断跳转后的页面数据=搜索联想下拉框的第一条数据就通过
         self.assertEqual(test, newtest, '用例执行失败，跳转页面错误')
 
-    # @unittest.skip('跳过')
     def test_04(self):
         '''左上角搜索-输入内容为123456'''
         self.driver.implicitly_wait(5)
@@ -124,7 +122,6 @@ class Test4(unittest.TestCase):
         # 断言如果等于无数据cas就通过
         self.assertEqual(test, '无数据', '用例执行失败')
 
-    # @unittest.skip('跳过')
     def test_05(self):
         '''左上角搜索-输入内容字节长度为1'''
         self.driver.implicitly_wait(5)
@@ -151,7 +148,7 @@ class Test4(unittest.TestCase):
         # 断言字符串是否包含在警告框中如果在就不通过
         self.assertNotIn('接口请求失败', errortest, '接口正常报错输入内容字节长度为1位')
 
-    # @unittest.skip('跳过')
+
     def test_06(self):
         '''左上角搜索-输入内容为地区名称：北京'''
         self.driver.implicitly_wait(5)
@@ -180,7 +177,7 @@ class Test4(unittest.TestCase):
         # 断言字符串是否包含在警告框中如果在就不通过
         self.assertNotIn('接口请求失败',errortest, '接口正常报错输入内容为地区名称时报错')
 
-    #@unittest.skip('跳过')
+    @unittest.skip('跳过')
     def test_07(self):
         '''左上角搜索-输入内容为：~！'''
         self.driver.implicitly_wait(5)
