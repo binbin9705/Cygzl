@@ -128,11 +128,11 @@ class Test4(unittest.TestCase):
         try:
             WebGetDemo.Runmian(self.driver).click('xpath',
                                                   '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[1]/input')
-            time.sleep(2)
+            time.sleep(3)
             WebGetDemo.Runmian(self.driver).input_data('xpath',
                                                        '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[1]/input',
                                                        '1')
-            time.sleep(2)
+            time.sleep(3)
             # 获取搜索联想下拉框的第一条数据名称
             test = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
                                                               '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[2]/p')
@@ -177,7 +177,7 @@ class Test4(unittest.TestCase):
         # 断言字符串是否包含在警告框中如果在就不通过
         self.assertNotIn('接口请求失败',errortest, '接口正常报错输入内容为地区名称时报错')
 
-    @unittest.skip('跳过')
+    # @unittest.skip('跳过')
     def test_07(self):
         '''左上角搜索-输入内容为：~！'''
         self.driver.implicitly_wait(5)
