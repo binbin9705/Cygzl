@@ -136,7 +136,7 @@ class Test4(unittest.TestCase):
             # 获取搜索联想下拉框的第一条数据名称
             test = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
                                                               '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[2]/p')
-            errortest = WebGetDemo.Runmian(self.driver).obtaintest('css_selector',
+            errortest = WebGetDemo.Runmian(self.driver).obtaintest('css',
                                                                    'body > div.el-message.el-message--error > p')
         except AssertionError as e:
             # 调用封装好的截图方法，进行截图并保存在本地磁盘
@@ -165,7 +165,7 @@ class Test4(unittest.TestCase):
             test = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
                                                               '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[2]/p')
             # 获取警告框中的test
-            errortest = WebGetDemo.Runmian(self.driver).obtaintest('css_selector',
+            errortest = WebGetDemo.Runmian(self.driver).obtaintest('css',
                                                                    'body > div.el-message.el-message--error > p')
         except AssertionError as e:
             # 调用封装好的截图方法，进行截图并保存在本地磁盘
@@ -194,7 +194,7 @@ class Test4(unittest.TestCase):
             test = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
                                                               '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[2]/p')
             # 获取警告框中的test
-            errortest = WebGetDemo.Runmian(self.driver).obtaintest('css_selector',
+            errortest = WebGetDemo.Runmian(self.driver).obtaintest('css',
                                                                    'body > div.el-message.el-message--error > p')
         except AssertionError as e:
             # 调用封装好的截图方法，进行截图并保存在本地磁盘
