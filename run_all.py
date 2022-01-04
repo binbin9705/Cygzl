@@ -5,10 +5,9 @@ import HTMLTestRunner_cn
 from case import test_case1
 if __name__ == '__main__':
     #创建一个测试套件
-    # dir='case'
+    dir='case'
     dircase='test*.py'
-    dircase = 'test_case5.py'
-    # dircase = 'test_case3.py'
+    # dircase = 'test_case5.py'
     suite=unittest.defaultTestLoader.discover(dir,dircase)
     #创建生成测试报告方法
     # now=time.strftime('%Y-%m-%d %H_%M_%S')
