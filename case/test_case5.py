@@ -6,6 +6,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import warnings
+from selenium.common.exceptions import NoSuchElementException
 
 
 # @unittest.skip('调试')
@@ -26,14 +27,20 @@ class Test5(unittest.TestCase):
         # 启动浏览并设置相关选项
         self.driver = webdriver.Chrome(options=WebGetDemo.Runmian(self).options())
         self.driver.maximize_window()
+        self.imgs = []
         WebGetDemo.Runmian(self.driver).open('http://ihd.wanvdata.cn/#/login?redirect=%2Fdashboard')
         WebGetDemo.Runmian(self.driver).login('ihqd-test', 'ihqd-test@6688')
+
+    def add_img(self):
+        # 1、下面注释掉的这行代码作用是不管用例是否执行成功，只要在执行过程加了self.add_img()操作，那么最后生成的报告中含有该执行过程的截图，如果不添加则默认对用例失败进行截图
+        self.imgs.append(self.driver.get_screenshot_as_base64())
+        return True
 
     def tearDown(self):
         WebGetDemo.Runmian(self.driver).quit()
         # pass
 
-    #@unittest.skip('跳过')
+    # @unittest.skip('跳过')
     def test_01(self):
         '''CRI指数页面统计图切换统计条件-年度数据'''
         self.driver.implicitly_wait(5)
@@ -56,17 +63,15 @@ class Test5(unittest.TestCase):
             # 获取年度数据的class值
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath',
                                                                     '/html/body/div[3]/div[1]/div[1]/ul/li[1]')
-        except AssertionError as e:
-            # 调用封装好的截图方法，进行截图并保存在本地磁盘
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        except Exception as e:
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        # 判断有没有正常跳转页面
-        self.assertEqual(self.driver.title, 'CRI指数 - 产业高质量发展平台', '用例执行错误')
-        # 判断点击年度数据 弹窗class值有没有发生变化
-        self.assertEqual(classvlue, 'el-select-dropdown__item selected hover', '用例执行错误')
+            # 判断有没有正常跳转页面
+            self.assertEqual(self.driver.title, 'CRI指数 - 产业高质量发展平台', '用例执行错误')
+            # 判断点击年度数据 弹窗class值有没有发生变化
+            self.assertEqual(classvlue, 'el-select-dropdown__item selected hover', '用例执行错误')
+        except NoSuchElementException:
+            self.add_img()
+            raise
 
-    #@unittest.skip('跳过')
+    # @unittest.skip('跳过')
     def test_02(self):
         '''CRI指数页面统计图切换统计条件-月度数据'''
         self.driver.implicitly_wait(5)
@@ -89,20 +94,18 @@ class Test5(unittest.TestCase):
             # 获取月度数据的class值
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath',
                                                                     '/html/body/div[3]/div[1]/div[1]/ul/li[2]')
-        except AssertionError as e:
-            # 调用封装好的截图方法，进行截图并保存在本地磁盘
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        except Exception as e:
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        # 判断有没有正常跳转页面
-        self.assertEqual(self.driver.title, 'CRI指数 - 产业高质量发展平台', '用例执行错误')
-        # 判断点击月度数据 弹窗class值有没有发生变化
-        self.assertEqual(classvlue, 'el-select-dropdown__item selected hover', '用例执行错误')
+            # 判断有没有正常跳转页面
+            self.assertEqual(self.driver.title, 'CRI指数 - 产业高质量发展平台', '用例执行错误')
+            # 判断点击月度数据 弹窗class值有没有发生变化
+            self.assertEqual(classvlue, 'el-select-dropdown__item selected hover', '用例执行错误')
+        except NoSuchElementException:
+            self.add_img()
+            raise
 
-    #@unittest.skip('跳过')
+    # @unittest.skip('跳过')
     def test_03(self):
         '''企业总量页面统计图切换统计模块-区域对比'''
-        self.driver.implicitly_wait(5)
+        # self.driver.implicitly_wait(5)
         try:
             # 点击市场主体下来框
             WebGetDemo.Runmian(self.driver).click('css',
@@ -119,19 +122,17 @@ class Test5(unittest.TestCase):
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'id', 'tab-区域对比')
             # 获取区域对比div的tabindex值
             tabindexvlue = WebGetDemo.Runmian(self.driver).obtainvalue('tabindex', 'id', 'tab-区域对比')
-        except AssertionError as e:
-            # 调用封装好的截图方法，进行截图并保存在本地磁盘
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        except Exception as e:
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        # 判断有没有正常跳转页面
-        self.assertEqual(self.driver.title, '企业总量 - 产业高质量发展平台', '用例执行错误')
-        # 判断点击区域对比后对应div的class值有没有发生变化
-        self.assertEqual(classvlue, 'el-tabs__item is-top is-active', '用例执行错误')
-        # 判断点击区域对比后对应div的tabindex值有没有发生变化
-        self.assertNotEqual(tabindexvlue, '-1', '用例执行错误')
+            # 判断有没有正常跳转页面
+            self.assertEqual(self.driver.title, '企业总量 - 产业高质量发展平台', '用例执行错误')
+            # 判断点击区域对比后对应div的class值有没有发生变化
+            self.assertEqual(classvlue, 'el-tabs__item is-top is-active', '用例执行错误')
+            # 判断点击区域对比后对应div的tabindex值有没有发生变化
+            self.assertNotEqual(tabindexvlue, '-1', '用例执行错误')
+        except NoSuchElementException:
+            self.add_img()
+            raise
 
-    #@unittest.skip('跳过')
+    # @unittest.skip('跳过')
     def test_04(self):
         '''企业总量页面统计图切换统计模块-企业列表'''
         self.driver.implicitly_wait(5)
@@ -151,19 +152,17 @@ class Test5(unittest.TestCase):
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'id', 'tab-企业列表')
             # 获取区域对比div的tabindex值
             tabindexvlue = WebGetDemo.Runmian(self.driver).obtainvalue('tabindex', 'id', 'tab-企业列表')
-        except AssertionError as e:
-            # 调用封装好的截图方法，进行截图并保存在本地磁盘
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        except Exception as e:
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        # 判断有没有正常跳转页面
-        self.assertEqual(self.driver.title, '企业总量 - 产业高质量发展平台', '用例执行错误')
-        # 判断点击区域对比后对应div的class值有没有发生变化
-        self.assertEqual(classvlue, 'el-tabs__item is-top is-active', '用例执行错误')
-        # 判断点击区域对比后对应div的tabindex值有没有发生变化
-        self.assertNotEqual(tabindexvlue, '-1', '用例执行错误')
+            # 判断有没有正常跳转页面
+            self.assertEqual(self.driver.title, '企业总量 - 产业高质量发展平台', '用例执行错误')
+            # 判断点击区域对比后对应div的class值有没有发生变化
+            self.assertEqual(classvlue, 'el-tabs__item is-top is-active', '用例执行错误')
+            # 判断点击区域对比后对应div的tabindex值有没有发生变化
+            self.assertNotEqual(tabindexvlue, '-1', '用例执行错误')
+        except NoSuchElementException:
+            self.add_img()
+            raise
 
-    #@unittest.skip('跳过')
+    # @unittest.skip('跳过')
     def test_05(self):
         '''企业总量页面本地数据统计图交互-按照存量企业数量'''
         self.driver.implicitly_wait(5)
@@ -189,17 +188,15 @@ class Test5(unittest.TestCase):
             # 获取存量企业数量的class值
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'css',
                                                                     'body > div.el-select-dropdown.el-popper.is-multiple > div.el-scrollbar > div.el-select-dropdown__wrap.el-scrollbar__wrap > ul > ul:nth-child(1) > li:nth-child(2) > ul > li:nth-child(1)')
-        except AssertionError as e:
-            # 调用封装好的截图方法，进行截图并保存在本地磁盘
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        except Exception as e:
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        # 判断有没有正常跳转页面
-        self.assertEqual(self.driver.title, '企业总量 - 产业高质量发展平台', '用例执行错误')
-        # 判断存量企业数量的class值有没有发生变化
-        self.assertEqual(classvlue, 'el-select-dropdown__item selected hover', '用例执行错误')
+            # 判断有没有正常跳转页面
+            self.assertEqual(self.driver.title, '企业总量 - 产业高质量发展平台', '用例执行错误')
+            # 判断存量企业数量的class值有没有发生变化
+            self.assertEqual(classvlue, 'el-select-dropdown__item selected hover', '用例执行错误')
+        except NoSuchElementException:
+            self.add_img()
+            raise
 
-    #@unittest.skip('跳过')
+    # @unittest.skip('跳过')
     def test_06(self):
         '''企业总量页面本地数据统计图交互-按照新增企业数量'''
         self.driver.implicitly_wait(5)
@@ -226,17 +223,15 @@ class Test5(unittest.TestCase):
             # 获取新增企业数量的class值
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'css',
                                                                     'body > div.el-select-dropdown.el-popper.is-multiple > div.el-scrollbar > div.el-select-dropdown__wrap.el-scrollbar__wrap > ul > ul:nth-child(1) > li:nth-child(2) > ul > li:nth-child(2)')
-        except AssertionError as e:
-            # 调用封装好的截图方法，进行截图并保存在本地磁盘
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        except Exception as e:
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        # 判断有没有正常跳转页面
-        self.assertEqual(self.driver.title, '企业总量 - 产业高质量发展平台', '用例执行错误')
-        # 判断新增企业数量的class值有没有发生变化
-        self.assertEqual(classvlue, 'el-select-dropdown__item selected hover', '用例执行错误')
+            # 判断有没有正常跳转页面
+            self.assertEqual(self.driver.title, '企业总量 - 产业高质量发展平台', '用例执行错误')
+            # 判断新增企业数量的class值有没有发生变化
+            self.assertEqual(classvlue, 'el-select-dropdown__item selected hover', '用例执行错误')
+        except NoSuchElementException:
+            self.add_img()
+            raise
 
-    #@unittest.skip('跳过')
+    # @unittest.skip('跳过')
     def test_07(self):
         '''企业总量页面本地数据统计图交互-按照死亡企业数量'''
         self.driver.implicitly_wait(5)
@@ -263,17 +258,15 @@ class Test5(unittest.TestCase):
             # 获取死亡企业数量的class值
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'css',
                                                                     'body > div.el-select-dropdown.el-popper.is-multiple > div.el-scrollbar > div.el-select-dropdown__wrap.el-scrollbar__wrap > ul > ul:nth-child(1) > li:nth-child(2) > ul > li:nth-child(3)')
-        except AssertionError as e:
-            # 调用封装好的截图方法，进行截图并保存在本地磁盘
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        except Exception as e:
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        # 判断有没有正常跳转页面
-        self.assertEqual(self.driver.title, '企业总量 - 产业高质量发展平台', '用例执行错误')
-        # 判断死亡企业数量的class值有没有发生变化
-        self.assertEqual(classvlue, 'el-select-dropdown__item selected hover', '用例执行错误')
+            # 判断有没有正常跳转页面
+            self.assertEqual(self.driver.title, '企业总量 - 产业高质量发展平台', '用例执行错误')
+            # 判断死亡企业数量的class值有没有发生变化
+            self.assertEqual(classvlue, 'el-select-dropdown__item selected hover', '用例执行错误')
+        except NoSuchElementException:
+            self.add_img()
+            raise
 
-    #@unittest.skip('跳过')
+    # @unittest.skip('跳过')
     def test_08(self):
         '''企业总量页面本地数据统计图交互-按照存量企业注册资本'''
         self.driver.implicitly_wait(5)
@@ -301,17 +294,15 @@ class Test5(unittest.TestCase):
             # 获取存量企业注册资本的class值
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'css',
                                                                     'body > div.el-select-dropdown.el-popper.is-multiple > div.el-scrollbar > div.el-select-dropdown__wrap.el-scrollbar__wrap > ul > ul:nth-child(2) > li:nth-child(2) > ul > li:nth-child(1)')
-        except AssertionError as e:
-            # 调用封装好的截图方法，进行截图并保存在本地磁盘
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        except Exception as e:
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        # 判断有没有正常跳转页面
-        self.assertEqual(self.driver.title, '企业总量 - 产业高质量发展平台', '用例执行错误')
-        # 判断存量企业注册资本的class值有没有发生变化
-        self.assertEqual(classvlue, 'el-select-dropdown__item selected hover', '用例执行错误')
+            # 判断有没有正常跳转页面
+            self.assertEqual(self.driver.title, '企业总量 - 产业高质量发展平台', '用例执行错误')
+            # 判断存量企业注册资本的class值有没有发生变化
+            self.assertEqual(classvlue, 'el-select-dropdown__item selected hover', '用例执行错误')
+        except NoSuchElementException:
+            self.add_img()
+            raise
 
-    #@unittest.skip('跳过')
+    # @unittest.skip('跳过')
     def test_09(self):
         '''企业总量页面本地数据统计图交互-按照新增企业注册资本'''
         self.driver.implicitly_wait(5)
@@ -339,15 +330,13 @@ class Test5(unittest.TestCase):
             # 获取新增企业注册资本的class值
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'css',
                                                                     'body > div.el-select-dropdown.el-popper.is-multiple > div.el-scrollbar > div.el-select-dropdown__wrap.el-scrollbar__wrap > ul > ul:nth-child(2) > li:nth-child(2) > ul > li:nth-child(2)')
-        except AssertionError as e:
-            # 调用封装好的截图方法，进行截图并保存在本地磁盘
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        except Exception as e:
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        # 判断有没有正常跳转页面
-        self.assertEqual(self.driver.title, '企业总量 - 产业高质量发展平台', '用例执行错误')
-        # 判断新增企业注册资本的class值有没有发生变化
-        self.assertEqual(classvlue, 'el-select-dropdown__item selected hover', '用例执行错误')
+            # 判断有没有正常跳转页面
+            self.assertEqual(self.driver.title, '企业总量 - 产业高质量发展平台', '用例执行错误')
+            # 判断新增企业注册资本的class值有没有发生变化
+            self.assertEqual(classvlue, 'el-select-dropdown__item selected hover', '用例执行错误')
+        except NoSuchElementException:
+            self.add_img()
+            raise
 
     @unittest.skip('不问题未解决暂时跳过')
     def test_10(self):
@@ -370,10 +359,12 @@ class Test5(unittest.TestCase):
             WebGetDemo.Runmian(self.driver).click('css',
                                                   'body > div.el-select-dropdown.el-popper.is-multiple > div.el-scrollbar > div.el-select-dropdown__wrap.el-scrollbar__wrap > ul > ul:nth-child(1) > li:nth-child(2) > ul > li:nth-child(2) > span')
             time.sleep(3)
-            WebGetDemo.Runmian(self.driver).click('css','body > div.el-select-dropdown.el-popper.is-multiple > div.el-scrollbar > div.el-select-dropdown__wrap.el-scrollbar__wrap > ul > ul:nth-child(2) > li:nth-child(2) > ul > li:nth-child(2)')
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-select-dropdown.el-popper.is-multiple > div.el-scrollbar > div.el-select-dropdown__wrap.el-scrollbar__wrap > ul > ul:nth-child(2) > li:nth-child(2) > ul > li:nth-child(2)')
             time.sleep(3)
-            #调用键盘向下按键
-            style=WebGetDemo.Runmian(self.driver).obtainvalue('style','css','body > div.el-select-dropdown.el-popper.is-multiple > div.el-scrollbar > div.el-scrollbar__bar.is-vertical > div')
+            # 调用键盘向下按键
+            style = WebGetDemo.Runmian(self.driver).obtainvalue('style', 'css',
+                                                                'body > div.el-select-dropdown.el-popper.is-multiple > div.el-scrollbar > div.el-scrollbar__bar.is-vertical > div')
             print(style)
             time.sleep(3)
             # 选中注册资本指标-死亡企业注册资本
@@ -382,9 +373,9 @@ class Test5(unittest.TestCase):
             time.sleep(3)
             # 获取死亡企业注册资本的class值
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'css',
-                                                                        'body > div.el-select-dropdown.el-popper.is-multiple > div.el-scrollbar > div.el-select-dropdown__wrap.el-scrollbar__wrap > ul > ul:nth-child(2) > li:nth-child(2) > ul > li:nth-child(3)')
+                                                                    'body > div.el-select-dropdown.el-popper.is-multiple > div.el-scrollbar > div.el-select-dropdown__wrap.el-scrollbar__wrap > ul > ul:nth-child(2) > li:nth-child(2) > ul > li:nth-child(3)')
         except AssertionError as e:
-            #调用封装好的截图方法，进行截图并保存在本地磁盘
+            # 调用封装好的截图方法，进行截图并保存在本地磁盘
             WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
         except Exception as e:
             WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
@@ -392,6 +383,7 @@ class Test5(unittest.TestCase):
         self.assertEqual(self.driver.title, '企业总量 - 产业高质量发展平台', '用例执行错误')
         # 判断死亡企业注册资本的class值有没有发生变化
         self.assertEqual(classvlue, 'el-select-dropdown__item selected hover', '用例执行错误')
+
 
 if __name__ == '__main__':
     login_url = 'http://ihd.wanvdata.cn/#/login?redirect=%2Fdashboard'
