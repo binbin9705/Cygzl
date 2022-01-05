@@ -2,9 +2,6 @@ import unittest
 import time
 from selenium import webdriver
 from PublicMethod import WebGetDemo
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
 import warnings
 
 
@@ -335,7 +332,7 @@ class Test5(unittest.TestCase):
             self.add_img()
             raise
 
-    @unittest.skip('不问题未解决暂时跳过')
+    # @unittest.skip('跳过')
     def test_10(self):
         '''企业总量页面本地数据统计图交互-按照死亡企业注册资本'''
         self.driver.implicitly_wait(5)
@@ -351,20 +348,15 @@ class Test5(unittest.TestCase):
             # 点击统计条件下拉框
             time.sleep(3)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="pane-本地数据"]/div/div/div/div[1]/div[1]/div[1]')
-            time.sleep(3)
             # 取消选中新增企业数量
+            time.sleep(3)
             WebGetDemo.Runmian(self.driver).click('css',
                                                   'body > div.el-select-dropdown.el-popper.is-multiple > div.el-scrollbar > div.el-select-dropdown__wrap.el-scrollbar__wrap > ul > ul:nth-child(1) > li:nth-child(2) > ul > li:nth-child(2) > span')
             time.sleep(3)
-            WebGetDemo.Runmian(self.driver).click('css',
-                                                  'body > div.el-select-dropdown.el-popper.is-multiple > div.el-scrollbar > div.el-select-dropdown__wrap.el-scrollbar__wrap > ul > ul:nth-child(2) > li:nth-child(2) > ul > li:nth-child(2)')
+            js = 'document.getElementsByClassName("el-scrollbar__wrap")[3].scrollTop=10000'
+            self.driver.execute_script(js)
             time.sleep(3)
-            # 调用键盘向下按键
-            style = WebGetDemo.Runmian(self.driver).obtainvalue('style', 'css',
-                                                                'body > div.el-select-dropdown.el-popper.is-multiple > div.el-scrollbar > div.el-scrollbar__bar.is-vertical > div')
-            print(style)
-            time.sleep(3)
-            # 选中注册资本指标-死亡企业注册资本
+            # 点击死亡企业注册资本
             WebGetDemo.Runmian(self.driver).click('css',
                                                   'body > div.el-select-dropdown.el-popper.is-multiple > div.el-scrollbar > div.el-select-dropdown__wrap.el-scrollbar__wrap > ul > ul:nth-child(2) > li:nth-child(2) > ul > li:nth-child(3) > span')
             time.sleep(3)
@@ -374,6 +366,78 @@ class Test5(unittest.TestCase):
             # 判断有没有正常跳转页面
             self.assertEqual(self.driver.title, '企业总量 - 产业高质量发展平台', '用例执行错误')
             # 判断死亡企业注册资本的class值有没有发生变化
+            self.assertEqual(classvlue, 'el-select-dropdown__item selected hover', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    def test_11(self):
+        '''企业总量页面本地数据统计图交互-按照年度数据'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下来框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i')
+
+            # 点击企业总量
+            time.sleep(3)
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            # 点击年度月度统计条件下拉框
+            time.sleep(3)
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-本地数据 > div > div > div > div.formeList > div:nth-child(2) > div.el-input.el-input--suffix > span > span > i')
+            # 选中年度数据
+            time.sleep(3)
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-select-dropdown.el-popper > div.el-scrollbar > div.el-select-dropdown__wrap.el-scrollbar__wrap > ul > li:nth-child(1) > span')
+            # 获取年度数据的class值
+            time.sleep(3)
+            classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'css',
+                                                                    'body > div.el-select-dropdown.el-popper > div.el-scrollbar > div.el-select-dropdown__wrap.el-scrollbar__wrap > ul > li:nth-child(1)')
+            # 判断有没有正常跳转页面
+            self.assertEqual(self.driver.title, '企业总量 - 产业高质量发展平台', '用例执行错误')
+            # 判断class值有没有发生变化
+            self.assertEqual(classvlue, 'el-select-dropdown__item selected hover', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    def test_12(self):
+        '''企业总量页面本地数据统计图交互-按照月度数据'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下来框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i')
+
+            # 点击企业总量
+            time.sleep(3)
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            # 点击年度月度统计条件下拉框
+            time.sleep(3)
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-本地数据 > div > div > div > div.formeList > div:nth-child(2) > div.el-input.el-input--suffix > span > span > i')
+            # 选中年度数据
+            time.sleep(3)
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-select-dropdown.el-popper > div.el-scrollbar > div.el-select-dropdown__wrap.el-scrollbar__wrap > ul > li:nth-child(1) > span')
+            # 点击年度月度统计条件下拉框
+            time.sleep(3)
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-本地数据 > div > div > div > div.formeList > div:nth-child(2) > div.el-input.el-input--suffix > span > span > i')
+            # 再选中月度数据
+            time.sleep(3)
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-select-dropdown.el-popper > div.el-scrollbar > div.el-select-dropdown__wrap.el-scrollbar__wrap > ul > li:nth-child(2) > span')
+            # 获取月度数据的class值
+            time.sleep(3)
+            classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'css',
+                                                                    'body > div.el-select-dropdown.el-popper > div.el-scrollbar > div.el-select-dropdown__wrap.el-scrollbar__wrap > ul > li:nth-child(2)')
+            # 判断有没有正常跳转页面
+            self.assertEqual(self.driver.title, '企业总量 - 产业高质量发展平台', '用例执行错误')
+            # 判断class值有没有发生变化
             self.assertEqual(classvlue, 'el-select-dropdown__item selected hover', '用例执行错误')
         except Exception:
             self.add_img()
