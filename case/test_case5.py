@@ -6,7 +6,6 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import warnings
-from selenium.common.exceptions import NoSuchElementException
 
 
 # @unittest.skip('调试')
@@ -17,7 +16,6 @@ class Test5(unittest.TestCase):
     def setUpClass(cls):
         # 消除警告
         warnings.simplefilter('ignore', ResourceWarning)
-        # pass
 
     @classmethod
     def tearDownClass(cls):
@@ -26,7 +24,6 @@ class Test5(unittest.TestCase):
     def setUp(self):
         # 启动浏览并设置相关选项
         self.driver = webdriver.Chrome(options=WebGetDemo.Runmian(self).options())
-        self.driver.maximize_window()
         self.imgs = []
         WebGetDemo.Runmian(self.driver).open('http://ihd.wanvdata.cn/#/login?redirect=%2Fdashboard')
         WebGetDemo.Runmian(self.driver).login('ihqd-test', 'ihqd-test@6688')
@@ -67,7 +64,7 @@ class Test5(unittest.TestCase):
             self.assertEqual(self.driver.title, 'CRI指数 - 产业高质量发展平台', '用例执行错误')
             # 判断点击年度数据 弹窗class值有没有发生变化
             self.assertEqual(classvlue, 'el-select-dropdown__item selected hover', '用例执行错误')
-        except NoSuchElementException:
+        except Exception:
             self.add_img()
             raise
 
@@ -98,7 +95,7 @@ class Test5(unittest.TestCase):
             self.assertEqual(self.driver.title, 'CRI指数 - 产业高质量发展平台', '用例执行错误')
             # 判断点击月度数据 弹窗class值有没有发生变化
             self.assertEqual(classvlue, 'el-select-dropdown__item selected hover', '用例执行错误')
-        except NoSuchElementException:
+        except Exception:
             self.add_img()
             raise
 
@@ -128,7 +125,7 @@ class Test5(unittest.TestCase):
             self.assertEqual(classvlue, 'el-tabs__item is-top is-active', '用例执行错误')
             # 判断点击区域对比后对应div的tabindex值有没有发生变化
             self.assertNotEqual(tabindexvlue, '-1', '用例执行错误')
-        except NoSuchElementException:
+        except Exception:
             self.add_img()
             raise
 
@@ -158,7 +155,7 @@ class Test5(unittest.TestCase):
             self.assertEqual(classvlue, 'el-tabs__item is-top is-active', '用例执行错误')
             # 判断点击区域对比后对应div的tabindex值有没有发生变化
             self.assertNotEqual(tabindexvlue, '-1', '用例执行错误')
-        except NoSuchElementException:
+        except Exception:
             self.add_img()
             raise
 
@@ -192,7 +189,7 @@ class Test5(unittest.TestCase):
             self.assertEqual(self.driver.title, '企业总量 - 产业高质量发展平台', '用例执行错误')
             # 判断存量企业数量的class值有没有发生变化
             self.assertEqual(classvlue, 'el-select-dropdown__item selected hover', '用例执行错误')
-        except NoSuchElementException:
+        except Exception:
             self.add_img()
             raise
 
@@ -227,7 +224,7 @@ class Test5(unittest.TestCase):
             self.assertEqual(self.driver.title, '企业总量 - 产业高质量发展平台', '用例执行错误')
             # 判断新增企业数量的class值有没有发生变化
             self.assertEqual(classvlue, 'el-select-dropdown__item selected hover', '用例执行错误')
-        except NoSuchElementException:
+        except Exception:
             self.add_img()
             raise
 
@@ -262,7 +259,7 @@ class Test5(unittest.TestCase):
             self.assertEqual(self.driver.title, '企业总量 - 产业高质量发展平台', '用例执行错误')
             # 判断死亡企业数量的class值有没有发生变化
             self.assertEqual(classvlue, 'el-select-dropdown__item selected hover', '用例执行错误')
-        except NoSuchElementException:
+        except Exception:
             self.add_img()
             raise
 
@@ -298,7 +295,7 @@ class Test5(unittest.TestCase):
             self.assertEqual(self.driver.title, '企业总量 - 产业高质量发展平台', '用例执行错误')
             # 判断存量企业注册资本的class值有没有发生变化
             self.assertEqual(classvlue, 'el-select-dropdown__item selected hover', '用例执行错误')
-        except NoSuchElementException:
+        except Exception:
             self.add_img()
             raise
 
@@ -334,7 +331,7 @@ class Test5(unittest.TestCase):
             self.assertEqual(self.driver.title, '企业总量 - 产业高质量发展平台', '用例执行错误')
             # 判断新增企业注册资本的class值有没有发生变化
             self.assertEqual(classvlue, 'el-select-dropdown__item selected hover', '用例执行错误')
-        except NoSuchElementException:
+        except Exception:
             self.add_img()
             raise
 
@@ -374,15 +371,13 @@ class Test5(unittest.TestCase):
             # 获取死亡企业注册资本的class值
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'css',
                                                                     'body > div.el-select-dropdown.el-popper.is-multiple > div.el-scrollbar > div.el-select-dropdown__wrap.el-scrollbar__wrap > ul > ul:nth-child(2) > li:nth-child(2) > ul > li:nth-child(3)')
-        except AssertionError as e:
-            # 调用封装好的截图方法，进行截图并保存在本地磁盘
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        except Exception as e:
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        # 判断有没有正常跳转页面
-        self.assertEqual(self.driver.title, '企业总量 - 产业高质量发展平台', '用例执行错误')
-        # 判断死亡企业注册资本的class值有没有发生变化
-        self.assertEqual(classvlue, 'el-select-dropdown__item selected hover', '用例执行错误')
+            # 判断有没有正常跳转页面
+            self.assertEqual(self.driver.title, '企业总量 - 产业高质量发展平台', '用例执行错误')
+            # 判断死亡企业注册资本的class值有没有发生变化
+            self.assertEqual(classvlue, 'el-select-dropdown__item selected hover', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
 
 
 if __name__ == '__main__':

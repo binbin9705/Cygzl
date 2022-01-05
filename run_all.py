@@ -13,7 +13,7 @@ if __name__ == '__main__':
     # now=time.strftime('%Y-%m-%d %H_%M_%S')
     path='plugins/测试报告.html'
     pathopen=open(path,'wb')
-    runner=HTMLTestRunner_cn.HTMLTestRunner(stream=pathopen,description=u'用例执行情况',title='产业高质量发展平台测试报告',verbosity=2,retry=2, save_last_try=True)
+    runner=HTMLTestRunner_cn.HTMLTestRunner(stream=pathopen,description=u'用例执行情况',title='产业高质量发展平台测试报告',verbosity=2,retry=1, save_last_try=True)
     runner.run(suite)
 
 

@@ -21,10 +21,14 @@ class Test3(unittest.TestCase):
     def setUp(self):
         # 启动浏览并设置相关选项
         self.driver = webdriver.Chrome(options=WebGetDemo.Runmian(self).options())
-        # self.driver.maximize_window()
+        self.imgs = []
         WebGetDemo.Runmian(self.driver).open('http://ihd.wanvdata.cn/#/login?redirect=%2Fdashboard')
-        time.sleep(2)
         WebGetDemo.Runmian(self.driver).login('ihqd-test', 'ihqd-test@6688')
+
+    def add_img(self):
+        # 1、下面注释掉的这行代码作用是不管用例是否执行成功，只要在执行过程加了self.add_img()操作，那么最后生成的报告中含有该执行过程的截图，如果不添加则默认对用例失败进行截图
+        self.imgs.append(self.driver.get_screenshot_as_base64())
+        return True
 
     def tearDown(self):
         WebGetDemo.Runmian(self.driver).quit()
@@ -44,12 +48,10 @@ class Test3(unittest.TestCase):
             time.sleep(2)
             # 获取A的class状态
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[1]')
-        except AssertionError as e:
-            # 调用封装好的截图方法，进行截图并保存在本地磁盘
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        except Exception as e:
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        self.assertEqual('active', classvlue, '用例执行错误')
+            self.assertEqual('active', classvlue, '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
 
     def test_02(self):
         '''切换地区-按城市快捷查看-B'''
@@ -62,12 +64,10 @@ class Test3(unittest.TestCase):
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[2]')
             time.sleep(2)
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[2]')
-        except AssertionError as e:
-            # 调用封装好的截图方法，进行截图并保存在本地磁盘
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        except Exception as e:
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        self.assertEqual('active', classvlue, '用例执行错误')
+            self.assertEqual('active', classvlue, '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
 
     def test_03(self):
         '''切换地区-按城市快捷查看-C'''
@@ -80,12 +80,10 @@ class Test3(unittest.TestCase):
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[3]')
             time.sleep(2)
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[3]')
-        except AssertionError as e:
-            # 调用封装好的截图方法，进行截图并保存在本地磁盘
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        except Exception as e:
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        self.assertEqual('active', classvlue, '用例执行错误')
+            self.assertEqual('active', classvlue, '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
 
     def test_04(self):
         '''切换地区-按城市快捷查看-D'''
@@ -98,12 +96,10 @@ class Test3(unittest.TestCase):
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[4]')
             time.sleep(2)
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[4]')
-        except AssertionError as e:
-            # 调用封装好的截图方法，进行截图并保存在本地磁盘
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        except Exception as e:
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        self.assertEqual('active', classvlue, '用例执行错误')
+            self.assertEqual('active', classvlue, '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
 
     def test_05(self):
         '''切换地区-按城市快捷查看-E'''
@@ -116,12 +112,10 @@ class Test3(unittest.TestCase):
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[5]')
             time.sleep(2)
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[5]')
-        except AssertionError as e:
-            # 调用封装好的截图方法，进行截图并保存在本地磁盘
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        except Exception as e:
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        self.assertEqual('active', classvlue, '用例执行错误')
+            self.assertEqual('active', classvlue, '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
 
     def test_06(self):
         '''切换地区-按城市快捷查看-F'''
@@ -134,12 +128,10 @@ class Test3(unittest.TestCase):
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[6]')
             time.sleep(2)
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[6]')
-        except AssertionError as e:
-            # 调用封装好的截图方法，进行截图并保存在本地磁盘
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        except Exception as e:
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        self.assertEqual('active', classvlue, '用例执行错误')
+            self.assertEqual('active', classvlue, '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
 
     def test_07(self):
         '''切换地区-按城市快捷查看-G'''
@@ -152,12 +144,10 @@ class Test3(unittest.TestCase):
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[7]')
             time.sleep(2)
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[7]')
-        except AssertionError as e:
-            # 调用封装好的截图方法，进行截图并保存在本地磁盘
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        except Exception as e:
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        self.assertEqual('active', classvlue, '用例执行错误')
+            self.assertEqual('active', classvlue, '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
 
     def test_08(self):
         '''切换地区-按城市快捷查看-H'''
@@ -170,12 +160,10 @@ class Test3(unittest.TestCase):
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[8]')
             time.sleep(2)
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[8]')
-        except AssertionError as e:
-            # 调用封装好的截图方法，进行截图并保存在本地磁盘
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        except Exception as e:
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        self.assertEqual('active', classvlue, '用例执行错误')
+            self.assertEqual('active', classvlue, '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
 
     def test_09(self):
         '''切换地区-按城市快捷查看-J'''
@@ -188,12 +176,10 @@ class Test3(unittest.TestCase):
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[9]')
             time.sleep(2)
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[9]')
-        except AssertionError as e:
-            # 调用封装好的截图方法，进行截图并保存在本地磁盘
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        except Exception as e:
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        self.assertEqual('active', classvlue, '用例执行错误')
+            self.assertEqual('active', classvlue, '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
 
     def test_10(self):
         '''切换地区-按城市快捷查看-K'''
@@ -206,12 +192,10 @@ class Test3(unittest.TestCase):
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[10]')
             time.sleep(2)
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[10]')
-        except AssertionError as e:
-            # 调用封装好的截图方法，进行截图并保存在本地磁盘
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        except Exception as e:
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        self.assertEqual('active', classvlue, '用例执行错误')
+            self.assertEqual('active', classvlue, '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
 
     def test_11(self):
         '''切换地区-按城市快捷查看-L'''
@@ -224,12 +208,10 @@ class Test3(unittest.TestCase):
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[11]')
             time.sleep(2)
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[11]')
-        except AssertionError as e:
-            # 调用封装好的截图方法，进行截图并保存在本地磁盘
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        except Exception as e:
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        self.assertEqual('active', classvlue, '用例执行错误')
+            self.assertEqual('active', classvlue, '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
 
     def test_12(self):
         '''切换地区-按城市快捷查看-M'''
@@ -242,12 +224,10 @@ class Test3(unittest.TestCase):
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[12]')
             time.sleep(2)
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[12]')
-        except AssertionError as e:
-            # 调用封装好的截图方法，进行截图并保存在本地磁盘
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        except Exception as e:
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        self.assertEqual('active', classvlue, '用例执行错误')
+            self.assertEqual('active', classvlue, '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
 
     def test_13(self):
         '''切换地区-按城市快捷查看-N'''
@@ -260,12 +240,10 @@ class Test3(unittest.TestCase):
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[13]')
             time.sleep(2)
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[13]')
-        except AssertionError as e:
-            # 调用封装好的截图方法，进行截图并保存在本地磁盘
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        except Exception as e:
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        self.assertEqual('active', classvlue, '用例执行错误')
+            self.assertEqual('active', classvlue, '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
 
     def test_14(self):
         '''切换地区-按城市快捷查看-P'''
@@ -278,12 +256,10 @@ class Test3(unittest.TestCase):
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[14]')
             time.sleep(2)
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[14]')
-        except AssertionError as e:
-            # 调用封装好的截图方法，进行截图并保存在本地磁盘
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        except Exception as e:
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        self.assertEqual('active', classvlue, '用例执行错误')
+            self.assertEqual('active', classvlue, '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
 
     def test_15(self):
         '''切换地区-按城市快捷查看-Q'''
@@ -296,12 +272,10 @@ class Test3(unittest.TestCase):
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[15]')
             time.sleep(2)
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[15]')
-        except AssertionError as e:
-            # 调用封装好的截图方法，进行截图并保存在本地磁盘
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        except Exception as e:
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        self.assertEqual('active', classvlue, '用例执行错误')
+            self.assertEqual('active', classvlue, '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
 
     def test_16(self):
         '''切换地区-按城市快捷查看-S'''
@@ -314,12 +288,10 @@ class Test3(unittest.TestCase):
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[16]')
             time.sleep(2)
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[16]')
-        except AssertionError as e:
-            # 调用封装好的截图方法，进行截图并保存在本地磁盘
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        except Exception as e:
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        self.assertEqual('active', classvlue, '用例执行错误')
+            self.assertEqual('active', classvlue, '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
 
     def test_17(self):
         '''切换地区-按城市快捷查看-T'''
@@ -332,12 +304,10 @@ class Test3(unittest.TestCase):
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[17]')
             time.sleep(2)
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[17]')
-        except AssertionError as e:
-            # 调用封装好的截图方法，进行截图并保存在本地磁盘
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        except Exception as e:
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        self.assertEqual('active', classvlue, '用例执行错误')
+            self.assertEqual('active', classvlue, '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
 
     def test_18(self):
         '''切换地区-按城市快捷查看-W'''
@@ -350,12 +320,10 @@ class Test3(unittest.TestCase):
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[18]')
             time.sleep(2)
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[18]')
-        except AssertionError as e:
-            # 调用封装好的截图方法，进行截图并保存在本地磁盘
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        except Exception as e:
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        self.assertEqual('active', classvlue, '用例执行错误')
+            self.assertEqual('active', classvlue, '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
 
     def test_19(self):
         '''切换地区-按城市快捷查看-X'''
@@ -368,12 +336,10 @@ class Test3(unittest.TestCase):
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[19]')
             time.sleep(2)
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[19]')
-        except AssertionError as e:
-            # 调用封装好的截图方法，进行截图并保存在本地磁盘
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        except Exception as e:
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        self.assertEqual('active', classvlue, '用例执行错误')
+            self.assertEqual('active', classvlue, '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
 
     def test_20(self):
         '''切换地区-按城市快捷查看-Y'''
@@ -386,12 +352,10 @@ class Test3(unittest.TestCase):
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[20]')
             time.sleep(2)
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[20]')
-        except AssertionError as e:
-            # 调用封装好的截图方法，进行截图并保存在本地磁盘
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        except Exception as e:
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        self.assertEqual('active', classvlue, '用例执行错误')
+            self.assertEqual('active', classvlue, '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
 
     def test_21(self):
         '''切换地区-按城市快捷查看-Z'''
@@ -404,12 +368,10 @@ class Test3(unittest.TestCase):
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[21]')
             time.sleep(2)
             classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[21]')
-        except AssertionError as e:
-            # 调用封装好的截图方法，进行截图并保存在本地磁盘
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        except Exception as e:
-            WebGetDemo.Runmian(self.driver).takeScreenshot(WebGetDemo.Runmian(self.driver).createDir(), e)
-        self.assertEqual('active', classvlue, '用例执行错误')
+            self.assertEqual('active', classvlue, '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
 
 
 if __name__ == '__main__':
