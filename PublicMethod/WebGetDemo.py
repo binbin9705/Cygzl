@@ -1,13 +1,6 @@
-import os
-import traceback
-
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 import time
-from datetime import datetime
-from selenium.webdriver.support.wait import WebDriverWait
-import sys
-
 
 class Runmian():
     def __init__(self, driver):
@@ -15,14 +8,14 @@ class Runmian():
 
     # 浏览器参数设置
     def options(self):
-        option = Options()# Options类实例化
+        option = Options()  # Options类实例化
         # option.add_argument('--incognito')# 无痕模式
         option.add_argument('no-sandbox')  # 以最高权限运行
         option.add_argument('--start-maximized')  # 最大化运行（全屏窗口）设置元素定位比较准确
-        option.add_argument('--disable-gpu') # 谷歌文档提到需要加上这个属性来规避bug
+        option.add_argument('--disable-gpu')  # 谷歌文档提到需要加上这个属性来规避bug
         # 关闭“chrome正受到自动测试软件的控制”
         option.add_experimental_option('excludeSwitches', ['enable-automation'])
-        option.add_experimental_option("detach", True)# 不自动关闭浏览器
+        option.add_experimental_option("detach", True)  # 不自动关闭浏览器
         # 关掉浏览器记住密码弹窗
         prefs = {"": ""}
         prefs["credentials_enable_service"] = False
@@ -92,7 +85,7 @@ class Runmian():
         return el.text
 
     # 获取任意元素值
-    def obtainvalue(self, valuename,type, value):
+    def obtainvalue(self, valuename, type, value):
         '''class,title,name'''
         # 调用locateElement定位元素
         el = self.locateElement(type, value)
@@ -106,54 +99,13 @@ class Runmian():
         # 调用send_keys进行输入
         el.send_keys(data)
 
-    # 截图
-    def jietu(self, url):
-        self.driver.get_screenshot_as_file(url)
-        # WebGetDemo.Runmian(self.driver).jietu("D:\pycharm\Cygzl\error_png\\test_01\error02.png")
-
-    # 构造今天的日期字符串
-    def currentDate(self):
-        date = time.localtime()
-        today = str(date.tm_year) + "-" + str(date.tm_mon) + "-" + str(date.tm_mday)
-        return today
-
-    # 构造当前时间字符串
-    def currentTime(self):
-        timeStr = datetime.now()
-        now = timeStr.strftime('%H - %M - %S')
-        return now
-
-    # 创建图片存储路径
-    def createDir(self):
-        # 获取今天的日期字符串
-        today = Runmian(self).currentDate()
-        # 构造以今天日期命名的目录的绝对路径
-        dateDir = os.path.join('D:\pycharm\Cygzl\error_png', today)
-        if not os.path.exists(dateDir):
-            # 如果以今天日期命名的目录不存在则创建
-            os.mkdir(dateDir)
-        now = Runmian(self).currentTime()
-        # 构造以当前时间命名的目录的绝对路径
-        timeDir = os.path.join(dateDir, now)
-        return timeDir
-
-    # 封装截屏方法
-    def takeScreenshot(self, savePath, picName):
-        # 构造屏幕截图路径及图片名
-        picPath = os.path.join(savePath + '.png')
-        try:
-            # 调用WebDriver提供的get_screenshot_as_file()方法
-            # 将截取的屏幕图片保存为本地文件
-            self.driver.get_screenshot_as_file(picPath)
-        except Exception as e:
-            print(traceback.print_exc())
-
-    #切换title页
-    def switch_window_by_title(self,title):
+    # 切换title页
+    def switch_window_by_title(self, title):
         for handle in self.driver.window_handles:
             self.driver.switch_to.window(handle)
             if self.driver.title.__contains__(title):
                 break
-    #切换frame
-    def switch_window_by_frame(self,frame):
+
+    # 切换frame
+    def switch_window_by_frame(self, frame):
         self.driver.switch_to.frame(frame)
