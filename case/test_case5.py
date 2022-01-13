@@ -32,7 +32,6 @@ class Test5(unittest.TestCase):
 
     def tearDown(self):
         WebGetDemo.Runmian(self.driver).quit()
-        # pass
 
     # @unittest.skip('跳过')
     def test_01(self):
@@ -99,7 +98,7 @@ class Test5(unittest.TestCase):
     # @unittest.skip('跳过')
     def test_03(self):
         '''企业总量页面统计图切换统计模块-区域对比'''
-        # self.driver.implicitly_wait(5)
+        self.driver.implicitly_wait(5)
         try:
             # 点击市场主体下来框
             WebGetDemo.Runmian(self.driver).click('css',
@@ -371,6 +370,7 @@ class Test5(unittest.TestCase):
             self.add_img()
             raise
 
+    # @unittest.skip('跳过')
     def test_11(self):
         '''企业总量页面本地数据统计图交互-按照年度数据'''
         self.driver.implicitly_wait(5)
@@ -403,6 +403,7 @@ class Test5(unittest.TestCase):
             self.add_img()
             raise
 
+    # @unittest.skip('跳过')
     def test_12(self):
         '''企业总量页面本地数据统计图交互-按照月度数据'''
         self.driver.implicitly_wait(5)
@@ -439,6 +440,290 @@ class Test5(unittest.TestCase):
             self.assertEqual(self.driver.title, '企业总量 - 产业高质量发展平台', '用例执行错误')
             # 判断class值有没有发生变化
             self.assertEqual(classvlue, 'el-select-dropdown__item selected hover', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_13(self):
+        '''企业总量页面本区域对比统计图交互-按照新增企业数量'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下来框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击区域对比
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-区域对比')
+            time.sleep(3)
+            # 点击企业数量指标下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-区域对比 > div > div > div > div.formeList > div:nth-child(1) > div.el-input.el-input--suffix > span > span > i')
+            time.sleep(3)
+            # 点击新增企业数量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-select-dropdown.el-popper > div.el-scrollbar > div.el-select-dropdown__wrap.el-scrollbar__wrap > ul > ul:nth-child(1) > li:nth-child(2) > ul > li:nth-child(2)')
+            time.sleep(3)
+            # 获取新增企业数量的class值
+            classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'css',
+                                                                    'body > div.el-select-dropdown.el-popper > div.el-scrollbar > div.el-select-dropdown__wrap.el-scrollbar__wrap > ul > ul:nth-child(1) > li:nth-child(2) > ul > li:nth-child(2)')
+            time.sleep(3)
+            # 判断class值有没有发生变化
+            self.assertEqual(classvlue, 'el-select-dropdown__item selected hover', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_14(self):
+        '''企业总量页面本区域对比统计图交互-按照死亡企业数量'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下来框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击区域对比
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-区域对比')
+            time.sleep(3)
+            # 点击企业数量指标下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-区域对比 > div > div > div > div.formeList > div:nth-child(1) > div.el-input.el-input--suffix > span > span > i')
+            time.sleep(3)
+            # 点击死亡企业数量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-select-dropdown.el-popper > div.el-scrollbar > div.el-select-dropdown__wrap.el-scrollbar__wrap > ul > ul:nth-child(1) > li:nth-child(2) > ul > li:nth-child(3)')
+            time.sleep(3)
+            # 获取点击的class值
+            classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'css',
+                                                                    'body > div.el-select-dropdown.el-popper > div.el-scrollbar > div.el-select-dropdown__wrap.el-scrollbar__wrap > ul > ul:nth-child(1) > li:nth-child(2) > ul > li:nth-child(3)')
+            time.sleep(3)
+            # 判断class值有没有发生变化
+            self.assertEqual(classvlue, 'el-select-dropdown__item selected hover', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_15(self):
+        '''企业总量页面本区域对比统计图交互-按照存量企业注册资本'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下来框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击区域对比
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-区域对比')
+            time.sleep(3)
+            # 点击企业数量指标下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-区域对比 > div > div > div > div.formeList > div:nth-child(1) > div.el-input.el-input--suffix > span > span > i')
+            time.sleep(3)
+            # 点击存量企业注册资本
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-select-dropdown.el-popper > div.el-scrollbar > div.el-select-dropdown__wrap.el-scrollbar__wrap > ul > ul:nth-child(2) > li:nth-child(2) > ul > li:nth-child(1)')
+            time.sleep(3)
+            # 获取点击的class值
+            classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'css',
+                                                                    'body > div.el-select-dropdown.el-popper > div.el-scrollbar > div.el-select-dropdown__wrap.el-scrollbar__wrap > ul > ul:nth-child(2) > li:nth-child(2) > ul > li:nth-child(1)')
+            time.sleep(3)
+            # 判断class值有没有发生变化
+            self.assertEqual(classvlue, 'el-select-dropdown__item selected hover', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_16(self):
+        '''企业总量页面本区域对比统计图交互-按照新增企业注册资本'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下来框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击区域对比
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-区域对比')
+            time.sleep(3)
+            # 点击企业数量指标下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-区域对比 > div > div > div > div.formeList > div:nth-child(1) > div.el-input.el-input--suffix > span > span > i')
+            time.sleep(3)
+            # 点击新增企业注册资本
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-select-dropdown.el-popper > div.el-scrollbar > div.el-select-dropdown__wrap.el-scrollbar__wrap > ul > ul:nth-child(2) > li:nth-child(2) > ul > li:nth-child(2)')
+            time.sleep(3)
+            # 获取点击的class值
+            classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'css',
+                                                                    'body > div.el-select-dropdown.el-popper > div.el-scrollbar > div.el-select-dropdown__wrap.el-scrollbar__wrap > ul > ul:nth-child(2) > li:nth-child(2) > ul > li:nth-child(2)')
+            time.sleep(3)
+            # 判断class值有没有发生变化
+            self.assertEqual(classvlue, 'el-select-dropdown__item selected hover', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_17(self):
+        '''企业总量页面本区域对比统计图交互-按照死亡企业注册资本'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下来框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击区域对比
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-区域对比')
+            time.sleep(3)
+            # 点击企业数量指标下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-区域对比 > div > div > div > div.formeList > div:nth-child(1) > div.el-input.el-input--suffix > span > span > i')
+            time.sleep(3)
+            # 控制下拉框向下滑
+            js = 'document.getElementsByClassName("el-scrollbar__wrap")[3].scrollTop=10000'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 点击死亡企业注册资本
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-select-dropdown.el-popper > div.el-scrollbar > div.el-select-dropdown__wrap.el-scrollbar__wrap > ul > ul:nth-child(2) > li:nth-child(2) > ul > li:nth-child(3)')
+            time.sleep(3)
+            # 获取点击的class值
+            classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'css',
+                                                                    'body > div.el-select-dropdown.el-popper > div.el-scrollbar > div.el-select-dropdown__wrap.el-scrollbar__wrap > ul > ul:nth-child(2) > li:nth-child(2) > ul > li:nth-child(3)')
+            time.sleep(3)
+            # 判断class值有没有发生变化
+            self.assertEqual(classvlue, 'el-select-dropdown__item selected hover', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_18(self):
+        '''企业总量页面本区域对比统计图交互-按照年度数据'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下来框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击区域对比
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-区域对比')
+            time.sleep(3)
+            # 点击时间维度下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-区域对比 > div > div > div > div.formeList > div:nth-child(2) > div > span > span > i')
+            time.sleep(3)
+            # 点击年度数据
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-select-dropdown.el-popper > div.el-scrollbar > div.el-select-dropdown__wrap.el-scrollbar__wrap > ul > li:nth-child(1)')
+            time.sleep(3)
+            # 获取点击的class值
+            classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'css',
+                                                                    'body > div.el-select-dropdown.el-popper > div.el-scrollbar > div.el-select-dropdown__wrap.el-scrollbar__wrap > ul > li:nth-child(1)')
+            time.sleep(3)
+            # 判断class值有没有发生变化
+            self.assertEqual(classvlue, 'el-select-dropdown__item selected hover', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_19(self):
+        '''企业总量页面本区域对比统计图交互-按照月度数据'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下来框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击区域对比
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-区域对比')
+            time.sleep(3)
+            # 点击时间维度下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-区域对比 > div > div > div > div.formeList > div:nth-child(2) > div > span > span > i')
+            time.sleep(3)
+            # 点击年度数据
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-select-dropdown.el-popper > div.el-scrollbar > div.el-select-dropdown__wrap.el-scrollbar__wrap > ul > li:nth-child(1)')
+            time.sleep(3)
+            # 点击时间维度下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-区域对比 > div > div > div > div.formeList > div:nth-child(2) > div > span > span > i')
+            time.sleep(3)
+            # 点击月度数据
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-select-dropdown.el-popper > div.el-scrollbar > div.el-select-dropdown__wrap.el-scrollbar__wrap > ul > li:nth-child(2)')
+            time.sleep(3)
+            # 获取点击的class值
+            classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'css',
+                                                                    'body > div.el-select-dropdown.el-popper > div.el-scrollbar > div.el-select-dropdown__wrap.el-scrollbar__wrap > ul > li:nth-child(2)')
+            time.sleep(3)
+            # 判断class值有没有发生变化
+            self.assertEqual(classvlue, 'el-select-dropdown__item selected hover', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_20(self):
+        '''企业总量企业列表页面交互-按照经营状态'新设'查询企业'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下来框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击企业列表
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-企业列表')
+            time.sleep(3)
+            # 点击经营状态下来框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > span:nth-child(1) > span')
+            time.sleep(3)
+            # 点击新设
+            js = 'document.getElementsByClassName("el-checkbox__inner")[107].click();'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 获取已选条件中的值
+            classvlue = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                   '//*[@id="pane-企业列表"]/div/div[1]/div[2]/div/span/span')
+            time.sleep(3)
+            # 判断已选条件框中的值是否等于新设
+            self.assertEqual(classvlue, '新设', '用例执行错误')
         except Exception:
             self.add_img()
             raise
