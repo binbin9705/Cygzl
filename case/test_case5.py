@@ -38,7 +38,7 @@ class Test5(unittest.TestCase):
         '''CRI指数页面统计图切换统计条件-年度数据'''
         self.driver.implicitly_wait(5)
         try:
-            # 点击市场主体下来框
+            # 点击市场主体下拉框
             WebGetDemo.Runmian(self.driver).click('css',
                                                   ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
             time.sleep(3)
@@ -69,7 +69,7 @@ class Test5(unittest.TestCase):
         '''CRI指数页面统计图切换统计条件-月度数据'''
         self.driver.implicitly_wait(5)
         try:
-            # 点击市场主体下来框
+            # 点击市场主体下拉框
             WebGetDemo.Runmian(self.driver).click('css',
                                                   ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
             time.sleep(3)
@@ -100,7 +100,7 @@ class Test5(unittest.TestCase):
         '''企业总量页面统计图切换统计模块-区域对比'''
         self.driver.implicitly_wait(5)
         try:
-            # 点击市场主体下来框
+            # 点击市场主体下拉框
             WebGetDemo.Runmian(self.driver).click('css',
                                                   ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
             time.sleep(3)
@@ -130,7 +130,7 @@ class Test5(unittest.TestCase):
         '''企业总量页面统计图切换统计模块-企业列表'''
         self.driver.implicitly_wait(5)
         try:
-            # 点击市场主体下来框
+            # 点击市场主体下拉框
             WebGetDemo.Runmian(self.driver).click('css',
                                                   ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
             time.sleep(3)
@@ -160,7 +160,7 @@ class Test5(unittest.TestCase):
         '''企业总量页面本地数据统计图交互-按照存量企业数量'''
         self.driver.implicitly_wait(5)
         try:
-            # 点击市场主体下来框
+            # 点击市场主体下拉框
             WebGetDemo.Runmian(self.driver).click('css',
                                                   '#app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i')
             # 点击企业总量
@@ -194,7 +194,7 @@ class Test5(unittest.TestCase):
         '''企业总量页面本地数据统计图交互-按照新增企业数量'''
         self.driver.implicitly_wait(5)
         try:
-            # 点击市场主体下来框
+            # 点击市场主体下拉框
             WebGetDemo.Runmian(self.driver).click('css',
                                                   '#app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i')
 
@@ -229,7 +229,7 @@ class Test5(unittest.TestCase):
         '''企业总量页面本地数据统计图交互-按照死亡企业数量'''
         self.driver.implicitly_wait(5)
         try:
-            # 点击市场主体下来框
+            # 点击市场主体下拉框
             WebGetDemo.Runmian(self.driver).click('css',
                                                   '#app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i')
 
@@ -264,7 +264,7 @@ class Test5(unittest.TestCase):
         '''企业总量页面本地数据统计图交互-按照存量企业注册资本'''
         self.driver.implicitly_wait(5)
         try:
-            # 点击市场主体下来框
+            # 点击市场主体下拉框
             WebGetDemo.Runmian(self.driver).click('css',
                                                   '#app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i')
 
@@ -300,7 +300,7 @@ class Test5(unittest.TestCase):
         '''企业总量页面本地数据统计图交互-按照新增企业注册资本'''
         self.driver.implicitly_wait(5)
         try:
-            # 点击市场主体下来框
+            # 点击市场主体下拉框
             WebGetDemo.Runmian(self.driver).click('css',
                                                   '#app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i')
 
@@ -336,7 +336,7 @@ class Test5(unittest.TestCase):
         '''企业总量页面本地数据统计图交互-按照死亡企业注册资本'''
         self.driver.implicitly_wait(5)
         try:
-            # 点击市场主体下来框
+            # 点击市场主体下拉框
             WebGetDemo.Runmian(self.driver).click('css',
                                                   '#app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i')
 
@@ -375,7 +375,7 @@ class Test5(unittest.TestCase):
         '''企业总量页面本地数据统计图交互-按照年度数据'''
         self.driver.implicitly_wait(5)
         try:
-            # 点击市场主体下来框
+            # 点击市场主体下拉框
             WebGetDemo.Runmian(self.driver).click('css',
                                                   '#app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i')
 
@@ -408,7 +408,7 @@ class Test5(unittest.TestCase):
         '''企业总量页面本地数据统计图交互-按照月度数据'''
         self.driver.implicitly_wait(5)
         try:
-            # 点击市场主体下来框
+            # 点击市场主体下拉框
             WebGetDemo.Runmian(self.driver).click('css',
                                                   '#app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i')
 
@@ -449,7 +449,7 @@ class Test5(unittest.TestCase):
         '''企业总量页面本区域对比统计图交互-按照新增企业数量'''
         self.driver.implicitly_wait(5)
         try:
-            # 点击市场主体下来框
+            # 点击市场主体下拉框
             WebGetDemo.Runmian(self.driver).click('css',
                                                   ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
             time.sleep(3)
@@ -483,7 +483,7 @@ class Test5(unittest.TestCase):
         '''企业总量页面本区域对比统计图交互-按照死亡企业数量'''
         self.driver.implicitly_wait(5)
         try:
-            # 点击市场主体下来框
+            # 点击市场主体下拉框
             WebGetDemo.Runmian(self.driver).click('css',
                                                   ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
             time.sleep(3)
@@ -517,7 +517,7 @@ class Test5(unittest.TestCase):
         '''企业总量页面本区域对比统计图交互-按照存量企业注册资本'''
         self.driver.implicitly_wait(5)
         try:
-            # 点击市场主体下来框
+            # 点击市场主体下拉框
             WebGetDemo.Runmian(self.driver).click('css',
                                                   ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
             time.sleep(3)
@@ -551,7 +551,7 @@ class Test5(unittest.TestCase):
         '''企业总量页面本区域对比统计图交互-按照新增企业注册资本'''
         self.driver.implicitly_wait(5)
         try:
-            # 点击市场主体下来框
+            # 点击市场主体下拉框
             WebGetDemo.Runmian(self.driver).click('css',
                                                   ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
             time.sleep(3)
@@ -585,7 +585,7 @@ class Test5(unittest.TestCase):
         '''企业总量页面本区域对比统计图交互-按照死亡企业注册资本'''
         self.driver.implicitly_wait(5)
         try:
-            # 点击市场主体下来框
+            # 点击市场主体下拉框
             WebGetDemo.Runmian(self.driver).click('css',
                                                   ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
             time.sleep(3)
@@ -623,7 +623,7 @@ class Test5(unittest.TestCase):
         '''企业总量页面本区域对比统计图交互-按照年度数据'''
         self.driver.implicitly_wait(5)
         try:
-            # 点击市场主体下来框
+            # 点击市场主体下拉框
             WebGetDemo.Runmian(self.driver).click('css',
                                                   ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
             time.sleep(3)
@@ -657,7 +657,7 @@ class Test5(unittest.TestCase):
         '''企业总量页面本区域对比统计图交互-按照月度数据'''
         self.driver.implicitly_wait(5)
         try:
-            # 点击市场主体下来框
+            # 点击市场主体下拉框
             WebGetDemo.Runmian(self.driver).click('css',
                                                   ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
             time.sleep(3)
@@ -699,7 +699,7 @@ class Test5(unittest.TestCase):
         '''企业总量企业列表页面交互-按照经营状态'新设'查询企业'''
         self.driver.implicitly_wait(5)
         try:
-            # 点击市场主体下来框
+            # 点击市场主体下拉框
             WebGetDemo.Runmian(self.driver).click('css',
                                                   ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
             time.sleep(3)
@@ -710,20 +710,1684 @@ class Test5(unittest.TestCase):
             # 点击企业列表
             WebGetDemo.Runmian(self.driver).click('id', 'tab-企业列表')
             time.sleep(3)
-            # 点击经营状态下来框
+            # 点击经营状态下拉框
             WebGetDemo.Runmian(self.driver).click('css',
                                                   '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > span:nth-child(1) > span')
             time.sleep(3)
             # 点击新设
-            js = 'document.getElementsByClassName("el-checkbox__inner")[107].click();'
+            js = 'document.getElementsByClassName("el-checkbox__inner")[107].click()'
             self.driver.execute_script(js)
+            time.sleep(3)
+            # 点击确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[5]/div[2]/div/div[2]/button[2]/span')
             time.sleep(3)
             # 获取已选条件中的值
             classvlue = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
                                                                    '//*[@id="pane-企业列表"]/div/div[1]/div[2]/div/span/span')
             time.sleep(3)
-            # 判断已选条件框中的值是否等于新设
+            # 判断已选条件框中的值是否等于前者选择的条件
             self.assertEqual(classvlue, '新设', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_21(self):
+        '''企业总量企业列表页面交互-按照经营状态'在营'查询企业'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击企业列表
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-企业列表')
+            time.sleep(3)
+            # 点击经营状态下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > span:nth-child(1) > span')
+            time.sleep(3)
+            # 点击在营
+            js = 'document.getElementsByClassName("el-checkbox__inner")[108].click()'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 点击确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[5]/div[2]/div/div[2]/button[2]/span')
+            time.sleep(3)
+            # 获取已选条件中的值
+            classvlue = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                   '//*[@id="pane-企业列表"]/div/div[1]/div[2]/div/span/span')
+            time.sleep(3)
+            # 判断已选条件框中的值是否等于前者选择的条件
+            self.assertEqual(classvlue, '在营', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_22(self):
+        '''企业总量企业列表页面交互-按照经营状态'吊销'查询企业'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击企业列表
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-企业列表')
+            time.sleep(3)
+            # 点击经营状态下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > span:nth-child(1) > span')
+            time.sleep(3)
+            # 点击吊销
+            js = 'document.getElementsByClassName("el-checkbox__inner")[109].click()'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 点击确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[5]/div[2]/div/div[2]/button[2]/span')
+            time.sleep(3)
+            # 获取已选条件中的值
+            classvlue = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                   '//*[@id="pane-企业列表"]/div/div[1]/div[2]/div/span/span')
+            time.sleep(3)
+            # 判断已选条件框中的值是否等于前者选择的条件
+            self.assertEqual(classvlue, '吊销', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_23(self):
+        '''企业总量企业列表页面交互-按照经营状态'注销'查询企业'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击企业列表
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-企业列表')
+            time.sleep(3)
+            # 点击经营状态下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > span:nth-child(1) > span')
+            time.sleep(3)
+            # 点击注销
+            js = 'document.getElementsByClassName("el-checkbox__inner")[110].click()'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 点击确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[5]/div[2]/div/div[2]/button[2]/span')
+            time.sleep(3)
+            # 获取已选条件中的值
+            classvlue = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                   '//*[@id="pane-企业列表"]/div/div[1]/div[2]/div/span/span')
+            time.sleep(3)
+            # 判断已选条件框中的值是否等于前者选择的条件
+            self.assertEqual(classvlue, '注销', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_24(self):
+        '''企业总量企业列表页面交互-按照成立时间'1978年以前'查询企业'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击企业列表
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-企业列表')
+            time.sleep(3)
+            # 点击成立时间下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > div:nth-child(2) > button > span')
+            time.sleep(3)
+            # 点击1978年以前
+            js = 'document.getElementsByClassName("el-checkbox__inner")[4].click()'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 点击弹出框的确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[2]/div[2]/div/div[1]/div/div/div[3]/div/button')
+            time.sleep(3)
+            # 点击确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[5]/div[2]/div/div[2]/button[2]/span')
+            time.sleep(3)
+            # 获取已选条件中的值
+            classvlue = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                   '//*[@id="pane-企业列表"]/div/div[1]/div[2]/div/span/span')
+            time.sleep(3)
+            # 判断已选条件框中的值是否等于前者选择的条件
+            self.assertEqual(classvlue, '1978年以前', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_25(self):
+        '''企业总量企业列表页面交互-按照成立时间'1980年-1978年(含)'查询企业'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击企业列表
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-企业列表')
+            time.sleep(3)
+            # 点击成立时间下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > div:nth-child(2) > button > span')
+            time.sleep(3)
+            # 点击1980年-1978年(含)
+            js = 'document.getElementsByClassName("el-checkbox__inner")[5].click()'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 点击弹出框的确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[2]/div[2]/div/div[1]/div/div/div[3]/div/button')
+            time.sleep(3)
+            # 点击确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[5]/div[2]/div/div[2]/button[2]/span')
+            time.sleep(3)
+            # 获取已选条件中的值
+            classvlue = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                   '//*[@id="pane-企业列表"]/div/div[1]/div[2]/div/span/span')
+            time.sleep(3)
+            # 判断已选条件框中的值是否等于前者选择的条件
+            self.assertEqual(classvlue, '1980年-1978年(含)', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_26(self):
+        '''企业总量企业列表页面交互-按照成立时间'1990年-1981年(含)'查询企业'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击企业列表
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-企业列表')
+            time.sleep(3)
+            # 点击成立时间下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > div:nth-child(2) > button > span')
+            time.sleep(3)
+            # 点击1990年-1981年(含)
+            js = 'document.getElementsByClassName("el-checkbox__inner")[6].click()'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 点击弹出框的确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[2]/div[2]/div/div[1]/div/div/div[3]/div/button')
+            time.sleep(3)
+            # 点击确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[5]/div[2]/div/div[2]/button[2]/span')
+            time.sleep(3)
+            # 获取已选条件中的值
+            classvlue = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                   '//*[@id="pane-企业列表"]/div/div[1]/div[2]/div/span/span')
+            time.sleep(3)
+            # 判断已选条件框中的值是否等于前者选择的条件
+            self.assertEqual(classvlue, '1990年-1981年(含)', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_27(self):
+        '''企业总量企业列表页面交互-按照成立时间'2000年-1991年(含)'查询企业'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击企业列表
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-企业列表')
+            time.sleep(3)
+            # 点击成立时间下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > div:nth-child(2) > button > span')
+            time.sleep(3)
+            # 点击2000年-1991年(含)
+            js = 'document.getElementsByClassName("el-checkbox__inner")[7].click()'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 点击弹出框的确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[2]/div[2]/div/div[1]/div/div/div[3]/div/button')
+            time.sleep(3)
+            # 点击确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[5]/div[2]/div/div[2]/button[2]/span')
+            time.sleep(3)
+            # 获取已选条件中的值
+            classvlue = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                   '//*[@id="pane-企业列表"]/div/div[1]/div[2]/div/span/span')
+            time.sleep(3)
+            # 判断已选条件框中的值是否等于前者选择的条件
+            self.assertEqual(classvlue, '2000年-1991年(含)', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_28(self):
+        '''企业总量企业列表页面交互-按照成立时间'2010年-2001年(含)'查询企业'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击企业列表
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-企业列表')
+            time.sleep(3)
+            # 点击成立时间下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > div:nth-child(2) > button > span')
+            time.sleep(3)
+            # 点击2010年-2001年(含)
+            js = 'document.getElementsByClassName("el-checkbox__inner")[8].click()'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 点击弹出框的确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[2]/div[2]/div/div[1]/div/div/div[3]/div/button')
+            time.sleep(3)
+            # 点击确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[5]/div[2]/div/div[2]/button[2]/span')
+            time.sleep(3)
+            # 获取已选条件中的值
+            classvlue = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                   '//*[@id="pane-企业列表"]/div/div[1]/div[2]/div/span/span')
+            time.sleep(3)
+            # 判断已选条件框中的值是否等于前者选择的条件
+            self.assertEqual(classvlue, '2010年-2001年(含)', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_29(self):
+        '''企业总量企业列表页面交互-按照成立时间'2011年'查询企业'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击企业列表
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-企业列表')
+            time.sleep(3)
+            # 点击成立时间下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > div:nth-child(2) > button > span')
+            time.sleep(3)
+            # 点击2011年
+            js = 'document.getElementsByClassName("el-checkbox__inner")[9].click()'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 点击弹出框的确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[2]/div[2]/div/div[1]/div/div/div[3]/div/button')
+            time.sleep(3)
+            # 点击确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[5]/div[2]/div/div[2]/button[2]/span')
+            time.sleep(3)
+            # 获取已选条件中的值
+            classvlue = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                   '//*[@id="pane-企业列表"]/div/div[1]/div[2]/div/span/span')
+            time.sleep(3)
+            # 判断已选条件框中的值是否等于前者选择的条件
+            self.assertEqual(classvlue, '2011年', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_30(self):
+        '''企业总量企业列表页面交互-按照成立时间'2012年'查询企业'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击企业列表
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-企业列表')
+            time.sleep(3)
+            # 点击成立时间下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > div:nth-child(2) > button > span')
+            time.sleep(3)
+            # 点击2012年
+            js = 'document.getElementsByClassName("el-checkbox__inner")[10].click()'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 点击弹出框的确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[2]/div[2]/div/div[1]/div/div/div[3]/div/button')
+            time.sleep(3)
+            # 点击确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[5]/div[2]/div/div[2]/button[2]/span')
+            time.sleep(3)
+            # 获取已选条件中的值
+            classvlue = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                   '//*[@id="pane-企业列表"]/div/div[1]/div[2]/div/span/span')
+            time.sleep(3)
+            # 判断已选条件框中的值是否等于前者选择的条件
+            self.assertEqual(classvlue, '2012年', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_31(self):
+        '''企业总量企业列表页面交互-按照成立时间'2013年'查询企业'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击企业列表
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-企业列表')
+            time.sleep(3)
+            # 点击成立时间下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > div:nth-child(2) > button > span')
+            time.sleep(3)
+            # 点击2013年
+            js = 'document.getElementsByClassName("el-checkbox__inner")[11].click()'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 点击弹出框的确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[2]/div[2]/div/div[1]/div/div/div[3]/div/button')
+            time.sleep(3)
+            # 点击确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[5]/div[2]/div/div[2]/button[2]/span')
+            time.sleep(3)
+            # 获取已选条件中的值
+            classvlue = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                   '//*[@id="pane-企业列表"]/div/div[1]/div[2]/div/span/span')
+            time.sleep(3)
+            # 判断已选条件框中的值是否等于前者选择的条件
+            self.assertEqual(classvlue, '2013年', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_32(self):
+        '''企业总量企业列表页面交互-按照成立时间'2014年'查询企业'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击企业列表
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-企业列表')
+            time.sleep(3)
+            # 点击成立时间下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > div:nth-child(2) > button > span')
+            time.sleep(3)
+            # 点击2014年
+            js = 'document.getElementsByClassName("el-checkbox__inner")[12].click()'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 点击弹出框的确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[2]/div[2]/div/div[1]/div/div/div[3]/div/button')
+            time.sleep(3)
+            # 点击确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[5]/div[2]/div/div[2]/button[2]/span')
+            time.sleep(3)
+            # 获取已选条件中的值
+            classvlue = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                   '//*[@id="pane-企业列表"]/div/div[1]/div[2]/div/span/span')
+            time.sleep(3)
+            # 判断已选条件框中的值是否等于前者选择的条件
+            self.assertEqual(classvlue, '2014年', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_33(self):
+        '''企业总量企业列表页面交互-按照成立时间'2015年'查询企业'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击企业列表
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-企业列表')
+            time.sleep(3)
+            # 点击成立时间下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > div:nth-child(2) > button > span')
+            time.sleep(3)
+            # 点击2015年
+            js = 'document.getElementsByClassName("el-checkbox__inner")[13].click()'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 点击弹出框的确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[2]/div[2]/div/div[1]/div/div/div[3]/div/button')
+            time.sleep(3)
+            # 点击确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[5]/div[2]/div/div[2]/button[2]/span')
+            time.sleep(3)
+            # 获取已选条件中的值
+            classvlue = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                   '//*[@id="pane-企业列表"]/div/div[1]/div[2]/div/span/span')
+            time.sleep(3)
+            # 判断已选条件框中的值是否等于前者选择的条件
+            self.assertEqual(classvlue, '2015年', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_34(self):
+        '''企业总量企业列表页面交互-按照成立时间'2016年'查询企业'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击企业列表
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-企业列表')
+            time.sleep(3)
+            # 点击成立时间下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > div:nth-child(2) > button > span')
+            time.sleep(3)
+            # 点击2016年
+            js = 'document.getElementsByClassName("el-checkbox__inner")[14].click()'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 点击弹出框的确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[2]/div[2]/div/div[1]/div/div/div[3]/div/button')
+            time.sleep(3)
+            # 点击确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[5]/div[2]/div/div[2]/button[2]/span')
+            time.sleep(3)
+            # 获取已选条件中的值
+            classvlue = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                   '//*[@id="pane-企业列表"]/div/div[1]/div[2]/div/span/span')
+            time.sleep(3)
+            # 判断已选条件框中的值是否等于前者选择的条件
+            self.assertEqual(classvlue, '2016年', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_35(self):
+        '''企业总量企业列表页面交互-按照成立时间'2017年'查询企业'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击企业列表
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-企业列表')
+            time.sleep(3)
+            # 点击成立时间下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > div:nth-child(2) > button > span')
+            time.sleep(3)
+            # 点击2017年
+            js = 'document.getElementsByClassName("el-checkbox__inner")[15].click()'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 点击弹出框的确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[2]/div[2]/div/div[1]/div/div/div[3]/div/button')
+            time.sleep(3)
+            # 点击确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[5]/div[2]/div/div[2]/button[2]/span')
+            time.sleep(3)
+            # 获取已选条件中的值
+            classvlue = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                   '//*[@id="pane-企业列表"]/div/div[1]/div[2]/div/span/span')
+            time.sleep(3)
+            # 判断已选条件框中的值是否等于前者选择的条件
+            self.assertEqual(classvlue, '2017年', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_36(self):
+        '''企业总量企业列表页面交互-按照成立时间'2018年'查询企业'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击企业列表
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-企业列表')
+            time.sleep(3)
+            # 点击成立时间下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > div:nth-child(2) > button > span')
+            time.sleep(3)
+            # 点击2018年
+            js = 'document.getElementsByClassName("el-checkbox__inner")[16].click()'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 点击弹出框的确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[2]/div[2]/div/div[1]/div/div/div[3]/div/button')
+            time.sleep(3)
+            # 点击确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[5]/div[2]/div/div[2]/button[2]/span')
+            time.sleep(3)
+            # 获取已选条件中的值
+            classvlue = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                   '//*[@id="pane-企业列表"]/div/div[1]/div[2]/div/span/span')
+            time.sleep(3)
+            # 判断已选条件框中的值是否等于前者选择的条件
+            self.assertEqual(classvlue, '2018年', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_37(self):
+        '''企业总量企业列表页面交互-按照成立时间'2019年'查询企业'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击企业列表
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-企业列表')
+            time.sleep(3)
+            # 点击成立时间下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > div:nth-child(2) > button > span')
+            time.sleep(3)
+            # 点击2019年
+            js = 'document.getElementsByClassName("el-checkbox__inner")[17].click()'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 点击弹出框的确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[2]/div[2]/div/div[1]/div/div/div[3]/div/button')
+            time.sleep(3)
+            # 点击确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[5]/div[2]/div/div[2]/button[2]/span')
+            time.sleep(3)
+            # 获取已选条件中的值
+            classvlue = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                   '//*[@id="pane-企业列表"]/div/div[1]/div[2]/div/span/span')
+            time.sleep(3)
+            # 判断已选条件框中的值是否等于前者选择的条件
+            self.assertEqual(classvlue, '2019年', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_38(self):
+        '''企业总量企业列表页面交互-按照成立时间'2020年'查询企业'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击企业列表
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-企业列表')
+            time.sleep(3)
+            # 点击成立时间下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > div:nth-child(2) > button > span')
+            time.sleep(3)
+            # 点击2020年
+            js = 'document.getElementsByClassName("el-checkbox__inner")[18].click()'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 点击弹出框的确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[2]/div[2]/div/div[1]/div/div/div[3]/div/button')
+            time.sleep(3)
+            # 点击确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[5]/div[2]/div/div[2]/button[2]/span')
+            time.sleep(3)
+            # 获取已选条件中的值
+            classvlue = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                   '//*[@id="pane-企业列表"]/div/div[1]/div[2]/div/span/span')
+            time.sleep(3)
+            # 判断已选条件框中的值是否等于前者选择的条件
+            self.assertEqual(classvlue, '2020年', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_39(self):
+        '''企业总量企业列表页面交互-按照国标行业'农、林、牧、渔业'查询企业'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击企业列表
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-企业列表')
+            time.sleep(3)
+            # 点击国标行业标签
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > div:nth-child(4) > button > span')
+            time.sleep(3)
+            # 点击农、林、牧、渔业
+            js = 'document.getElementsByClassName("el-checkbox__inner")[4].click()'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 点击弹出框的确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[2]/div[2]/div/div[3]/div/div/div[3]/div/button')
+            time.sleep(3)
+            # 点击确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[5]/div[2]/div/div[2]/button[2]/span')
+            time.sleep(3)
+            # 获取已选条件中的值
+            classvlue = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                   '//*[@id="pane-企业列表"]/div/div[1]/div[2]/div/span/span')
+            time.sleep(3)
+            # 判断已选条件框中的值是否等于前者选择的条件
+            self.assertEqual(classvlue, '农、林、牧、渔业', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_40(self):
+        '''企业总量企业列表页面交互-按照国标行业'采矿业'查询企业'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击企业列表
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-企业列表')
+            time.sleep(3)
+            # 点击国标行业标签
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > div:nth-child(4) > button > span')
+            time.sleep(3)
+            # 点击采矿业
+            js = 'document.getElementsByClassName("el-checkbox__inner")[5].click()'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 点击弹出框的确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[2]/div[2]/div/div[3]/div/div/div[3]/div/button')
+            time.sleep(3)
+            # 点击确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[5]/div[2]/div/div[2]/button[2]/span')
+            time.sleep(3)
+            # 获取已选条件中的值
+            classvlue = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                   '//*[@id="pane-企业列表"]/div/div[1]/div[2]/div/span/span')
+            time.sleep(3)
+            # 判断已选条件框中的值是否等于前者选择的条件
+            self.assertEqual(classvlue, '采矿业', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_41(self):
+        '''企业总量企业列表页面交互-按照国标行业'制造业'查询企业'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击企业列表
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-企业列表')
+            time.sleep(3)
+            # 点击国标行业标签
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > div:nth-child(4) > button > span')
+            time.sleep(3)
+            # 点击制造业
+            js = 'document.getElementsByClassName("el-checkbox__inner")[6].click()'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 点击弹出框的确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[2]/div[2]/div/div[3]/div/div/div[3]/div/button')
+            time.sleep(3)
+            # 点击确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[5]/div[2]/div/div[2]/button[2]/span')
+            time.sleep(3)
+            # 获取已选条件中的值
+            classvlue = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                   '//*[@id="pane-企业列表"]/div/div[1]/div[2]/div/span/span')
+            time.sleep(3)
+            # 判断已选条件框中的值是否等于前者选择的条件
+            self.assertEqual(classvlue, '制造业', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_42(self):
+        '''企业总量企业列表页面交互-按照国标行业'电力、热力、燃气及水生产和供应业'查询企业'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击企业列表
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-企业列表')
+            time.sleep(3)
+            # 点击国标行业标签
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > div:nth-child(4) > button > span')
+            time.sleep(3)
+            # 点击电力、热力、燃气及水生产和供应业
+            js = 'document.getElementsByClassName("el-checkbox__inner")[7].click()'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 点击弹出框的确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[2]/div[2]/div/div[3]/div/div/div[3]/div/button')
+            time.sleep(3)
+            # 点击确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[5]/div[2]/div/div[2]/button[2]/span')
+            time.sleep(3)
+            # 获取已选条件中的值
+            classvlue = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                   '//*[@id="pane-企业列表"]/div/div[1]/div[2]/div/span/span')
+            time.sleep(3)
+            # 判断已选条件框中的值是否等于前者选择的条件
+            self.assertEqual(classvlue, '电力、热力、燃气及水生产和供应业', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_43(self):
+        '''企业总量企业列表页面交互-按照国标行业'建筑业'查询企业'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击企业列表
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-企业列表')
+            time.sleep(3)
+            # 点击国标行业标签
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > div:nth-child(4) > button > span')
+            time.sleep(3)
+            # 点击建筑业
+            js = 'document.getElementsByClassName("el-checkbox__inner")[8].click()'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 点击弹出框的确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[2]/div[2]/div/div[3]/div/div/div[3]/div/button')
+            time.sleep(3)
+            # 点击确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[5]/div[2]/div/div[2]/button[2]/span')
+            time.sleep(3)
+            # 获取已选条件中的值
+            classvlue = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                   '//*[@id="pane-企业列表"]/div/div[1]/div[2]/div/span/span')
+            time.sleep(3)
+            # 判断已选条件框中的值是否等于前者选择的条件
+            self.assertEqual(classvlue, '建筑业', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_44(self):
+        '''企业总量企业列表页面交互-按照国标行业'批发和零售业'查询企业'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击企业列表
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-企业列表')
+            time.sleep(3)
+            # 点击国标行业标签
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > div:nth-child(4) > button > span')
+            time.sleep(3)
+            # 点击批发和零售业
+            js = 'document.getElementsByClassName("el-checkbox__inner")[9].click()'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 点击弹出框的确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[2]/div[2]/div/div[3]/div/div/div[3]/div/button')
+            time.sleep(3)
+            # 点击确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[5]/div[2]/div/div[2]/button[2]/span')
+            time.sleep(3)
+            # 获取已选条件中的值
+            classvlue = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                   '//*[@id="pane-企业列表"]/div/div[1]/div[2]/div/span/span')
+            time.sleep(3)
+            # 判断已选条件框中的值是否等于前者选择的条件
+            self.assertEqual(classvlue, '批发和零售业', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_45(self):
+        '''企业总量企业列表页面交互-按照国标行业'交通运输、仓储和邮政业'查询企业'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击企业列表
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-企业列表')
+            time.sleep(3)
+            # 点击国标行业标签
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > div:nth-child(4) > button > span')
+            time.sleep(3)
+            # 点击交通运输、仓储和邮政业
+            js = 'document.getElementsByClassName("el-checkbox__inner")[10].click()'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 点击弹出框的确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[2]/div[2]/div/div[3]/div/div/div[3]/div/button')
+            time.sleep(3)
+            # 点击确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[5]/div[2]/div/div[2]/button[2]/span')
+            time.sleep(3)
+            # 获取已选条件中的值
+            classvlue = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                   '//*[@id="pane-企业列表"]/div/div[1]/div[2]/div/span/span')
+            time.sleep(3)
+            # 判断已选条件框中的值是否等于前者选择的条件
+            self.assertEqual(classvlue, '交通运输、仓储和邮政业', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_46(self):
+        '''企业总量企业列表页面交互-按照国标行业'住宿和餐饮业'查询企业'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击企业列表
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-企业列表')
+            time.sleep(3)
+            # 点击国标行业标签
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > div:nth-child(4) > button > span')
+            time.sleep(3)
+            # 点击住宿和餐饮业
+            js = 'document.getElementsByClassName("el-checkbox__inner")[11].click()'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 点击弹出框的确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[2]/div[2]/div/div[3]/div/div/div[3]/div/button')
+            time.sleep(3)
+            # 点击确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[5]/div[2]/div/div[2]/button[2]/span')
+            time.sleep(3)
+            # 获取已选条件中的值
+            classvlue = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                   '//*[@id="pane-企业列表"]/div/div[1]/div[2]/div/span/span')
+            time.sleep(3)
+            # 判断已选条件框中的值是否等于前者选择的条件
+            self.assertEqual(classvlue, '住宿和餐饮业', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_47(self):
+        '''企业总量企业列表页面交互-按照国标行业'信息传输、软件和信息技术服务业'查询企业'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击企业列表
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-企业列表')
+            time.sleep(3)
+            # 点击国标行业标签
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > div:nth-child(4) > button > span')
+            time.sleep(3)
+            # 点击信息传输、软件和信息技术服务业
+            js = 'document.getElementsByClassName("el-checkbox__inner")[12].click()'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 点击弹出框的确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[2]/div[2]/div/div[3]/div/div/div[3]/div/button')
+            time.sleep(3)
+            # 点击确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[5]/div[2]/div/div[2]/button[2]/span')
+            time.sleep(3)
+            # 获取已选条件中的值
+            classvlue = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                   '//*[@id="pane-企业列表"]/div/div[1]/div[2]/div/span/span')
+            time.sleep(3)
+            # 判断已选条件框中的值是否等于前者选择的条件
+            self.assertEqual(classvlue, '信息传输、软件和信息技术服务业', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_48(self):
+        '''企业总量企业列表页面交互-按照国标行业'金融业'查询企业'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击企业列表
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-企业列表')
+            time.sleep(3)
+            # 点击国标行业标签
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > div:nth-child(4) > button > span')
+            time.sleep(3)
+            # 点击金融业
+            js = 'document.getElementsByClassName("el-checkbox__inner")[13].click()'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 点击弹出框的确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[2]/div[2]/div/div[3]/div/div/div[3]/div/button')
+            time.sleep(3)
+            # 点击确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[5]/div[2]/div/div[2]/button[2]/span')
+            time.sleep(3)
+            # 获取已选条件中的值
+            classvlue = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                   '//*[@id="pane-企业列表"]/div/div[1]/div[2]/div/span/span')
+            time.sleep(3)
+            # 判断已选条件框中的值是否等于前者选择的条件
+            self.assertEqual(classvlue, '金融业', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_49(self):
+        '''企业总量企业列表页面交互-按照国标行业'房地产业'查询企业'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击企业列表
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-企业列表')
+            time.sleep(3)
+            # 点击国标行业标签
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > div:nth-child(4) > button > span')
+            time.sleep(3)
+            # 点击房地产业
+            js = 'document.getElementsByClassName("el-checkbox__inner")[14].click()'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 点击弹出框的确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[2]/div[2]/div/div[3]/div/div/div[3]/div/button')
+            time.sleep(3)
+            # 点击确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[5]/div[2]/div/div[2]/button[2]/span')
+            time.sleep(3)
+            # 获取已选条件中的值
+            classvlue = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                   '//*[@id="pane-企业列表"]/div/div[1]/div[2]/div/span/span')
+            time.sleep(3)
+            # 判断已选条件框中的值是否等于前者选择的条件
+            self.assertEqual(classvlue, '房地产业', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_50(self):
+        '''企业总量企业列表页面交互-按照国标行业'租赁和商务服务业'查询企业'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击企业列表
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-企业列表')
+            time.sleep(3)
+            # 点击国标行业标签
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > div:nth-child(4) > button > span')
+            time.sleep(3)
+            # 点击租赁和商务服务业
+            js = 'document.getElementsByClassName("el-checkbox__inner")[15].click()'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 点击弹出框的确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[2]/div[2]/div/div[3]/div/div/div[3]/div/button')
+            time.sleep(3)
+            # 点击确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[5]/div[2]/div/div[2]/button[2]/span')
+            time.sleep(3)
+            # 获取已选条件中的值
+            classvlue = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                   '//*[@id="pane-企业列表"]/div/div[1]/div[2]/div/span/span')
+            time.sleep(3)
+            # 判断已选条件框中的值是否等于前者选择的条件
+            self.assertEqual(classvlue, '租赁和商务服务业', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_51(self):
+        '''企业总量企业列表页面交互-按照国标行业'科学研究和技术服务业'查询企业'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击企业列表
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-企业列表')
+            time.sleep(3)
+            # 点击国标行业标签
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > div:nth-child(4) > button > span')
+            time.sleep(3)
+            # 点击科学研究和技术服务业
+            js = 'document.getElementsByClassName("el-checkbox__inner")[16].click()'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 点击弹出框的确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[2]/div[2]/div/div[3]/div/div/div[3]/div/button')
+            time.sleep(3)
+            # 点击确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[5]/div[2]/div/div[2]/button[2]/span')
+            time.sleep(3)
+            # 获取已选条件中的值
+            classvlue = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                   '//*[@id="pane-企业列表"]/div/div[1]/div[2]/div/span/span')
+            time.sleep(3)
+            # 判断已选条件框中的值是否等于前者选择的条件
+            self.assertEqual(classvlue, '科学研究和技术服务业', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_52(self):
+        '''企业总量企业列表页面交互-按照国标行业'水利、环境和公共设施管理业'查询企业'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击企业列表
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-企业列表')
+            time.sleep(3)
+            # 点击国标行业标签
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > div:nth-child(4) > button > span')
+            time.sleep(3)
+            # 点击水利、环境和公共设施管理业
+            js = 'document.getElementsByClassName("el-checkbox__inner")[17].click()'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 点击弹出框的确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[2]/div[2]/div/div[3]/div/div/div[3]/div/button')
+            time.sleep(3)
+            # 点击确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[5]/div[2]/div/div[2]/button[2]/span')
+            time.sleep(3)
+            # 获取已选条件中的值
+            classvlue = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                   '//*[@id="pane-企业列表"]/div/div[1]/div[2]/div/span/span')
+            time.sleep(3)
+            # 判断已选条件框中的值是否等于前者选择的条件
+            self.assertEqual(classvlue, '水利、环境和公共设施管理业', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_53(self):
+        '''企业总量企业列表页面交互-按照国标行业'居民服务、修理和其他服务业'查询企业'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击企业列表
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-企业列表')
+            time.sleep(3)
+            # 点击国标行业标签
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > div:nth-child(4) > button > span')
+            time.sleep(3)
+            # 点击居民服务、修理和其他服务业
+            js = 'document.getElementsByClassName("el-checkbox__inner")[18].click()'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 点击弹出框的确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[2]/div[2]/div/div[3]/div/div/div[3]/div/button')
+            time.sleep(3)
+            # 点击确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[5]/div[2]/div/div[2]/button[2]/span')
+            time.sleep(3)
+            # 获取已选条件中的值
+            classvlue = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                   '//*[@id="pane-企业列表"]/div/div[1]/div[2]/div/span/span')
+            time.sleep(3)
+            # 判断已选条件框中的值是否等于前者选择的条件
+            self.assertEqual(classvlue, '居民服务、修理和其他服务业', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_54(self):
+        '''企业总量企业列表页面交互-按照国标行业'教育'查询企业'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击企业列表
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-企业列表')
+            time.sleep(3)
+            # 点击国标行业标签
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > div:nth-child(4) > button > span')
+            time.sleep(3)
+            # 点击教育
+            js = 'document.getElementsByClassName("el-checkbox__inner")[19].click()'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 点击弹出框的确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[2]/div[2]/div/div[3]/div/div/div[3]/div/button')
+            time.sleep(3)
+            # 点击确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[5]/div[2]/div/div[2]/button[2]/span')
+            time.sleep(3)
+            # 获取已选条件中的值
+            classvlue = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                   '//*[@id="pane-企业列表"]/div/div[1]/div[2]/div/span/span')
+            time.sleep(3)
+            # 判断已选条件框中的值是否等于前者选择的条件
+            self.assertEqual(classvlue, '教育', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_55(self):
+        '''企业总量企业列表页面交互-按照国标行业'卫生和社会工作'查询企业'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击企业列表
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-企业列表')
+            time.sleep(3)
+            # 点击国标行业标签
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > div:nth-child(4) > button > span')
+            time.sleep(3)
+            # 点击卫生和社会工作
+            js = 'document.getElementsByClassName("el-checkbox__inner")[20].click()'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 点击弹出框的确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[2]/div[2]/div/div[3]/div/div/div[3]/div/button')
+            time.sleep(3)
+            # 点击确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[5]/div[2]/div/div[2]/button[2]/span')
+            time.sleep(3)
+            # 获取已选条件中的值
+            classvlue = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                   '//*[@id="pane-企业列表"]/div/div[1]/div[2]/div/span/span')
+            time.sleep(3)
+            # 判断已选条件框中的值是否等于前者选择的条件
+            self.assertEqual(classvlue, '卫生和社会工作', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_56(self):
+        '''企业总量企业列表页面交互-按照国标行业'文化、体育和娱乐业'查询企业'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击企业列表
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-企业列表')
+            time.sleep(3)
+            # 点击国标行业标签
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > div:nth-child(4) > button > span')
+            time.sleep(3)
+            # 点击文化、体育和娱乐业
+            js = 'document.getElementsByClassName("el-checkbox__inner")[21].click()'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 点击弹出框的确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[2]/div[2]/div/div[3]/div/div/div[3]/div/button')
+            time.sleep(3)
+            # 点击确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[5]/div[2]/div/div[2]/button[2]/span')
+            time.sleep(3)
+            # 获取已选条件中的值
+            classvlue = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                   '//*[@id="pane-企业列表"]/div/div[1]/div[2]/div/span/span')
+            time.sleep(3)
+            # 判断已选条件框中的值是否等于前者选择的条件
+            self.assertEqual(classvlue, '文化、体育和娱乐业', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_57(self):
+        '''企业总量企业列表页面交互-按照国标行业'公共管理、社会保障和社会组织'查询企业'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击企业列表
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-企业列表')
+            time.sleep(3)
+            # 点击国标行业标签
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > div:nth-child(4) > button > span')
+            time.sleep(3)
+            # 点击公共管理、社会保障和社会组织
+            js = 'document.getElementsByClassName("el-checkbox__inner")[22].click()'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 点击弹出框的确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[2]/div[2]/div/div[3]/div/div/div[3]/div/button')
+            time.sleep(3)
+            # 点击确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[5]/div[2]/div/div[2]/button[2]/span')
+            time.sleep(3)
+            # 获取已选条件中的值
+            classvlue = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                   '//*[@id="pane-企业列表"]/div/div[1]/div[2]/div/span/span')
+            time.sleep(3)
+            # 判断已选条件框中的值是否等于前者选择的条件
+            self.assertEqual(classvlue, '公共管理、社会保障和社会组织', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_58(self):
+        '''企业总量企业列表页面交互-按照国标行业'国际组织'查询企业'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击企业列表
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-企业列表')
+            time.sleep(3)
+            # 点击国标行业标签
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > div:nth-child(4) > button > span')
+            time.sleep(3)
+            # 点击国际组织
+            js = 'document.getElementsByClassName("el-checkbox__inner")[23].click()'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 点击弹出框的确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[2]/div[2]/div/div[3]/div/div/div[3]/div/button')
+            time.sleep(3)
+            # 点击确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[5]/div[2]/div/div[2]/button[2]/span')
+            time.sleep(3)
+            # 获取已选条件中的值
+            classvlue = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                   '//*[@id="pane-企业列表"]/div/div[1]/div[2]/div/span/span')
+            time.sleep(3)
+            # 判断已选条件框中的值是否等于前者选择的条件
+            self.assertEqual(classvlue, '国际组织', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_59(self):
+        '''企业总量企业列表页面交互-按照注册资本'10亿以上'查询企业'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击企业列表
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-企业列表')
+            time.sleep(3)
+            # 点击
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > span:nth-child(5) > span > button > span')
+            time.sleep(3)
+            # 点击10亿以上
+            js = 'document.getElementsByClassName("el-checkbox__inner")[103].click()'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 点击确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[5]/div[2]/div/div[2]/button[2]/span')
+            time.sleep(3)
+            # 获取已选条件中的值
+            classvlue = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                   '//*[@id="pane-企业列表"]/div/div[1]/div[2]/div/span/span')
+            time.sleep(3)
+            # 判断已选条件框中的值是否等于前者选择的条件
+            self.assertEqual(classvlue, '10亿以上', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    # @unittest.skip('跳过')
+    def test_60(self):
+        '''企业总量企业列表页面交互-按照注册资本'1万-100万(含)'查询企业'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  ' #app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i ')
+            time.sleep(3)
+            # 点击企业总量
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li > span')
+            time.sleep(3)
+            # 点击企业列表
+            WebGetDemo.Runmian(self.driver).click('id', 'tab-企业列表')
+            time.sleep(3)
+            # 点击
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > span:nth-child(5) > span > button > span')
+            time.sleep(3)
+            # 点击1万-100万(含)
+            js = 'document.getElementsByClassName("el-checkbox__inner")[104].click()'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 点击确定
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-企业列表"]/div/div[5]/div[2]/div/div[2]/button[2]/span')
+            time.sleep(3)
+            # 获取已选条件中的值
+            classvlue = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                   '//*[@id="pane-企业列表"]/div/div[1]/div[2]/div/span/span')
+            time.sleep(3)
+            # 判断已选条件框中的值是否等于前者选择的条件
+            self.assertEqual(classvlue, '1万-100万(含)', '用例执行错误')
         except Exception:
             self.add_img()
             raise
