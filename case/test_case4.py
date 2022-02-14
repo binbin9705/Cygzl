@@ -92,7 +92,7 @@ class Test4(unittest.TestCase):
             # 切换到新的frame里
             WebGetDemo.Runmian(self.driver).switch_window_by_frame('com_frame')
             newtest = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
-                                                                 '//*[@id="mapMainBox"]/body/div[3]/div[1]/div[1]/div[2]/h3')
+                                                                 '//*[@id="mapMainBox"]/body/div[3]/div[1]/div[1]/div[3]/h3')
             # 判断跳转后的页面数据=搜索联想下拉框的第一条数据就通过
             self.assertEqual(test, newtest, '用例执行失败，跳转页面错误')
         except Exception:
