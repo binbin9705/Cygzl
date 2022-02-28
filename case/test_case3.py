@@ -7,7 +7,7 @@ import warnings
 
 # @unittest.skip('调试')
 class Test3(unittest.TestCase):
-    '''首页页面交互-按城市切换地区'''
+    '''首页页面交互'''
 
     @classmethod
     def setUpClass(cls):
@@ -34,341 +34,163 @@ class Test3(unittest.TestCase):
         WebGetDemo.Runmian(self.driver).quit()
 
     def test_01(self):
-        '''切换地区-按城市快捷查看-A'''
+        '''市场主体统计图切换统计条件-高薪企业'''
         self.driver.implicitly_wait(5)
         try:
-            # 点击右上角地区切换按钮
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
-            time.sleep(2)
-            # 点击按城市
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
-            time.sleep(2)
-            # 点击A
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[1]')
-            time.sleep(2)
-            # 获取A的class状态
-            classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[1]')
-            self.assertEqual('active', classvlue, '用例执行错误')
+            time.sleep(3)
+            # 先获取高薪企业class值
+            classvalue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath',
+                                                                     '//*[@id="app"]/div/div/section/div/div[2]/div[1]/div[1]/label[2]')
+            # 点击市场主体中的高新企业
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  ' //*[@id="app"]/div/div/section/div/div[2]/div[1]/div[1]/label[2]/span ')
+            time.sleep(3)
+            afterclassvalue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath',
+                                                                          '//*[@id="app"]/div/div/section/div/div[2]/div[1]/div[1]/label[2]')
+            self.assertNotEqual(classvalue, afterclassvalue, '用例执行错误')
         except Exception:
             self.add_img()
             raise
 
     def test_02(self):
-        '''切换地区-按城市快捷查看-B'''
+        '''市场主体统计图切换统计条件-战兴企业'''
         self.driver.implicitly_wait(5)
         try:
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
-            time.sleep(2)
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
-            time.sleep(2)
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[2]')
-            time.sleep(2)
-            classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[2]')
-            self.assertEqual('active', classvlue, '用例执行错误')
+            time.sleep(3)
+            # 先获取战兴企业class值
+            classvalue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath',
+                                                                     '//*[@id="app"]/div/div/section/div/div[2]/div[1]/div[1]/label[3]')
+            # 点击统计图中的战兴企业 战兴企业
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="app"]/div/div/section/div/div[2]/div[1]/div[1]/label[3]/span')
+            time.sleep(3)
+            afterclassvalue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath',
+                                                                          '//*[@id="app"]/div/div/section/div/div[2]/div[1]/div[1]/label[3]')
+            self.assertNotEqual(classvalue, afterclassvalue, '用例执行错误')
         except Exception:
             self.add_img()
             raise
 
     def test_03(self):
-        '''切换地区-按城市快捷查看-C'''
+        '''左上角搜索-输入内容为华为'''
         self.driver.implicitly_wait(5)
         try:
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[1]/input')
             time.sleep(2)
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
-            time.sleep(2)
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[3]')
-            time.sleep(2)
-            classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[3]')
-            self.assertEqual('active', classvlue, '用例执行错误')
+            WebGetDemo.Runmian(self.driver).input_data('xpath',
+                                                       '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[1]/input',
+                                                       '华为')
+            time.sleep(3)
+            test = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                              '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[2]/div[1]/div[1]/ul/li[1]/span')
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[2]/div[1]/div[1]/ul/li[1]/span')
+            time.sleep(3)
+            # 切换到新title页
+            WebGetDemo.Runmian(self.driver).switch_window_by_title('企业大数据')
+            # 切换到新的frame里
+            WebGetDemo.Runmian(self.driver).switch_window_by_frame('com_frame')
+            newtest = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                 '//*[@id="mapMainBox"]/body/div[3]/div[1]/div[1]/div[3]/h3')
+            # 判断跳转后的页面数据=搜索联想下拉框的第一条数据就通过
+            self.assertEqual(test, newtest, '用例执行失败，跳转页面错误')
         except Exception:
             self.add_img()
             raise
 
     def test_04(self):
-        '''切换地区-按城市快捷查看-D'''
+        '''左上角搜索-输入内容为123456'''
         self.driver.implicitly_wait(5)
         try:
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[1]/input')
             time.sleep(2)
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
+            WebGetDemo.Runmian(self.driver).input_data('xpath',
+                                                       '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[1]/input',
+                                                       '123456')
             time.sleep(2)
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[4]')
-            time.sleep(2)
-            classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[4]')
-            self.assertEqual('active', classvlue, '用例执行错误')
+            # 获取搜索联想下拉框的第一条数据名称
+            test = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                              '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[2]/p')
+            # 断言如果等于无数据cas就通过
+            self.assertEqual(test, '无数据', '用例执行失败')
         except Exception:
             self.add_img()
             raise
 
     def test_05(self):
-        '''切换地区-按城市快捷查看-E'''
+        '''左上角搜索-输入内容字节长度为1'''
         self.driver.implicitly_wait(5)
         try:
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
-            time.sleep(2)
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
-            time.sleep(2)
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[5]')
-            time.sleep(2)
-            classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[5]')
-            self.assertEqual('active', classvlue, '用例执行错误')
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[1]/input')
+            time.sleep(3)
+            WebGetDemo.Runmian(self.driver).input_data('xpath',
+                                                       '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[1]/input',
+                                                       '1')
+            time.sleep(3)
+            # 获取搜索联想下拉框的第一条数据名称
+            test = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                              '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[2]/p')
+            errortest = WebGetDemo.Runmian(self.driver).obtaintest('css',
+                                                                   'body > div.el-message.el-message--error > p')
+            # 断言如果等于无数据case就通过
+            self.assertEqual(test, '无数据', '用例执行失败')
+            # 断言字符串是否包含在警告框中如果在就不通过
+            self.assertNotIn('接口请求失败', errortest, '接口正常报错输入内容字节长度为1位')
         except Exception:
             self.add_img()
             raise
 
     def test_06(self):
-        '''切换地区-按城市快捷查看-F'''
+        '''左上角搜索-输入内容为地区名称：北京'''
         self.driver.implicitly_wait(5)
         try:
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
+            # 点击搜索输入文本框
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[1]/input')
             time.sleep(2)
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
+            WebGetDemo.Runmian(self.driver).input_data('xpath',
+                                                       '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[1]/input',
+                                                       '北京')
             time.sleep(2)
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[6]')
-            time.sleep(2)
-            classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[6]')
-            self.assertEqual('active', classvlue, '用例执行错误')
+            # 获取搜索联想下拉框的第一条数据名称
+            test = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                              '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[2]/p')
+            # 获取警告框中的test
+            errortest = WebGetDemo.Runmian(self.driver).obtaintest('css',
+                                                                   'body > div.el-message.el-message--error > p')
+            # 断言如果等于无数据case就通过
+            self.assertEqual(test, '无数据', '用例执行失败')
+            # 断言字符串是否包含在警告框中如果在就不通过
+            self.assertNotIn('接口请求失败', errortest, '接口正常报错输入内容为地区名称时报错')
         except Exception:
             self.add_img()
             raise
 
     def test_07(self):
-        '''切换地区-按城市快捷查看-G'''
+        '''左上角搜索-输入内容为：~！'''
         self.driver.implicitly_wait(5)
         try:
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
+            # 点击搜索输入文本框
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[1]/input')
             time.sleep(2)
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
+            WebGetDemo.Runmian(self.driver).input_data('xpath',
+                                                       '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[1]/input',
+                                                       '~！')
             time.sleep(2)
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[7]')
-            time.sleep(2)
-            classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[7]')
-            self.assertEqual('active', classvlue, '用例执行错误')
-        except Exception:
-            self.add_img()
-            raise
-
-    def test_08(self):
-        '''切换地区-按城市快捷查看-H'''
-        self.driver.implicitly_wait(5)
-        try:
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
-            time.sleep(2)
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
-            time.sleep(2)
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[8]')
-            time.sleep(2)
-            classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[8]')
-            self.assertEqual('active', classvlue, '用例执行错误')
-        except Exception:
-            self.add_img()
-            raise
-
-    def test_09(self):
-        '''切换地区-按城市快捷查看-J'''
-        self.driver.implicitly_wait(5)
-        try:
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
-            time.sleep(2)
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
-            time.sleep(2)
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[9]')
-            time.sleep(2)
-            classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[9]')
-            self.assertEqual('active', classvlue, '用例执行错误')
-        except Exception:
-            self.add_img()
-            raise
-
-    def test_10(self):
-        '''切换地区-按城市快捷查看-K'''
-        self.driver.implicitly_wait(5)
-        try:
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
-            time.sleep(2)
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
-            time.sleep(2)
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[10]')
-            time.sleep(2)
-            classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[10]')
-            self.assertEqual('active', classvlue, '用例执行错误')
-        except Exception:
-            self.add_img()
-            raise
-
-    def test_11(self):
-        '''切换地区-按城市快捷查看-L'''
-        self.driver.implicitly_wait(5)
-        try:
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
-            time.sleep(2)
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
-            time.sleep(2)
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[11]')
-            time.sleep(2)
-            classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[11]')
-            self.assertEqual('active', classvlue, '用例执行错误')
-        except Exception:
-            self.add_img()
-            raise
-
-    def test_12(self):
-        '''切换地区-按城市快捷查看-M'''
-        self.driver.implicitly_wait(5)
-        try:
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
-            time.sleep(2)
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
-            time.sleep(2)
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[12]')
-            time.sleep(2)
-            classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[12]')
-            self.assertEqual('active', classvlue, '用例执行错误')
-        except Exception:
-            self.add_img()
-            raise
-
-    def test_13(self):
-        '''切换地区-按城市快捷查看-N'''
-        self.driver.implicitly_wait(5)
-        try:
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
-            time.sleep(2)
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
-            time.sleep(2)
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[13]')
-            time.sleep(2)
-            classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[13]')
-            self.assertEqual('active', classvlue, '用例执行错误')
-        except Exception:
-            self.add_img()
-            raise
-
-    def test_14(self):
-        '''切换地区-按城市快捷查看-P'''
-        self.driver.implicitly_wait(5)
-        try:
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
-            time.sleep(2)
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
-            time.sleep(2)
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[14]')
-            time.sleep(2)
-            classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[14]')
-            self.assertEqual('active', classvlue, '用例执行错误')
-        except Exception:
-            self.add_img()
-            raise
-
-    def test_15(self):
-        '''切换地区-按城市快捷查看-Q'''
-        self.driver.implicitly_wait(5)
-        try:
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
-            time.sleep(2)
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
-            time.sleep(2)
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[15]')
-            time.sleep(2)
-            classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[15]')
-            self.assertEqual('active', classvlue, '用例执行错误')
-        except Exception:
-            self.add_img()
-            raise
-
-    def test_16(self):
-        '''切换地区-按城市快捷查看-S'''
-        self.driver.implicitly_wait(5)
-        try:
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
-            time.sleep(2)
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
-            time.sleep(2)
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[16]')
-            time.sleep(2)
-            classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[16]')
-            self.assertEqual('active', classvlue, '用例执行错误')
-        except Exception:
-            self.add_img()
-            raise
-
-    def test_17(self):
-        '''切换地区-按城市快捷查看-T'''
-        self.driver.implicitly_wait(5)
-        try:
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
-            time.sleep(2)
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
-            time.sleep(2)
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[17]')
-            time.sleep(2)
-            classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[17]')
-            self.assertEqual('active', classvlue, '用例执行错误')
-        except Exception:
-            self.add_img()
-            raise
-
-    def test_18(self):
-        '''切换地区-按城市快捷查看-W'''
-        self.driver.implicitly_wait(5)
-        try:
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
-            time.sleep(2)
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
-            time.sleep(2)
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[18]')
-            time.sleep(2)
-            classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[18]')
-            self.assertEqual('active', classvlue, '用例执行错误')
-        except Exception:
-            self.add_img()
-            raise
-
-    def test_19(self):
-        '''切换地区-按城市快捷查看-X'''
-        self.driver.implicitly_wait(5)
-        try:
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
-            time.sleep(2)
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
-            time.sleep(2)
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[19]')
-            time.sleep(2)
-            classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[19]')
-            self.assertEqual('active', classvlue, '用例执行错误')
-        except Exception:
-            self.add_img()
-            raise
-
-    def test_20(self):
-        '''切换地区-按城市快捷查看-Y'''
-        self.driver.implicitly_wait(5)
-        try:
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
-            time.sleep(2)
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
-            time.sleep(2)
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[20]')
-            time.sleep(2)
-            classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[20]')
-            self.assertEqual('active', classvlue, '用例执行错误')
-        except Exception:
-            self.add_img()
-            raise
-
-    def test_21(self):
-        '''切换地区-按城市快捷查看-Z'''
-        self.driver.implicitly_wait(5)
-        try:
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
-            time.sleep(2)
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
-            time.sleep(2)
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListTP"]/span[21]')
-            time.sleep(2)
-            classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath', '//*[@id="cityListTP"]/span[21]')
-            self.assertEqual('active', classvlue, '用例执行错误')
+            # 获取搜索联想下拉框的第一条数据名称
+            test = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                              '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[2]/p')
+            # 获取警告框中的test
+            errortest = WebGetDemo.Runmian(self.driver).obtaintest('css',
+                                                                   'body > div.el-message.el-message--error > p')
+            # 断言如果等于无数据case就通过
+            self.assertEqual(test, '无数据', '用例执行失败')
+            # 断言字符串是否包含在警告框中如果在就不通过
+            self.assertNotIn('接口请求失败', errortest, '接口正常报错输入内容字节长度为1位以上的任意特殊字符')
         except Exception:
             self.add_img()
             raise

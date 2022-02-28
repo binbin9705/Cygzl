@@ -7,7 +7,7 @@ if __name__ == '__main__':
     #创建一个测试套件
     dir='case'
     dircase='test*.py'
-    # dircase = 'test_case4.py'
+    # dircase = 'test_case3.py'
     suite=unittest.defaultTestLoader.discover(dir,dircase)
     #创建生成测试报告方法
     # now=time.strftime('%Y-%m-%d %H_%M_%S')
