@@ -55,12 +55,12 @@ class Test4(unittest.TestCase):
             WebGetDemo.Runmian(self.driver).click('xpath', '/html/body/div[3]/div[1]/div[1]/ul/li[1]/span')
             time.sleep(3)
             # 获取年度数据的class值
-            classvlue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath',
-                                                                    '/html/body/div[3]/div[1]/div[1]/ul/li[1]')
+            classvalue = WebGetDemo.Runmian(self.driver).obtainvalue('class', 'xpath',
+                                                                     '/html/body/div[3]/div[1]/div[1]/ul/li[1]')
             # 判断有没有正常跳转页面
             self.assertEqual(self.driver.title, 'CRI指数 - 产业高质量发展平台', '用例执行错误')
             # 判断点击年度数据 弹窗class值有没有发生变化
-            self.assertEqual(classvlue, 'el-select-dropdown__item selected hover', '用例执行错误')
+            self.assertEqual(classvalue, 'el-select-dropdown__item selected hover', '用例执行错误')
         except Exception:
             self.add_img()
             raise
@@ -350,9 +350,10 @@ class Test4(unittest.TestCase):
             WebGetDemo.Runmian(self.driver).click('css',
                                                   '#pane-企业列表 > div > div:nth-child(2) > div.el-col.el-col-22 > div > span:nth-child(1) > span')
             time.sleep(3)
-            # 点击随机选择一个经营状态
+            # 点击随机一个经营状态
             num = random.randint(107, 110)
             js = 'document.getElementsByClassName("el-checkbox__inner")[' + str(num) + '].click()'
+            # 获取点击经营状态的文本值
             js2 = 'return document.getElementsByClassName("el-tree-node__label")[' + str(num) + '].innerText'
             classvalue = self.driver.execute_script(js2)
             self.driver.execute_script(js)
@@ -1317,6 +1318,109 @@ class Test4(unittest.TestCase):
             yxtest = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
                                                                 '//*[@id="pane-企业列表"]/div/div[6]/div/div[3]/table/tbody/tr[100]/td[1]/div/div')
             self.assertEqual(yxtest, '100', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    #@unittest.skip('跳过')
+    def test_36(self):
+        '''行业分析整体概况页面交互-随机统计类型展示统计图'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i')
+            time.sleep(3)
+            # 点击主体分析
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(3) > a > li > span')
+            time.sleep(3)
+            # 点击企业数量指标下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-整体概况 > div > div.formeList > div:nth-child(1) > div > input')
+            time.sleep(3)
+            # 随机选择一个指标
+            num = random.randint(2, 4)
+            js = 'document.getElementsByClassName("el-select-dropdown__item")[' + str(num) + '].click()'
+            self.driver.execute_script(js)
+            # 获取点击后指标的class值
+            js2 = 'return document.getElementsByClassName("el-select-dropdown__item")[' + str(
+                num) + '].getAttribute("class")'
+            classvalue = self.driver.execute_script(js2)
+            time.sleep(3)
+            self.assertEqual(classvalue, 'el-select-dropdown__item selected', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    ##@unittest.skip('跳过')
+    def test_37(self):
+        '''行业分析整体概况页面交互-按行业门类着色展示统计图'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i')
+            time.sleep(3)
+            # 点击主体分析
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(3) > a > li > span')
+            time.sleep(3)
+            # 点击统计图风格下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-整体概况 > div > div.formeList > div:nth-child(2) > div > span > span > i')
+            time.sleep(3)
+            # 选择行业门类着色
+            js = 'document.getElementsByClassName("el-select-dropdown__item")[4].click()'
+            self.driver.execute_script(js)
+            # 获取行业门类的class值
+            js2 = 'return document.getElementsByClassName("el-select-dropdown__item")[4].getAttribute("class")'
+            classvalue = self.driver.execute_script(js2)
+            time.sleep(3)
+            self.assertEqual(classvalue, 'el-select-dropdown__item selected', '用例执行错误')
+        except Exception:
+            self.add_img()
+            raise
+
+    ##@unittest.skip('跳过')
+    def test_38(self):
+        '''行业分析整体概况页面交互-随机行业展示统计图/清空'''
+        self.driver.implicitly_wait(5)
+        try:
+            # 点击市场主体下拉框
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(3) > li > div > i')
+            time.sleep(3)
+            # 点击主体分析
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  'body > div.el-menu--horizontal > ul > div:nth-child(3) > a > li > span')
+            time.sleep(3)
+            # 点击行业选择弹窗
+            WebGetDemo.Runmian(self.driver).click('css',
+                                                  '#pane-整体概况 > div > div.formeList > button > span')
+            time.sleep(3)
+            # 随机选择一个行业
+            num = random.randint(0, 19)
+            js = 'document.getElementsByClassName("el-checkbox__inner")[' + str(num) + '].click()'
+            self.driver.execute_script(js)
+            time.sleep(3)
+            # 获取选择行业的文本值
+            js2 = 'return document.getElementsByClassName("el-tree-node__label")[' + str(num) + '].innerText'
+            classvalue = self.driver.execute_script(js2)
+            # 获取已选中的文本值
+            js3 = 'return document.getElementsByClassName("selectM")[4].innerText'
+            xclassvalue = self.driver.execute_script(js3)
+            # 已选栏中+有空格 rstrip去除字符串右侧空格
+            Selectedvalue = xclassvalue.rstrip()
+            self.assertEqual(classvalue, Selectedvalue, '用例执行错误')
+            time.sleep(2)
+            # 点击清空
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-整体概况"]/div/div[1]/div[3]/div/div[2]/div/section/footer/button[1]/span')
+            # 获取已选的文本
+            xztext = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
+                                                                '//*[@id="pane-整体概况"]/div/div[1]/div[3]/div/div[2]/div/section/main/h4/p')
+            self.assertEqual(xztext, '已选:(0/20)', '用例执行错误')
         except Exception:
             self.add_img()
             raise
