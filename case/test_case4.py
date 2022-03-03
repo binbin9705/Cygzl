@@ -34,7 +34,6 @@ class Test4(unittest.TestCase):
     def tearDown(self):
         WebGetDemo.Runmian(self.driver).quit()
 
-    #@unittest.skip('跳过')
     def test_01(self):
         '''CRI指数页面统计图切换统计条件-年度数据'''
         self.driver.implicitly_wait(5)
@@ -65,7 +64,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_02(self):
         '''企业总量页面本地数据统计图交互-按照存量企业数量'''
         self.driver.implicitly_wait(5)
@@ -99,7 +97,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_03(self):
         '''企业总量页面本地数据统计图交互-按照新增企业注册资本'''
         self.driver.implicitly_wait(5)
@@ -135,7 +132,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_04(self):
         '''企业总量页面本地数据统计图交互-按照年度数据'''
         self.driver.implicitly_wait(5)
@@ -168,7 +164,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_05(self):
         '''企业总量页面统计图切换统计模块-区域对比'''
         self.driver.implicitly_wait(5)
@@ -198,7 +193,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_06(self):
         '''企业总量页面本区域对比统计图交互-按照新增企业数量展示统计图'''
         self.driver.implicitly_wait(5)
@@ -232,7 +226,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_07(self):
         '''企业总量页面本区域对比统计图交互-按照新增企业注册资本展示统计图'''
         self.driver.implicitly_wait(5)
@@ -266,7 +259,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_08(self):
         '''企业总量页面本区域对比统计图交互-按照年度数据展示统计图'''
         self.driver.implicitly_wait(5)
@@ -300,7 +292,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_09(self):
         '''企业总量页面统计图切换统计模块-企业列表'''
         self.driver.implicitly_wait(5)
@@ -330,7 +321,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_10(self):
         '''企业总量企业列表页面交互-随机经营状态查询企业'''
         self.driver.implicitly_wait(5)
@@ -372,7 +362,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_11(self):
         '''企业总量企业列表页面交互-按照成立时间'1978年以前'查询企业'''
         self.driver.implicitly_wait(5)
@@ -414,7 +403,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_12(self):
         '''企业总量企业列表页面交互-按照国标行业'农、林、牧、渔业'查询企业'''
         self.driver.implicitly_wait(5)
@@ -456,7 +444,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_13(self):
         '''企业总量企业列表页面交互-按照注册资本'10亿以上'查询企业'''
         self.driver.implicitly_wait(5)
@@ -494,7 +481,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_14(self):
         '''企业总量企业列表页面交互-按照企业类型'国有企业'查询企业'''
         self.driver.implicitly_wait(5)
@@ -533,7 +519,6 @@ class Test4(unittest.TestCase):
             # 该语句引发当前上下文中捕获的异常
             raise
 
-    #@unittest.skip('跳过')
     def test_15(self):
         '''企业总量企业列表页面交互-按照优质企业'国有企业'查询企业'''
         self.driver.implicitly_wait(5)
@@ -572,7 +557,6 @@ class Test4(unittest.TestCase):
             # 该语句引发当前上下文中捕获的异常
             raise
 
-    #@unittest.skip('跳过')
     def test_16(self):
         '''企业总量企业列表页面交互-按照企业规模'大型企业'查询企业'''
         self.driver.implicitly_wait(5)
@@ -610,7 +594,6 @@ class Test4(unittest.TestCase):
             # 该语句引发当前上下文中捕获的异常
             raise
 
-    #@unittest.skip('跳过')
     def test_17(self):
         '''企业总量企业列表页面交互-按照产业领域'三大产业'查询企业'''
         self.driver.implicitly_wait(5)
@@ -653,7 +636,6 @@ class Test4(unittest.TestCase):
             # 该语句引发当前上下文中捕获的异常
             raise
 
-    #@unittest.skip('跳过')
     def test_18(self):
         '''企业总量企业列表页面交互-按照币种'美元'查询企业'''
         self.driver.implicitly_wait(5)
@@ -692,7 +674,6 @@ class Test4(unittest.TestCase):
             # 该语句引发当前上下文中捕获的异常
             raise
 
-    #@unittest.skip('跳过')
     def test_19(self):
         '''企业总量企业列表页面交互-按照综合实力‘AAA’查询企业'''
         self.driver.implicitly_wait(5)
@@ -729,7 +710,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_20(self):
         '''企业总量企业列表页面交互-按照合法合规‘B’查询企业'''
         self.driver.implicitly_wait(5)
@@ -766,7 +746,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_21(self):
         '''企业总量企业列表页面交互-按照创新能力‘A’查询企业'''
         self.driver.implicitly_wait(5)
@@ -803,7 +782,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_22(self):
         '''企业总量企业列表页面交互-按照社会贡献‘CCC’查询企业'''
         self.driver.implicitly_wait(5)
@@ -840,7 +818,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_23(self):
         '''企业总量企业列表页面交互-按照发展潜力‘AAA’查询企业'''
         self.driver.implicitly_wait(5)
@@ -877,7 +854,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_24(self):
         '''企业总量企业列表页面交互-按照企业效率‘AAA’查询企业'''
         self.driver.implicitly_wait(5)
@@ -914,7 +890,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_25(self):
         '''企业总量企业列表页面交互-按照活跃度‘AAA’查询企业'''
         self.driver.implicitly_wait(5)
@@ -951,7 +926,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_26(self):
         '''企业总量企业列表页面交互-随机排序方式降序查询企业'''
         self.driver.implicitly_wait(5)
@@ -989,7 +963,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_27(self):
         '''企业总量企业列表页面交互-随机排序方式升序查询企业'''
         self.driver.implicitly_wait(5)
@@ -1038,7 +1011,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_28(self):
         '''企业总量企业列表页面交互-关键字’北京‘查询企业'''
         self.driver.implicitly_wait(5)
@@ -1071,7 +1043,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_29(self):
         '''企业总量企业列表页面交互-关键字’郑州‘查询企业'''
         self.driver.implicitly_wait(5)
@@ -1105,7 +1076,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_30(self):
         '''企业总量企业列表页面交互-关键字’~！@#￥%……&*‘查询企业'''
         self.driver.implicitly_wait(5)
@@ -1136,7 +1106,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_31(self):
         '''企业总量企业列表页面交互-随机跳转企业详情'''
         self.driver.implicitly_wait(5)
@@ -1174,7 +1143,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_32(self):
         '''企业总量企业列表页面交互-翻页随机跳转企业详情'''
         self.driver.implicitly_wait(5)
@@ -1218,7 +1186,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_33(self):
         '''企业总量企业列表页面交互-清空筛选条件-随机经营状态标签'''
         self.driver.implicitly_wait(5)
@@ -1253,7 +1220,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_34(self):
         '''企业总量企业列表页面交互-清空筛选条件-随机任意指标'''
         self.driver.implicitly_wait(5)
@@ -1290,7 +1256,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_35(self):
         '''企业总量企业列表页面交互-列表按照100条/页展示'''
         self.driver.implicitly_wait(5)
@@ -1322,7 +1287,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_36(self):
         '''行业分析整体概况页面交互-随机统计类型展示统计图'''
         self.driver.implicitly_wait(5)
@@ -1353,7 +1317,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_37(self):
         '''行业分析整体概况页面交互-按行业门类着色展示统计图'''
         self.driver.implicitly_wait(5)
@@ -1382,7 +1345,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_38(self):
         '''行业分析整体概况页面交互-随机行业展示统计图/清空'''
         self.driver.implicitly_wait(5)
@@ -1425,7 +1387,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_39(self):
         '''行业分析行业分类页面交互-随机统计类型展示统计图'''
         self.driver.implicitly_wait(5)
@@ -1460,7 +1421,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_40(self):
         '''行业分析行业分类页面交互-按行业门类着色展示统计图'''
         self.driver.implicitly_wait(5)
@@ -1492,7 +1452,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_41(self):
         '''行业分析行业分类页面交互-随机年份展示统计图'''
         self.driver.implicitly_wait(5)
@@ -1526,7 +1485,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_42(self):
         '''行业分析整体概况页面交互-随机行业展示统计图/清空'''
         self.driver.implicitly_wait(5)
@@ -1573,7 +1531,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_43(self):
         '''结构分析页面交互-随机企业数量指标展示统计图'''
         self.driver.implicitly_wait(5)
@@ -1604,7 +1561,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_44(self):
         '''结构分析页面交互-按月度数据展示统计图'''
         self.driver.implicitly_wait(5)
@@ -1632,7 +1588,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_45(self):
         '''结构分析页面交互-随机地区展示统计图'''
         self.driver.implicitly_wait(5)
@@ -1667,7 +1622,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_46(self):
         '''结构分析页面交互-随机行业展示统计图'''
         self.driver.implicitly_wait(5)
@@ -1705,7 +1659,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_47(self):
         '''结构分析页面交互-统计图切换行业占比'''
         self.driver.implicitly_wait(5)
@@ -1734,7 +1687,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_48(self):
         '''重点企业页面交互-随机统计类型展示统计图'''
         self.driver.implicitly_wait(5)
@@ -1765,7 +1717,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_49(self):
         '''重点企业区域对比页面交互-随机统计类型展示统计图'''
         self.driver.implicitly_wait(5)
@@ -1799,7 +1750,6 @@ class Test4(unittest.TestCase):
             self.add_img()
             raise
 
-    #@unittest.skip('跳过')
     def test_50(self):
         '''重点企业区域对比页面交互-随机选择地区'''
         self.driver.implicitly_wait(5)
@@ -1823,11 +1773,11 @@ class Test4(unittest.TestCase):
             WebGetDemo.Runmian(self.driver).click('css',
                                                   '#tipMul > div > div.flexRight.el-row > button.el-button.el-button--info.el-button--mini > span')
             # 获取已选条件的文本
-            text=WebGetDemo.Runmian(self.driver).obtaintest('css',
-                                                       '#tipMul > div > div.trimListBox > p:nth-child(1) > span:nth-child(2)')
-            self.assertEqual(text,'(0/40)','用例执行失败')
+            text = WebGetDemo.Runmian(self.driver).obtaintest('css',
+                                                              '#tipMul > div > div.trimListBox > p:nth-child(1) > span:nth-child(2)')
+            self.assertEqual(text, '(0/40)', '用例执行失败')
             time.sleep(2)
-            #随机选择一个地区
+            # 随机选择一个地区
             num = random.randint(0, 33)
             js = 'document.getElementsByClassName("el-checkbox__inner")[' + str(num) + '].click()'
             self.driver.execute_script(js)
@@ -1836,12 +1786,12 @@ class Test4(unittest.TestCase):
             js2 = 'return document.getElementsByClassName("el-checkbox__label")[' + str(
                 num) + '].innerText'
             text2 = self.driver.execute_script(js2)
-            #获取已选条件框中条件的文本
+            # 获取已选条件框中条件的文本
             js3 = 'return document.getElementsByClassName("selectM")[4].innerText'
             text3 = self.driver.execute_script(js3)
             # rstrip去除字符串右侧空格
             text3 = text3.rstrip()
-            self.assertEqual(text3,text2, '用例执行失败')
+            self.assertEqual(text3, text2, '用例执行失败')
         except Exception:
             self.add_img()
             raise
