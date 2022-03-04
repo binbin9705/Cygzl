@@ -11,7 +11,7 @@ import random
 
 # @unittest.skip('调试')
 class Test5(unittest.TestCase):
-    '''产业结构模块页面交互'''
+    '''产业结构'''
 
     @classmethod
     def setUpClass(cls):
