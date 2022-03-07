@@ -15,19 +15,27 @@ class Test7(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
+        # 启动浏览并设置相关选项
+        cls.driver = webdriver.Chrome(options=WebGetDemo.Runmian(cls).options())
+        cls.imgs = []
+        WebGetDemo.Runmian(cls.driver).open('http://ihd.wanvdata.cn/#/login?redirect=%2Fdashboard')
+        WebGetDemo.Runmian(cls.driver).login('ihqd-test', 'ihqd-test@6688')
         # 消除警告
         warnings.simplefilter('ignore', ResourceWarning)
 
     @classmethod
     def tearDownClass(cls):
+        cls.driver.quit()
         pass
 
     def setUp(self):
-        # 启动浏览并设置相关选项
-        self.driver = webdriver.Chrome(options=WebGetDemo.Runmian(self).options())
-        self.imgs = []
-        WebGetDemo.Runmian(self.driver).open('http://ihd.wanvdata.cn/#/login?redirect=%2Fdashboard')
-        WebGetDemo.Runmian(self.driver).login('ihqd-test', 'ihqd-test@6688')
+        # # 启动浏览并设置相关选项
+        # self.driver = webdriver.Chrome(options=WebGetDemo.Runmian(self).options())
+        # self.imgs = []
+        # WebGetDemo.Runmian(self.driver).open('http://ihd.wanvdata.cn/#/login?redirect=%2Fdashboard')
+        # WebGetDemo.Runmian(self.driver).login('ihqd-test', 'ihqd-test@6688')
+        # pass
+        self.driver.refresh()
         self.driver.implicitly_wait(5)
 
     def add_img(self):
@@ -36,7 +44,8 @@ class Test7(unittest.TestCase):
         return True
 
     def tearDown(self):
-        WebGetDemo.Runmian(self.driver).quit()
+        # WebGetDemo.Runmian(self.driver).quit()
+        pass
 
     def test_01(self):
         '''创新主体-随机切换企业类型'''
@@ -70,14 +79,14 @@ class Test7(unittest.TestCase):
     def test_02(self):
         '''创新主体-随机切换大中小企业'''
         try:
-            time.sleep(3)
-            # 点击创新发展下拉框
-            WebGetDemo.Runmian(self.driver).click('css',
-                                                  '#app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(6) > li > div > i')
-            time.sleep(3)
-            # 选择创新主体
-            WebGetDemo.Runmian(self.driver).click('css',
-                                                  'body > div.el-menu--horizontal > ul > div:nth-child(1) > a > li')
+            # time.sleep(3)
+            # # 点击创新发展下拉框
+            # WebGetDemo.Runmian(self.driver).click('css',
+            #                                       '#app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(6) > li > div > i')
+            # time.sleep(3)
+            # # 选择创新主体
+            # WebGetDemo.Runmian(self.driver).click('css',
+            #                                       'body > div.el-menu--horizontal > ul > div:nth-child(1) > a > li')
             time.sleep(3)
             # 点击企业类型下拉选择框
             WebGetDemo.Runmian(self.driver).click('css',
@@ -129,14 +138,14 @@ class Test7(unittest.TestCase):
     def test_04(self):
         '''创新成果-随机切换大中小企业'''
         try:
-            time.sleep(3)
-            # 点击创新发展下拉框
-            WebGetDemo.Runmian(self.driver).click('css',
-                                                  '#app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(6) > li > div > i')
-            time.sleep(3)
-            # 选择创新成果
-            WebGetDemo.Runmian(self.driver).click('css',
-                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li')
+            # time.sleep(3)
+            # # 点击创新发展下拉框
+            # WebGetDemo.Runmian(self.driver).click('css',
+            #                                       '#app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(6) > li > div > i')
+            # time.sleep(3)
+            # # 选择创新成果
+            # WebGetDemo.Runmian(self.driver).click('css',
+            #                                       'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li')
             time.sleep(3)
             # 点击大中小企业下拉框
             WebGetDemo.Runmian(self.driver).click('css',
@@ -158,14 +167,14 @@ class Test7(unittest.TestCase):
     def test_05(self):
         '''创新成果-随机切换产业'''
         try:
-            time.sleep(3)
-            # 点击创新发展下拉框
-            WebGetDemo.Runmian(self.driver).click('css',
-                                                  '#app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(6) > li > div > i')
-            time.sleep(3)
-            # 选择创新成果
-            WebGetDemo.Runmian(self.driver).click('css',
-                                                  'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li')
+            # time.sleep(3)
+            # # 点击创新发展下拉框
+            # WebGetDemo.Runmian(self.driver).click('css',
+            #                                       '#app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(6) > li > div > i')
+            # time.sleep(3)
+            # # 选择创新成果
+            # WebGetDemo.Runmian(self.driver).click('css',
+            #                                       'body > div.el-menu--horizontal > ul > div:nth-child(2) > a > li')
             time.sleep(3)
             # 点击产业下拉框
             WebGetDemo.Runmian(self.driver).click('css',

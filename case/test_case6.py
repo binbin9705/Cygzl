@@ -15,19 +15,27 @@ class Test6(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
+        # 启动浏览并设置相关选项
+        cls.driver = webdriver.Chrome(options=WebGetDemo.Runmian(cls).options())
+        cls.imgs = []
+        WebGetDemo.Runmian(cls.driver).open('http://ihd.wanvdata.cn/#/login?redirect=%2Fdashboard')
+        WebGetDemo.Runmian(cls.driver).login('ihqd-test', 'ihqd-test@6688')
         # 消除警告
         warnings.simplefilter('ignore', ResourceWarning)
 
     @classmethod
     def tearDownClass(cls):
+        cls.driver.quit()
         pass
 
     def setUp(self):
-        # 启动浏览并设置相关选项
-        self.driver = webdriver.Chrome(options=WebGetDemo.Runmian(self).options())
-        self.imgs = []
-        WebGetDemo.Runmian(self.driver).open('http://ihd.wanvdata.cn/#/login?redirect=%2Fdashboard')
-        WebGetDemo.Runmian(self.driver).login('ihqd-test', 'ihqd-test@6688')
+        # # 启动浏览并设置相关选项
+        # self.driver = webdriver.Chrome(options=WebGetDemo.Runmian(self).options())
+        # self.imgs = []
+        # WebGetDemo.Runmian(self.driver).open('http://ihd.wanvdata.cn/#/login?redirect=%2Fdashboard')
+        # WebGetDemo.Runmian(self.driver).login('ihqd-test', 'ihqd-test@6688')
+        # pass
+        self.driver.refresh()
         self.driver.implicitly_wait(5)
 
     def add_img(self):
@@ -36,7 +44,8 @@ class Test6(unittest.TestCase):
         return True
 
     def tearDown(self):
-        WebGetDemo.Runmian(self.driver).quit()
+        # WebGetDemo.Runmian(self.driver).quit()
+        pass
 
     def test_01(self):
         '''产业地图-页面交互-随机选择产业'''
@@ -74,10 +83,10 @@ class Test6(unittest.TestCase):
     def test_02(self):
         '''产业地图-页面交互-切换统计图中地区'''
         try:
-            time.sleep(3)
-            # 点击产业地图
-            WebGetDemo.Runmian(self.driver).click('css',
-                                                  '#app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(5) > a > li > span')
+            # time.sleep(3)
+            # # 点击产业地图
+            # WebGetDemo.Runmian(self.driver).click('css',
+            #                                       '#app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(5) > a > li > span')
             time.sleep(3)
             # 点击统计图中的中国
             js1 = 'document.getElementsByClassName("el-radio__input")[1].click()'
@@ -94,10 +103,10 @@ class Test6(unittest.TestCase):
     def test_03(self):
         '''产业地图-页面交互-随机切换统计信息条件'''
         try:
-            time.sleep(3)
-            # 点击产业地图
-            WebGetDemo.Runmian(self.driver).click('css',
-                                                  '#app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(5) > a > li > span')
+            # time.sleep(3)
+            # # 点击产业地图
+            # WebGetDemo.Runmian(self.driver).click('css',
+            #                                       '#app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(5) > a > li > span')
             time.sleep(3)
             # 随机点击一个统计信息中的条件
             num = random.randint(3, 4)
@@ -116,10 +125,10 @@ class Test6(unittest.TestCase):
     def test_04(self):
         '''产业地图-页面交互-随机切换发展态势统计图年份'''
         try:
-            time.sleep(3)
-            # 点击产业地图
-            WebGetDemo.Runmian(self.driver).click('css',
-                                                  '#app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(5) > a > li > span')
+            # time.sleep(3)
+            # # 点击产业地图
+            # WebGetDemo.Runmian(self.driver).click('css',
+            #                                       '#app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(5) > a > li > span')
             time.sleep(3)
             # 随机点击一个年份
             num = random.randint(5, 14)
@@ -138,10 +147,10 @@ class Test6(unittest.TestCase):
     def test_05(self):
         '''产业地图-页面交互-产业发展统计图切换统计条件'''
         try:
-            time.sleep(3)
-            # 点击产业地图
-            WebGetDemo.Runmian(self.driver).click('css',
-                                                  '#app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(5) > a > li > span')
+            # time.sleep(3)
+            # # 点击产业地图
+            # WebGetDemo.Runmian(self.driver).click('css',
+            #                                       '#app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(5) > a > li > span')
             time.sleep(3)
             # 切换注册资本
             js1 = 'document.getElementsByClassName("el-radio-button el-radio-button--mini")[17].click()'

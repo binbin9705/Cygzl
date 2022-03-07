@@ -16,19 +16,27 @@ class Test8(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
+        # 启动浏览并设置相关选项
+        cls.driver = webdriver.Chrome(options=WebGetDemo.Runmian(cls).options())
+        cls.imgs = []
+        WebGetDemo.Runmian(cls.driver).open('http://ihd.wanvdata.cn/#/login?redirect=%2Fdashboard')
+        WebGetDemo.Runmian(cls.driver).login('ihqd-test', 'ihqd-test@6688')
         # 消除警告
         warnings.simplefilter('ignore', ResourceWarning)
 
     @classmethod
     def tearDownClass(cls):
+        cls.driver.quit()
         pass
 
     def setUp(self):
-        # 启动浏览并设置相关选项
-        self.driver = webdriver.Chrome(options=WebGetDemo.Runmian(self).options())
-        self.imgs = []
-        WebGetDemo.Runmian(self.driver).open('http://ihd.wanvdata.cn/#/login?redirect=%2Fdashboard')
-        WebGetDemo.Runmian(self.driver).login('ihqd-test', 'ihqd-test@6688')
+        # # 启动浏览并设置相关选项
+        # self.driver = webdriver.Chrome(options=WebGetDemo.Runmian(self).options())
+        # self.imgs = []
+        # WebGetDemo.Runmian(self.driver).open('http://ihd.wanvdata.cn/#/login?redirect=%2Fdashboard')
+        # WebGetDemo.Runmian(self.driver).login('ihqd-test', 'ihqd-test@6688')
+        # pass
+        self.driver.refresh()
         self.driver.implicitly_wait(5)
 
     def add_img(self):
@@ -37,7 +45,8 @@ class Test8(unittest.TestCase):
         return True
 
     def tearDown(self):
-        WebGetDemo.Runmian(self.driver).quit()
+        # WebGetDemo.Runmian(self.driver).quit()
+        pass
 
     def test_01(self):
         '''产业链图谱-切换现状图'''
@@ -78,10 +87,10 @@ class Test8(unittest.TestCase):
     def test_03(self):
         '''产业链图谱-全景图-切换行业'''
         try:
-            time.sleep(3)
-            # 点击产业链图谱
-            WebGetDemo.Runmian(self.driver).click('css',
-                                                  '#app > div > header.layout-header-fixed > div.header > ul > div.header-right > div:nth-child(1) > a > li')
+            # time.sleep(3)
+            # # 点击产业链图谱
+            # WebGetDemo.Runmian(self.driver).click('css',
+            #                                       '#app > div > header.layout-header-fixed > div.header > ul > div.header-right > div:nth-child(1) > a > li')
             time.sleep(3)
             # 点击行业下拉框
             WebGetDemo.Runmian(self.driver).click('css',
@@ -102,10 +111,10 @@ class Test8(unittest.TestCase):
     def test_04(self):
         '''产业链图谱-现状图-切换行业'''
         try:
-            time.sleep(3)
-            # 点击产业链图谱
-            WebGetDemo.Runmian(self.driver).click('css',
-                                                  '#app > div > header.layout-header-fixed > div.header > ul > div.header-right > div:nth-child(1) > a > li')
+            # time.sleep(3)
+            # # 点击产业链图谱
+            # WebGetDemo.Runmian(self.driver).click('css',
+            #                                       '#app > div > header.layout-header-fixed > div.header > ul > div.header-right > div:nth-child(1) > a > li')
             time.sleep(3)
             # 点击现状图
             WebGetDemo.Runmian(self.driver).click('id', 'tab-xzt')
@@ -128,10 +137,10 @@ class Test8(unittest.TestCase):
     def test_05(self):
         '''产业链图谱-现状图-企业列表随机翻页随机跳转企业详情'''
         try:
-            time.sleep(3)
-            # 点击产业链图谱
-            WebGetDemo.Runmian(self.driver).click('css',
-                                                  '#app > div > header.layout-header-fixed > div.header > ul > div.header-right > div:nth-child(1) > a > li')
+            # time.sleep(3)
+            # # 点击产业链图谱
+            # WebGetDemo.Runmian(self.driver).click('css',
+            #                                       '#app > div > header.layout-header-fixed > div.header > ul > div.header-right > div:nth-child(1) > a > li')
             time.sleep(3)
             # 点击现状图
             WebGetDemo.Runmian(self.driver).click('id', 'tab-xzt')
@@ -164,6 +173,8 @@ class Test8(unittest.TestCase):
             newqytest = WebGetDemo.Runmian(self.driver).obtaintest('class_name', 'p_entName')
             time.sleep(3)
             self.assertEqual(newqytest, testvalue, '用例执行错误')
+            WebGetDemo.Runmian(self.driver).switch_window_by_title('产业链图谱 - 产业高质量发展平台')
+            time.sleep(2)
         except Exception:
             self.add_img()
             raise
@@ -171,10 +182,10 @@ class Test8(unittest.TestCase):
     def test_06(self):
         '''产业链图谱-现状图-企业列表随机切换分页条数'''
         try:
-            time.sleep(3)
-            # 点击产业链图谱
-            WebGetDemo.Runmian(self.driver).click('css',
-                                                  '#app > div > header.layout-header-fixed > div.header > ul > div.header-right > div:nth-child(1) > a > li')
+            # time.sleep(3)
+            # # 点击产业链图谱
+            # WebGetDemo.Runmian(self.driver).click('css',
+            #                                       '#app > div > header.layout-header-fixed > div.header > ul > div.header-right > div:nth-child(1) > a > li')
             time.sleep(3)
             # 点击现状图
             WebGetDemo.Runmian(self.driver).click('id', 'tab-xzt')
@@ -202,10 +213,10 @@ class Test8(unittest.TestCase):
     def test_07(self):
         '''产业链图谱-现状图-企业列表快捷跳转分页'''
         try:
-            time.sleep(3)
-            # 点击产业链图谱
-            WebGetDemo.Runmian(self.driver).click('css',
-                                                  '#app > div > header.layout-header-fixed > div.header > ul > div.header-right > div:nth-child(1) > a > li')
+            # time.sleep(3)
+            # # 点击产业链图谱
+            # WebGetDemo.Runmian(self.driver).click('css',
+            #                                       '#app > div > header.layout-header-fixed > div.header > ul > div.header-right > div:nth-child(1) > a > li')
             time.sleep(3)
             # 点击现状图
             WebGetDemo.Runmian(self.driver).click('id', 'tab-xzt')
@@ -241,10 +252,10 @@ class Test8(unittest.TestCase):
     def test_08(self):
         '''产业链图谱-分布图-切换产业'''
         try:
-            time.sleep(3)
-            # 点击产业链图谱
-            WebGetDemo.Runmian(self.driver).click('css',
-                                                  '#app > div > header.layout-header-fixed > div.header > ul > div.header-right > div:nth-child(1) > a > li')
+            # time.sleep(3)
+            # # 点击产业链图谱
+            # WebGetDemo.Runmian(self.driver).click('css',
+            #                                       '#app > div > header.layout-header-fixed > div.header > ul > div.header-right > div:nth-child(1) > a > li')
             time.sleep(3)
             # 点击分布图
             WebGetDemo.Runmian(self.driver).click('id', 'tab-fbt')

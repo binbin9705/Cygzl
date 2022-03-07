@@ -11,28 +11,35 @@ class Test1(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
+        # 启动浏览并设置相关选项
+        cls.driver = webdriver.Chrome(options=WebGetDemo.Runmian(cls).options())
+        cls.imgs = []
+        WebGetDemo.Runmian(cls.driver).open('http://ihd.wanvdata.cn/#/login?redirect=%2Fdashboard')
+        WebGetDemo.Runmian(cls.driver).login('ihqd-test', 'ihqd-test@6688')
         # 消除警告
         warnings.simplefilter('ignore', ResourceWarning)
 
     @classmethod
     def tearDownClass(cls):
+        cls.driver.quit()
         pass
 
     def setUp(self):
-        # 启动浏览并设置相关选项
-        self.driver = webdriver.Chrome(options=WebGetDemo.Runmian(self).options())
-        self.imgs = []
-        WebGetDemo.Runmian(self.driver).open('http://ihd.wanvdata.cn/#/login?redirect=%2Fdashboard')
-        WebGetDemo.Runmian(self.driver).login('ihqd-test', 'ihqd-test@6688')
-
+        # # 启动浏览并设置相关选项
+        # self.driver = webdriver.Chrome(options=WebGetDemo.Runmian(self).options())
+        # self.imgs = []
+        # WebGetDemo.Runmian(self.driver).open('http://ihd.wanvdata.cn/#/login?redirect=%2Fdashboard')
+        # WebGetDemo.Runmian(self.driver).login('ihqd-test', 'ihqd-test@6688')
+        # pass
+        self.driver.refresh()
     def add_img(self):
         # 1、下面注释掉的这行代码作用是不管用例是否执行成功，只要在执行过程加了self.add_img()操作，那么最后生成的报告中含有该执行过程的截图，如果不添加则默认对用例失败进行截图
         self.imgs.append(self.driver.get_screenshot_as_base64())
         return True
 
     def tearDown(self):
-        WebGetDemo.Runmian(self.driver).quit()
-
+        # WebGetDemo.Runmian(self.driver).quit()
+        pass
     def test_01(self):
         '''首页跳转CRL指数页面'''
         self.driver.implicitly_wait(5)

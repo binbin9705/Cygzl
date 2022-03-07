@@ -15,19 +15,27 @@ class Test5(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
+        # 启动浏览并设置相关选项
+        cls.driver = webdriver.Chrome(options=WebGetDemo.Runmian(cls).options())
+        cls.imgs = []
+        WebGetDemo.Runmian(cls.driver).open('http://ihd.wanvdata.cn/#/login?redirect=%2Fdashboard')
+        WebGetDemo.Runmian(cls.driver).login('ihqd-test', 'ihqd-test@6688')
         # 消除警告
         warnings.simplefilter('ignore', ResourceWarning)
 
     @classmethod
     def tearDownClass(cls):
+        cls.driver.quit()
         pass
 
     def setUp(self):
-        # 启动浏览并设置相关选项
-        self.driver = webdriver.Chrome(options=WebGetDemo.Runmian(self).options())
-        self.imgs = []
-        WebGetDemo.Runmian(self.driver).open('http://ihd.wanvdata.cn/#/login?redirect=%2Fdashboard')
-        WebGetDemo.Runmian(self.driver).login('ihqd-test', 'ihqd-test@6688')
+        # # 启动浏览并设置相关选项
+        # self.driver = webdriver.Chrome(options=WebGetDemo.Runmian(self).options())
+        # self.imgs = []
+        # WebGetDemo.Runmian(self.driver).open('http://ihd.wanvdata.cn/#/login?redirect=%2Fdashboard')
+        # WebGetDemo.Runmian(self.driver).login('ihqd-test', 'ihqd-test@6688')
+        # pass
+        self.driver.refresh()
         self.driver.implicitly_wait(5)
 
     def add_img(self):
@@ -36,7 +44,8 @@ class Test5(unittest.TestCase):
         return True
 
     def tearDown(self):
-        WebGetDemo.Runmian(self.driver).quit()
+        # WebGetDemo.Runmian(self.driver).quit()
+        pass
 
     def test_01(self):
         '''产业结构-总体监测-页面交互'''
@@ -68,16 +77,16 @@ class Test5(unittest.TestCase):
     def test_02(self):
         '''产业结构-结构监测-页面交互'''
         try:
+            # time.sleep(3)
+            # # 点击产业结构下拉框
+            # WebGetDemo.Runmian(self.driver).click('css',
+            #                                       '#app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(4) > li > div > i')
+            # time.sleep(3)
+            # # 点击整体概览
+            # WebGetDemo.Runmian(self.driver).click('css',
+            #                                       'body > div:nth-child(6) > ul > div:nth-child(1) > a > li > span')
             time.sleep(3)
-            # 点击产业结构下拉框
-            WebGetDemo.Runmian(self.driver).click('css',
-                                                  '#app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(4) > li > div > i')
-            time.sleep(3)
-            # 点击整体概览
-            WebGetDemo.Runmian(self.driver).click('css',
-                                                  'body > div:nth-child(6) > ul > div:nth-child(1) > a > li > span')
-            time.sleep(3)
-            # 点击机构监测
+            # 点击结构监测
             WebGetDemo.Runmian(self.driver).click('css',
                                                   '#app > div > div > section > div > div.menu-List > a:nth-child(2)')
             time.sleep(2)
@@ -97,16 +106,16 @@ class Test5(unittest.TestCase):
     def test_03(self):
         '''产业结构-结构分析-随机年份展示统计图'''
         try:
+            # time.sleep(3)
+            # # 点击产业结构下拉框
+            # WebGetDemo.Runmian(self.driver).click('css',
+            #                                       '#app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(4) > li > div > i')
+            # time.sleep(3)
+            # # 点击整体概览
+            # WebGetDemo.Runmian(self.driver).click('css',
+            #                                       'body > div:nth-child(6) > ul > div:nth-child(1) > a > li > span')
             time.sleep(3)
-            # 点击产业结构下拉框
-            WebGetDemo.Runmian(self.driver).click('css',
-                                                  '#app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(4) > li > div > i')
-            time.sleep(3)
-            # 点击整体概览
-            WebGetDemo.Runmian(self.driver).click('css',
-                                                  'body > div:nth-child(6) > ul > div:nth-child(1) > a > li > span')
-            time.sleep(3)
-            # 点击结构监测
+            # 点击结构分析
             WebGetDemo.Runmian(self.driver).click('css',
                                                   '#app > div > div > section > div > div.menu-List > a:nth-child(3)')
             time.sleep(2)
@@ -132,14 +141,14 @@ class Test5(unittest.TestCase):
     def test_04(self):
         '''产业结构-结构分析-随机地区展示统计图'''
         try:
-            time.sleep(3)
-            # 点击产业结构下拉框
-            WebGetDemo.Runmian(self.driver).click('css',
-                                                  '#app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(4) > li > div > i')
-            time.sleep(3)
-            # 点击整体概览
-            WebGetDemo.Runmian(self.driver).click('css',
-                                                  'body > div:nth-child(6) > ul > div:nth-child(1) > a > li > span')
+            # time.sleep(3)
+            # # 点击产业结构下拉框
+            # WebGetDemo.Runmian(self.driver).click('css',
+            #                                       '#app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(4) > li > div > i')
+            # time.sleep(3)
+            # # 点击整体概览
+            # WebGetDemo.Runmian(self.driver).click('css',
+            #                                       'body > div:nth-child(6) > ul > div:nth-child(1) > a > li > span')
             time.sleep(3)
             # 点击结构分析
             WebGetDemo.Runmian(self.driver).click('css',
@@ -199,14 +208,14 @@ class Test5(unittest.TestCase):
     def test_06(self):
         '''产业结构-产业分析-切换区域对比统计图'''
         try:
-            time.sleep(3)
-            # 点击产业结构下拉框
-            WebGetDemo.Runmian(self.driver).click('css',
-                                                  '#app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(4) > li > div > i')
-            time.sleep(3)
-            # 点击产业分析
-            WebGetDemo.Runmian(self.driver).click('css',
-                                                  'body > div:nth-child(6) > ul > div:nth-child(2) > a > li > span')
+            # time.sleep(3)
+            # # 点击产业结构下拉框
+            # WebGetDemo.Runmian(self.driver).click('css',
+            #                                       '#app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(4) > li > div > i')
+            # time.sleep(3)
+            # # 点击产业分析
+            # WebGetDemo.Runmian(self.driver).click('css',
+            #                                       'body > div:nth-child(6) > ul > div:nth-child(2) > a > li > span')
             time.sleep(3)
             # 切换区域对比
             WebGetDemo.Runmian(self.driver).click('id', 'tab-JGFX')
@@ -222,14 +231,14 @@ class Test5(unittest.TestCase):
     def test_07(self):
         '''产业结构-产业分析-区域对比随机选择地区'''
         try:
-            time.sleep(3)
-            # 点击产业结构下拉框
-            WebGetDemo.Runmian(self.driver).click('css',
-                                                  '#app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(4) > li > div > i')
-            time.sleep(3)
-            # 点击产业分析
-            WebGetDemo.Runmian(self.driver).click('css',
-                                                  'body > div:nth-child(6) > ul > div:nth-child(2) > a > li > span')
+            # time.sleep(3)
+            # # 点击产业结构下拉框
+            # WebGetDemo.Runmian(self.driver).click('css',
+            #                                       '#app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(4) > li > div > i')
+            # time.sleep(3)
+            # # 点击产业分析
+            # WebGetDemo.Runmian(self.driver).click('css',
+            #                                       'body > div:nth-child(6) > ul > div:nth-child(2) > a > li > span')
             time.sleep(3)
             # 切换区域对比
             WebGetDemo.Runmian(self.driver).click('id', 'tab-JGFX')
@@ -259,14 +268,14 @@ class Test5(unittest.TestCase):
     def test_08(self):
         '''产业结构-产业分析-区域对比随机选择行业'''
         try:
-            time.sleep(3)
-            # 点击产业结构下拉框
-            WebGetDemo.Runmian(self.driver).click('css',
-                                                  '#app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(4) > li > div > i')
-            time.sleep(3)
-            # 点击产业分析
-            WebGetDemo.Runmian(self.driver).click('css',
-                                                  'body > div:nth-child(6) > ul > div:nth-child(2) > a > li > span')
+            # time.sleep(3)
+            # # 点击产业结构下拉框
+            # WebGetDemo.Runmian(self.driver).click('css',
+            #                                       '#app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(4) > li > div > i')
+            # time.sleep(3)
+            # # 点击产业分析
+            # WebGetDemo.Runmian(self.driver).click('css',
+            #                                       'body > div:nth-child(6) > ul > div:nth-child(2) > a > li > span')
             time.sleep(3)
             # 切换区域对比
             WebGetDemo.Runmian(self.driver).click('id', 'tab-JGFX')
