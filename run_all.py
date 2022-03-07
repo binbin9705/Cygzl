@@ -2,7 +2,7 @@
 import unittest
 # import HTMLTestRunner
 import HTMLTestRunner_cn
-from case import test_case1
+from case import test_case01
 if __name__ == '__main__':
     #创建一个测试套件
     dir='case'

@@ -11,7 +11,7 @@ import random
 
 
 # @unittest.skip('调试')
-class Test8(unittest.TestCase):
+class Test08(unittest.TestCase):
     '''产业链图谱'''
 
     @classmethod

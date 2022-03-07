@@ -10,7 +10,7 @@ import random
 
 
 # @unittest.skip('调试')
-class Test7(unittest.TestCase):
+class Test07(unittest.TestCase):
     '''创新发展'''
 
     @classmethod

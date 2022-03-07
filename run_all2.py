@@ -1,8 +1,8 @@
 from selenium import webdriver
 import time
 import unittest
-from case import test_case1
-from case import test_case2
+from case import test_case01
+from case import test_case02
 if __name__ == '__main__':
     pass
     # 当前时间

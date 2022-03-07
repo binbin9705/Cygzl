@@ -11,7 +11,7 @@ import random
 
 
 # @unittest.skip('调试')
-class Test9(unittest.TestCase):
+class Test09(unittest.TestCase):
     '''招商引资'''
 
     @classmethod

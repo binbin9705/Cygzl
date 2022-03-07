@@ -10,7 +10,7 @@ import random
 
 
 # @unittest.skip('调试')
-class Test6(unittest.TestCase):
+class Test06(unittest.TestCase):
     '''产业地图'''
 
     @classmethod
