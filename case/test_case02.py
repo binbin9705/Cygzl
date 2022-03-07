@@ -6,7 +6,7 @@ import warnings
 
 
 # @unittest.skip('调试')
-class Test2(unittest.TestCase):
+class Test02(unittest.TestCase):
     '''切换地区'''
 
     @classmethod
@@ -33,6 +33,7 @@ class Test2(unittest.TestCase):
         # pass
         self.driver.refresh()
         self.driver.implicitly_wait(5)
+
     def add_img(self):
         # 1、下面注释掉的这行代码作用是不管用例是否执行成功，只要在执行过程加了self.add_img()操作，那么最后生成的报告中含有该执行过程的截图，如果不添加则默认对用例失败进行截图
         self.imgs.append(self.driver.get_screenshot_as_base64())

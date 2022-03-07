@@ -6,7 +6,7 @@ import warnings
 
 
 # @unittest.skip('调试')
-class Test3(unittest.TestCase):
+class Test03(unittest.TestCase):
     '''首页页面交互'''
 
     @classmethod
