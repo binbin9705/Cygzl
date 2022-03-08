@@ -5,7 +5,7 @@ from PublicMethod import WebGetDemo
 import warnings
 
 
-@unittest.skip('调试')
+# @unittest.skip('调试')
 class Test03(unittest.TestCase):
     '''首页页面交互'''
 

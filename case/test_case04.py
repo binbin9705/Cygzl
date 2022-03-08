@@ -6,7 +6,7 @@ import warnings
 import random
 
 
-@unittest.skip('调试')
+# @unittest.skip('调试')
 class Test04(unittest.TestCase):
     '''市场主体'''
 
