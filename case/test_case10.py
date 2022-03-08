@@ -77,13 +77,13 @@ class Test10(unittest.TestCase):
     def test_02(self):
         '''开放发展-结构分析-随机切换币种统计条件'''
         try:
-            time.sleep(3)
-            # 点击开放发展
-            WebGetDemo.Runmian(self.driver).click('xpath',
-                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[3]/div[3]/li/div/i')
-            time.sleep(3)
-            # 点击结构分析
-            WebGetDemo.Runmian(self.driver).click('xpath', '/html/body/div[2]/ul/div[1]/a/li/span')
+            # time.sleep(3)
+            # # 点击开放发展
+            # WebGetDemo.Runmian(self.driver).click('xpath',
+            #                                       '//*[@id="app"]/div/header[2]/div[1]/ul/div[3]/div[3]/li/div/i')
+            # time.sleep(3)
+            # # 点击结构分析
+            # WebGetDemo.Runmian(self.driver).click('xpath', '/html/body/div[2]/ul/div[1]/a/li/span')
             time.sleep(3)
             # 点击币种下拉框
             WebGetDemo.Runmian(self.driver).click('xpath',
@@ -106,13 +106,13 @@ class Test10(unittest.TestCase):
     def test_03(self):
         '''开放发展-结构分析-随机选择地区'''
         try:
-            time.sleep(3)
-            # 点击开放发展
-            WebGetDemo.Runmian(self.driver).click('xpath',
-                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[3]/div[3]/li/div/i')
-            time.sleep(3)
-            # 点击结构分析
-            WebGetDemo.Runmian(self.driver).click('xpath', '/html/body/div[2]/ul/div[1]/a/li/span')
+            # time.sleep(3)
+            # # 点击开放发展
+            # WebGetDemo.Runmian(self.driver).click('xpath',
+            #                                       '//*[@id="app"]/div/header[2]/div[1]/ul/div[3]/div[3]/li/div/i')
+            # time.sleep(3)
+            # # 点击结构分析
+            # WebGetDemo.Runmian(self.driver).click('xpath', '/html/body/div[2]/ul/div[1]/a/li/span')
             time.sleep(3)
             # 点击地区下拉框
             WebGetDemo.Runmian(self.driver).click('xpath',
@@ -150,13 +150,13 @@ class Test10(unittest.TestCase):
     def test_04(self):
         '''开放发展-结构分析-随机选择行业'''
         try:
-            time.sleep(3)
-            # 点击开放发展
-            WebGetDemo.Runmian(self.driver).click('xpath',
-                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[3]/div[3]/li/div/i')
-            time.sleep(3)
-            # 点击结构分析
-            WebGetDemo.Runmian(self.driver).click('xpath', '/html/body/div[2]/ul/div[1]/a/li/span')
+            # time.sleep(3)
+            # # 点击开放发展
+            # WebGetDemo.Runmian(self.driver).click('xpath',
+            #                                       '//*[@id="app"]/div/header[2]/div[1]/ul/div[3]/div[3]/li/div/i')
+            # time.sleep(3)
+            # # 点击结构分析
+            # WebGetDemo.Runmian(self.driver).click('xpath', '/html/body/div[2]/ul/div[1]/a/li/span')
             time.sleep(3)
             # 点击行业选择框
             WebGetDemo.Runmian(self.driver).click('xpath',
@@ -181,13 +181,13 @@ class Test10(unittest.TestCase):
     def test_05(self):
         '''开放发展-结构分析-随机选择产业'''
         try:
-            time.sleep(3)
-            # 点击开放发展
-            WebGetDemo.Runmian(self.driver).click('xpath',
-                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[3]/div[3]/li/div/i')
-            time.sleep(3)
-            # 点击结构分析
-            WebGetDemo.Runmian(self.driver).click('xpath', '/html/body/div[2]/ul/div[1]/a/li/span')
+            # time.sleep(3)
+            # # 点击开放发展
+            # WebGetDemo.Runmian(self.driver).click('xpath',
+            #                                       '//*[@id="app"]/div/header[2]/div[1]/ul/div[3]/div[3]/li/div/i')
+            # time.sleep(3)
+            # # 点击结构分析
+            # WebGetDemo.Runmian(self.driver).click('xpath', '/html/body/div[2]/ul/div[1]/a/li/span')
             time.sleep(3)
             # 点击产业选择框
             WebGetDemo.Runmian(self.driver).click('xpath',
@@ -212,13 +212,13 @@ class Test10(unittest.TestCase):
     def test_06(self):
         '''开放发展-结构分析-区域占比切换行业占比'''
         try:
-            time.sleep(3)
-            # 点击开放发展
-            WebGetDemo.Runmian(self.driver).click('xpath',
-                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[3]/div[3]/li/div/i')
-            time.sleep(3)
-            # 点击结构分析
-            WebGetDemo.Runmian(self.driver).click('xpath', '/html/body/div[2]/ul/div[1]/a/li/span')
+            # time.sleep(3)
+            # # 点击开放发展
+            # WebGetDemo.Runmian(self.driver).click('xpath',
+            #                                       '//*[@id="app"]/div/header[2]/div[1]/ul/div[3]/div[3]/li/div/i')
+            # time.sleep(3)
+            # # 点击结构分析
+            # WebGetDemo.Runmian(self.driver).click('xpath', '/html/body/div[2]/ul/div[1]/a/li/span')
             time.sleep(3)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="jgfn_box_m"]/div[2]/div[1]/div[1]/span/span/i')
             time.sleep(2)
