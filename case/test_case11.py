@@ -10,7 +10,7 @@ import warnings
 import random
 
 
-@unittest.skip('调试')
+# @unittest.skip('调试')
 class Test11(unittest.TestCase):
     '''社会效益'''
 
