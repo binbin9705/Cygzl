@@ -9,7 +9,7 @@ import warnings
 import random
 
 
-# @unittest.skip('调试')
+@unittest.skip('调试')
 class Test07(unittest.TestCase):
     '''创新发展'''
 

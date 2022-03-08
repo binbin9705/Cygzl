@@ -10,7 +10,7 @@ import warnings
 import random
 
 
-# @unittest.skip('调试')
+@unittest.skip('调试')
 class Test08(unittest.TestCase):
     '''产业链图谱'''
 
