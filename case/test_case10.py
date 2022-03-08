@@ -34,6 +34,7 @@ class Test10(unittest.TestCase):
         # self.imgs = []
         # WebGetDemo.Runmian(self.driver).open('http://ihd.wanvdata.cn/#/login?redirect=%2Fdashboard')
         # WebGetDemo.Runmian(self.driver).login('ihqd-test', 'ihqd-test@6688')
+        self.driver.refresh()
         self.driver.implicitly_wait(5)
 
     def add_img(self):
