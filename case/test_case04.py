@@ -44,7 +44,7 @@ class Test04(unittest.TestCase):
         # WebGetDemo.Runmian(self.driver).quit()
         pass
 
-    @unittest.skip('跳过')
+    # @unittest.skip('跳过')
     def test_01(self):
         '''CRI指数页面统计图切换统计条件-年度数据'''
         try:

@@ -6,7 +6,7 @@ from case import test_case01
 if __name__ == '__main__':
     #创建一个测试套件
     dir='case'
-    dircase='test**.py'
+    dircase='test*.py'
     # dircase = 'test_case03.py'
     suite=unittest.defaultTestLoader.discover(dir,dircase)
     #创建生成测试报告方法
