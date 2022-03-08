@@ -33,6 +33,7 @@ class Test03(unittest.TestCase):
         # pass
         self.driver.refresh()
         self.driver.implicitly_wait(5)
+
     def add_img(self):
         # 1、下面注释掉的这行代码作用是不管用例是否执行成功，只要在执行过程加了self.add_img()操作，那么最后生成的报告中含有该执行过程的截图，如果不添加则默认对用例失败进行截图
         self.imgs.append(self.driver.get_screenshot_as_base64())
@@ -41,7 +42,6 @@ class Test03(unittest.TestCase):
     def tearDown(self):
         # WebGetDemo.Runmian(self.driver).quit()
         pass
-
 
     def test_01(self):
         '''市场主体统计图切换统计条件-高薪企业'''
@@ -122,12 +122,12 @@ class Test03(unittest.TestCase):
             test = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
                                                               '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[2]/p')
             # 断言如果等于无数据cas就通过
-            self.assertEqual(test1, '无数据', '用例执行失败')
+            self.assertEqual(test, '无数据', '用例执行失败')
         except Exception:
             self.add_img()
             raise
 
-    @unittest.skip('跳过')
+    # @unittest.skip('跳过')
     def test_05(self):
         '''左上角搜索-输入内容字节长度为1'''
         try:
@@ -151,7 +151,7 @@ class Test03(unittest.TestCase):
             self.add_img()
             raise
 
-    @unittest.skip('跳过')
+    # @unittest.skip('跳过')
     def test_06(self):
         '''左上角搜索-输入内容为地区名称：北京'''
         try:
@@ -176,7 +176,8 @@ class Test03(unittest.TestCase):
         except Exception:
             self.add_img()
             raise
-    @unittest.skip('跳过')
+
+    # @unittest.skip('跳过')
     def test_07(self):
         '''左上角搜索-输入内容为：~！'''
         try:
