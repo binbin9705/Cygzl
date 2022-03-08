@@ -122,7 +122,7 @@ class Test03(unittest.TestCase):
             test = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
                                                               '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[2]/p')
             # 断言如果等于无数据cas就通过
-            self.assertEqual(test, '无数据', '用例执行失败')
+            self.assertEqual(test1, '无数据', '用例执行失败')
         except Exception:
             self.add_img()
             raise
