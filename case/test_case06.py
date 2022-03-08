@@ -9,7 +9,7 @@ import warnings
 import random
 
 
-@unittest.skip('调试')
+# @unittest.skip('调试')
 class Test06(unittest.TestCase):
     '''产业地图'''
 
