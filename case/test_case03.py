@@ -127,6 +127,7 @@ class Test03(unittest.TestCase):
             self.add_img()
             raise
 
+    @unittest.skip('跳过')
     def test_05(self):
         '''左上角搜索-输入内容字节长度为1'''
         try:
@@ -150,6 +151,7 @@ class Test03(unittest.TestCase):
             self.add_img()
             raise
 
+    @unittest.skip('跳过')
     def test_06(self):
         '''左上角搜索-输入内容为地区名称：北京'''
         try:
@@ -174,7 +176,7 @@ class Test03(unittest.TestCase):
         except Exception:
             self.add_img()
             raise
-
+    @unittest.skip('跳过')
     def test_07(self):
         '''左上角搜索-输入内容为：~！'''
         try:
