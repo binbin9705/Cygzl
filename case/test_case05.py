@@ -26,7 +26,7 @@ class Test05(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):
         cls.driver.quit()
-        pass
+        # pass
 
     def setUp(self):
         # # 启动浏览并设置相关选项
