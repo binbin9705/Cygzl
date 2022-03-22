@@ -35,7 +35,6 @@ class Test06(unittest.TestCase):
         # WebGetDemo.Runmian(self.driver).open('http://ihd.wanvdata.cn/#/login?redirect=%2Fdashboard')
         # WebGetDemo.Runmian(self.driver).login('ihqd-test', 'ihqd-test@6688')
         # pass
-        self.driver.refresh()
         self.driver.implicitly_wait(5)
 
     def add_img(self):
@@ -44,16 +43,14 @@ class Test06(unittest.TestCase):
         return True
 
     def tearDown(self):
-        # WebGetDemo.Runmian(self.driver).quit()
-        pass
+        self.driver.refresh()
 
     def test_01(self):
         '''产业地图-页面交互-随机选择产业'''
         try:
             time.sleep(3)
             # 点击产业地图
-            WebGetDemo.Runmian(self.driver).click('css',
-                                                  '#app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(5) > a > li > span')
+            WebGetDemo.Runmian(self.driver).click('xpath','//*[@id="app"]/div/header/div[1]/ul/div[1]/div[4]/a/li/span')
             time.sleep(3)
             # 点击产业下拉选择框
             js = 'document.querySelector("#app > div > div > section > div > div.in-map-control > div > button").click()'

@@ -54,7 +54,7 @@ class Test09(unittest.TestCase):
             time.sleep(3)
             # 点击招商引资
             WebGetDemo.Runmian(self.driver).click('xpath',
-                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[3]/div[2]/li/div/i')
+                                                  '//*[@id="app"]/div/header/div[1]/ul/div[3]/div[2]/li/div[1]/i')
             time.sleep(3)
             # 点击招商图谱
             WebGetDemo.Runmian(self.driver).click('xpath', '/html/body/div[2]/ul/div[1]/a/li/span')
@@ -210,7 +210,7 @@ class Test09(unittest.TestCase):
             time.sleep(3)
             # 点击招商引资
             WebGetDemo.Runmian(self.driver).click('xpath',
-                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[3]/div[2]/li/div/i')
+                                                  '//*[@id="app"]/div/header/div[1]/ul/div[3]/div[2]/li/div[1]/i')
             time.sleep(3)
             # 点击流动资本
             WebGetDemo.Runmian(self.driver).click('xpath', '/html/body/div[2]/ul/div[2]/a/li/span')
@@ -249,8 +249,8 @@ class Test09(unittest.TestCase):
             time.sleep(2)
             # 获取市的class
             js = 'return document.querySelector("#app > div > div > section > div > div:nth-child(2) > div > div.el-tabs__content > div > div.invest-control > div.invest-tab > small.active").getAttribute("class")'
-            classvalue=self.driver.execute_script(js)
-            self.assertIn('active',classvalue,'用例执行失败')
+            classvalue = self.driver.execute_script(js)
+            self.assertIn('active', classvalue, '用例执行失败')
         except Exception:
             self.add_img()
             raise
@@ -272,8 +272,8 @@ class Test09(unittest.TestCase):
             time.sleep(2)
             # 获取对外投资的class
             js = 'return document.querySelector("#app > div > div > section > div > div:nth-child(2) > div > div.el-tabs__content > div > div.invest-control > div.el-radio-group.gradient > label.el-radio-button.is-active").getAttribute("class")'
-            classvalue=self.driver.execute_script(js)
-            self.assertIn('is-active',classvalue,'用例执行失败')
+            classvalue = self.driver.execute_script(js)
+            self.assertIn('is-active', classvalue, '用例执行失败')
         except Exception:
             self.add_img()
             raise

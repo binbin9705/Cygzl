@@ -27,7 +27,6 @@ class Test11(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):
         cls.driver.quit()
-        # pass
 
     def setUp(self):
         # # 启动浏览并设置相关选项
@@ -35,10 +34,8 @@ class Test11(unittest.TestCase):
         self.imgs = []
         # WebGetDemo.Runmian(self.driver).open('http://ihd.wanvdata.cn/#/login?redirect=%2Fdashboard')
         # WebGetDemo.Runmian(self.driver).login('ihqd-test', 'ihqd-test@6688')
-        #刷新页面
-        self.driver.refresh()
+        # 刷新页面
         self.driver.implicitly_wait(5)
-
 
     def add_img(self):
         # 1、下面注释掉的这行代码作用是不管用例是否执行成功，只要在执行过程加了self.add_img()操作，那么最后生成的报告中含有该执行过程的截图，如果不添加则默认对用例失败进行截图
@@ -46,16 +43,15 @@ class Test11(unittest.TestCase):
         return True
 
     def tearDown(self):
-        # WebGetDemo.Runmian(self.driver).quit()
-        pass
-    # @unittest.skip('跳过')
+        self.driver.refresh()
+
     def test_01(self):
         '''社会效益-总体概览-随机选择行业'''
         try:
             time.sleep(3)
             # 点击社会效益
             WebGetDemo.Runmian(self.driver).click('xpath',
-                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[3]/div[4]/li/div/i')
+                                                  '//*[@id="app"]/div/header/div[1]/ul/div[3]/div[4]/li/div[1]/i')
             time.sleep(3)
             # 点击总体概览
             WebGetDemo.Runmian(self.driver).click('xpath', '/html/body/div[2]/ul/div[1]/a/li/span')
@@ -81,7 +77,6 @@ class Test11(unittest.TestCase):
             self.add_img()
             raise
 
-    # @unittest.skip('跳过')
     def test_02(self):
         '''社会效益-总体概览-随机选择产业'''
         try:
@@ -114,14 +109,13 @@ class Test11(unittest.TestCase):
             self.add_img()
             raise
 
-    # @unittest.skip('跳过')
     def test_03(self):
         '''社会效益-结构分析-随机选择地区'''
         try:
             time.sleep(3)
             # 点击社会效益
             WebGetDemo.Runmian(self.driver).click('xpath',
-                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[3]/div[4]/li/div/i')
+                                                  '//*[@id="app"]/div/header/div[1]/ul/div[3]/div[4]/li/div[1]/i')
             time.sleep(3)
             # 点击结构分析
             WebGetDemo.Runmian(self.driver).click('xpath', '/html/body/div[2]/ul/div[2]/a/li/span')
@@ -150,7 +144,6 @@ class Test11(unittest.TestCase):
             self.add_img()
             raise
 
-    # @unittest.skip('跳过')
     def test_04(self):
         '''社会效益-结构分析-随机选择行业'''
         try:
@@ -179,7 +172,6 @@ class Test11(unittest.TestCase):
             self.add_img()
             raise
 
-    # @unittest.skip('跳过')
     def test_05(self):
         '''社会效益-结构分析-随机选择产业'''
         try:
@@ -208,7 +200,6 @@ class Test11(unittest.TestCase):
             self.add_img()
             raise
 
-    # @unittest.skip('跳过')
     def test_06(self):
         '''社会效益-结构分析-统计图切换行业占比'''
         try:
@@ -228,7 +219,7 @@ class Test11(unittest.TestCase):
             time.sleep(2)
             js2 = 'return document.getElementsByClassName("el-select-dropdown__item")[1].getAttribute("class")'
             classvalue = self.driver.execute_script(js2)
-            self.assertIn('selected',classvalue,'用例执行失败')
+            self.assertIn('selected', classvalue, '用例执行失败')
         except Exception:
             self.add_img()
             raise

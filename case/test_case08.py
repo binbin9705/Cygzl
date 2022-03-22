@@ -36,7 +36,6 @@ class Test08(unittest.TestCase):
         # WebGetDemo.Runmian(self.driver).open('http://ihd.wanvdata.cn/#/login?redirect=%2Fdashboard')
         # WebGetDemo.Runmian(self.driver).login('ihqd-test', 'ihqd-test@6688')
         # pass
-        self.driver.refresh()
         self.driver.implicitly_wait(5)
 
     def add_img(self):
@@ -45,16 +44,15 @@ class Test08(unittest.TestCase):
         return True
 
     def tearDown(self):
-        # WebGetDemo.Runmian(self.driver).quit()
-        pass
+        self.driver.refresh()
 
     def test_01(self):
         '''产业链图谱-切换现状图'''
         try:
             time.sleep(3)
             # 点击产业链图谱
-            WebGetDemo.Runmian(self.driver).click('css',
-                                                  '#app > div > header.layout-header-fixed > div.header > ul > div.header-right > div:nth-child(1) > a > li')
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="app"]/div/header/div[1]/ul/div[3]/div[1]/a/li/span')
             time.sleep(3)
             # 点击现状图
             WebGetDemo.Runmian(self.driver).click('id', 'tab-xzt')
@@ -69,11 +67,11 @@ class Test08(unittest.TestCase):
     def test_02(self):
         '''产业链图谱-切换分布图'''
         try:
-            time.sleep(3)
-            # 点击产业链图谱
-            WebGetDemo.Runmian(self.driver).click('css',
-                                                  '#app > div > header.layout-header-fixed > div.header > ul > div.header-right > div:nth-child(1) > a > li')
-            time.sleep(3)
+            # time.sleep(3)
+            # # 点击产业链图谱
+            # WebGetDemo.Runmian(self.driver).click('css',
+            #                                       '#app > div > header.layout-header-fixed > div.header > ul > div.header-right > div:nth-child(1) > a > li')
+            # time.sleep(3)
             # 点击分布图
             WebGetDemo.Runmian(self.driver).click('id', 'tab-fbt')
             time.sleep(2)
@@ -93,8 +91,8 @@ class Test08(unittest.TestCase):
             #                                       '#app > div > header.layout-header-fixed > div.header > ul > div.header-right > div:nth-child(1) > a > li')
             time.sleep(3)
             # 点击行业下拉框
-            WebGetDemo.Runmian(self.driver).click('css',
-                                                  '#pane-qjt > div > div:nth-child(1) > div > div > span > span > i')
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '//*[@id="pane-qjt"]/div/div[1]/div/div[1]/span/span/i')
             time.sleep(2)
             # 选择新材料
             WebGetDemo.Runmian(self.driver).click('css',

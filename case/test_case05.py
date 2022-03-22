@@ -35,7 +35,6 @@ class Test05(unittest.TestCase):
         # WebGetDemo.Runmian(self.driver).open('http://ihd.wanvdata.cn/#/login?redirect=%2Fdashboard')
         # WebGetDemo.Runmian(self.driver).login('ihqd-test', 'ihqd-test@6688')
         # pass
-        self.driver.refresh()
         self.driver.implicitly_wait(5)
 
     def add_img(self):
@@ -44,20 +43,17 @@ class Test05(unittest.TestCase):
         return True
 
     def tearDown(self):
-        # WebGetDemo.Runmian(self.driver).quit()
-        pass
+        self.driver.refresh()
 
     def test_01(self):
         '''产业结构-总体监测-页面交互'''
         try:
             time.sleep(3)
             # 点击产业结构下拉框
-            WebGetDemo.Runmian(self.driver).click('css',
-                                                  '#app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(4) > li > div > i')
+            WebGetDemo.Runmian(self.driver).click('xpath','//*[@id="app"]/div/header/div[1]/ul/div[1]/div[3]/li/div/i')
             time.sleep(3)
             # 点击整体概览
-            WebGetDemo.Runmian(self.driver).click('css',
-                                                  'body > div:nth-child(6) > ul > div:nth-child(1) > a > li > span')
+            WebGetDemo.Runmian(self.driver).click('xpath','/html/body/div[2]/ul/div[1]/a/li/span')
             # 断言是否正确跳转页面
             self.assertEqual('总体监测 - 产业高质量发展平台', self.driver.title, '未跳转指定页面')
             time.sleep(2)
@@ -87,8 +83,7 @@ class Test05(unittest.TestCase):
             #                                       'body > div:nth-child(6) > ul > div:nth-child(1) > a > li > span')
             time.sleep(3)
             # 点击结构监测
-            WebGetDemo.Runmian(self.driver).click('css',
-                                                  '#app > div > div > section > div > div.menu-List > a:nth-child(2)')
+            WebGetDemo.Runmian(self.driver).click('xpath','//*[@id="app"]/div/div/section/div/div[2]/a[2]')
             time.sleep(2)
             # 跳转数据表单页面
             js = 'document.getElementsByClassName("el-tabs__item is-top")[1].click()'
@@ -116,8 +111,7 @@ class Test05(unittest.TestCase):
             #                                       'body > div:nth-child(6) > ul > div:nth-child(1) > a > li > span')
             time.sleep(3)
             # 点击结构分析
-            WebGetDemo.Runmian(self.driver).click('css',
-                                                  '#app > div > div > section > div > div.menu-List > a:nth-child(3)')
+            WebGetDemo.Runmian(self.driver).click('xpath','//*[@id="app"]/div/div/section/div/div[2]/a[3]')
             time.sleep(2)
             # 点击年份下拉框
             js = 'document.getElementsByClassName("el-select__caret")[2].click()'
@@ -151,8 +145,7 @@ class Test05(unittest.TestCase):
             #                                       'body > div:nth-child(6) > ul > div:nth-child(1) > a > li > span')
             time.sleep(3)
             # 点击结构分析
-            WebGetDemo.Runmian(self.driver).click('css',
-                                                  '#app > div > div > section > div > div.menu-List > a:nth-child(3)')
+            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="app"]/div/div/section/div/div[2]/a[3]')
             time.sleep(2)
             # 点击地区选择弹窗
             js = 'document.getElementsByClassName("el-select__caret")[3].click()'
@@ -182,12 +175,11 @@ class Test05(unittest.TestCase):
         try:
             time.sleep(3)
             # 点击产业结构下拉框
-            WebGetDemo.Runmian(self.driver).click('css',
-                                                  '#app > div > header.layout-header-fixed > div.header > ul > div.header-left > div:nth-child(4) > li > div > i')
+            WebGetDemo.Runmian(self.driver).click('xpath','//*[@id="app"]/div/header/div[1]/ul/div[1]/div[3]/li/div/i')
             time.sleep(3)
             # 点击产业分析
-            WebGetDemo.Runmian(self.driver).click('css',
-                                                  'body > div:nth-child(6) > ul > div:nth-child(2) > a > li > span')
+            WebGetDemo.Runmian(self.driver).click('xpath',
+                                                  '/html/body/div[2]/ul/div[2]/a/li/span')
             time.sleep(3)
             # 随机切换一个产业
             num = random.randint(1, 11)
@@ -244,7 +236,7 @@ class Test05(unittest.TestCase):
             WebGetDemo.Runmian(self.driver).click('id', 'tab-JGFX')
             time.sleep(3)
             # 点击地区选择弹窗
-            WebGetDemo.Runmian(self.driver).click('css', '#pane-JGFX > div > div.control-main > div > i')
+            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="pane-JGFX"]/div/div[1]/div/i')
             time.sleep(3)
             # 点击清空
             WebGetDemo.Runmian(self.driver).click('css',

@@ -31,7 +31,6 @@ class Test03(unittest.TestCase):
         # WebGetDemo.Runmian(self.driver).open('http://ihd.wanvdata.cn/#/login?redirect=%2Fdashboard')
         # WebGetDemo.Runmian(self.driver).login('ihqd-test', 'ihqd-test@6688')
         # pass
-        self.driver.refresh()
         self.driver.implicitly_wait(5)
 
     def add_img(self):
@@ -40,8 +39,7 @@ class Test03(unittest.TestCase):
         return True
 
     def tearDown(self):
-        # WebGetDemo.Runmian(self.driver).quit()
-        pass
+        self.driver.refresh()
 
     def test_01(self):
         '''市场主体统计图切换统计条件-高薪企业'''
@@ -83,16 +81,16 @@ class Test03(unittest.TestCase):
         '''左上角搜索-输入内容为华为'''
         try:
             WebGetDemo.Runmian(self.driver).click('xpath',
-                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[1]/input')
+                                                  '//*[@id="app"]/div/header/div[1]/ul/div[1]/div[1]/div[1]/input')
             time.sleep(2)
             WebGetDemo.Runmian(self.driver).input_data('xpath',
-                                                       '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[1]/input',
+                                                       '//*[@id="app"]/div/header/div[1]/ul/div[1]/div[1]/div[1]/input',
                                                        '华为')
             time.sleep(3)
             test = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
-                                                              '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[2]/div[1]/div[1]/ul/li[1]/span')
+                                                              '//*[@id="app"]/div/header/div[1]/ul/div[1]/div[1]/div[2]/div[1]/div[1]/ul/li[1]/span')
             WebGetDemo.Runmian(self.driver).click('xpath',
-                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[2]/div[1]/div[1]/ul/li[1]/span')
+                                                  '//*[@id="app"]/div/header/div[1]/ul/div[1]/div[1]/div[2]/div[1]/div[1]/ul/li[1]/span')
             time.sleep(3)
             # 切换到新title页
             WebGetDemo.Runmian(self.driver).switch_window_by_title('企业大数据')
@@ -112,35 +110,34 @@ class Test03(unittest.TestCase):
         '''左上角搜索-输入内容为123456'''
         try:
             WebGetDemo.Runmian(self.driver).click('xpath',
-                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[1]/input')
+                                                  '//*[@id="app"]/div/header/div[1]/ul/div[1]/div[1]/div[1]/input')
             time.sleep(2)
             WebGetDemo.Runmian(self.driver).input_data('xpath',
-                                                       '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[1]/input',
+                                                       '//*[@id="app"]/div/header/div[1]/ul/div[1]/div[1]/div[1]/input',
                                                        '123456')
             time.sleep(2)
             # 获取搜索联想下拉框的第一条数据名称
             test = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
-                                                              '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[2]/p')
+                                                              '//*[@id="app"]/div/header/div[1]/ul/div[1]/div[1]/div[2]/p')
             # 断言如果等于无数据cas就通过
             self.assertEqual(test, '无数据', '用例执行失败')
         except Exception:
             self.add_img()
             raise
 
-    # @unittest.skip('跳过')
     def test_05(self):
         '''左上角搜索-输入内容字节长度为1'''
         try:
             WebGetDemo.Runmian(self.driver).click('xpath',
-                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[1]/input')
+                                                  '//*[@id="app"]/div/header/div[1]/ul/div[1]/div[1]/div[1]/input')
             time.sleep(3)
             WebGetDemo.Runmian(self.driver).input_data('xpath',
-                                                       '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[1]/input',
+                                                       '//*[@id="app"]/div/header/div[1]/ul/div[1]/div[1]/div[1]/input',
                                                        '1')
             time.sleep(3)
             # 获取搜索联想下拉框的第一条数据名称
             test = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
-                                                              '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[2]/p')
+                                                              '//*[@id="app"]/div/header/div[1]/ul/div[1]/div[1]/div[2]/p')
             errortest = WebGetDemo.Runmian(self.driver).obtaintest('css',
                                                                    'body > div.el-message.el-message--error > p')
             # 断言如果等于无数据case就通过
@@ -151,22 +148,20 @@ class Test03(unittest.TestCase):
             self.add_img()
             raise
 
-    # @unittest.skip('跳过')
     def test_06(self):
         '''左上角搜索-输入内容为地区名称：北京'''
         try:
             # 点击搜索输入文本框
             WebGetDemo.Runmian(self.driver).click('xpath',
-                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[1]/input')
+                                                  '//*[@id="app"]/div/header/div[1]/ul/div[1]/div[1]/div[1]/input')
             time.sleep(2)
             WebGetDemo.Runmian(self.driver).input_data('xpath',
-                                                       '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[1]/input',
+                                                       '//*[@id="app"]/div/header/div[1]/ul/div[1]/div[1]/div[1]/input',
                                                        '北京')
             time.sleep(2)
             # 获取搜索联想下拉框的第一条数据名称
             test = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
-                                                              '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[2]/p')
-            # 获取警告框中的test
+                                                              '//*[@id="app"]/div/header/div[1]/ul/div[1]/div[1]/div[2]/p')
             errortest = WebGetDemo.Runmian(self.driver).obtaintest('css',
                                                                    'body > div.el-message.el-message--error > p')
             # 断言如果等于无数据case就通过
@@ -177,22 +172,20 @@ class Test03(unittest.TestCase):
             self.add_img()
             raise
 
-    # @unittest.skip('跳过')
     def test_07(self):
         '''左上角搜索-输入内容为：~！'''
         try:
             # 点击搜索输入文本框
             WebGetDemo.Runmian(self.driver).click('xpath',
-                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[1]/input')
+                                                  '//*[@id="app"]/div/header/div[1]/ul/div[1]/div[1]/div[1]/input')
             time.sleep(2)
             WebGetDemo.Runmian(self.driver).input_data('xpath',
-                                                       '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[1]/input',
+                                                       '//*[@id="app"]/div/header/div[1]/ul/div[1]/div[1]/div[1]/input',
                                                        '~！')
             time.sleep(2)
             # 获取搜索联想下拉框的第一条数据名称
             test = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
-                                                              '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[1]/div[2]/p')
-            # 获取警告框中的test
+                                                              '//*[@id="app"]/div/header/div[1]/ul/div[1]/div[1]/div[2]/p')
             errortest = WebGetDemo.Runmian(self.driver).obtaintest('css',
                                                                    'body > div.el-message.el-message--error > p')
             # 断言如果等于无数据case就通过

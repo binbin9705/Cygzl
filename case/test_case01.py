@@ -31,7 +31,7 @@ class Test01(unittest.TestCase):
         # WebGetDemo.Runmian(self.driver).open('http://ihd.wanvdata.cn/#/login?redirect=%2Fdashboard')
         # WebGetDemo.Runmian(self.driver).login('ihqd-test', 'ihqd-test@6688')
         # pass
-        self.driver.refresh()
+
 
     def add_img(self):
         # 1、下面注释掉的这行代码作用是不管用例是否执行成功，只要在执行过程加了self.add_img()操作，那么最后生成的报告中含有该执行过程的截图，如果不添加则默认对用例失败进行截图
@@ -39,15 +39,13 @@ class Test01(unittest.TestCase):
         return True
 
     def tearDown(self):
-        # WebGetDemo.Runmian(self.driver).quit()
-        pass
+        self.driver.refresh()
 
     def test_01(self):
         '''首页跳转CRL指数页面'''
         self.driver.implicitly_wait(5)
         try:
-            WebGetDemo.Runmian(self.driver).click('xpath',
-                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[2]/li/div/span')
+            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="app"]/div/header/div[1]/ul/div[1]/div[2]/li/div/i')
             time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '/html/body/div[2]/ul/div[1]/a/li/span')
             time.sleep(2)
@@ -60,8 +58,7 @@ class Test01(unittest.TestCase):
         '''首页跳转企业总量页面'''
         self.driver.implicitly_wait(5)
         try:
-            WebGetDemo.Runmian(self.driver).click('xpath',
-                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[2]/li/div/span')
+            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="app"]/div/header/div[1]/ul/div[1]/div[2]/li/div/i')
             time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '/html/body/div[2]/ul/div[2]/a/li/span')
             # 判断跳转后的标签页是不是企业总量
@@ -74,8 +71,7 @@ class Test01(unittest.TestCase):
         '''首页跳转行业分析页面'''
         self.driver.implicitly_wait(5)
         try:
-            WebGetDemo.Runmian(self.driver).click('xpath',
-                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[2]/li/div/span')
+            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="app"]/div/header/div[1]/ul/div[1]/div[2]/li/div/i')
             time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '/html/body/div[2]/ul/div[3]/a/li/span')
             time.sleep(2)
@@ -88,8 +84,7 @@ class Test01(unittest.TestCase):
         '''首页跳转结构分析页面'''
         self.driver.implicitly_wait(5)
         try:
-            WebGetDemo.Runmian(self.driver).click('xpath',
-                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[2]/li/div/span')
+            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="app"]/div/header/div[1]/ul/div[1]/div[2]/li/div/i')
             time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '/html/body/div[2]/ul/div[4]/a/li/span')
             time.sleep(2)
@@ -102,8 +97,7 @@ class Test01(unittest.TestCase):
         '''首页跳转重点企业页面'''
         self.driver.implicitly_wait(5)
         try:
-            WebGetDemo.Runmian(self.driver).click('xpath',
-                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[2]/li/div/span')
+            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="app"]/div/header/div[1]/ul/div[1]/div[2]/li/div/i')
             time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '/html/body/div[2]/ul/div[5]/a/li/span')
             time.sleep(2)
@@ -116,8 +110,7 @@ class Test01(unittest.TestCase):
         '''首页跳转总体监测页面'''
         self.driver.implicitly_wait(5)
         try:
-            WebGetDemo.Runmian(self.driver).click('xpath',
-                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[3]/li/div/span')
+            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="app"]/div/header/div[1]/ul/div[1]/div[3]/li/div/i')
             time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '/html/body/div[2]/ul/div[1]/a/li/span')
             time.sleep(2)
@@ -130,8 +123,7 @@ class Test01(unittest.TestCase):
         '''首页跳转产业分析页面'''
         self.driver.implicitly_wait(5)
         try:
-            WebGetDemo.Runmian(self.driver).click('xpath',
-                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[3]/li/div/span')
+            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="app"]/div/header/div[1]/ul/div[1]/div[3]/li/div/i')
             time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '/html/body/div[2]/ul/div[2]/a/li/span')
             time.sleep(2)
@@ -145,7 +137,7 @@ class Test01(unittest.TestCase):
         self.driver.implicitly_wait(5)
         try:
             WebGetDemo.Runmian(self.driver).click('xpath',
-                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[4]/a/li/span')
+                                                  '//*[@id="app"]/div/header/div[1]/ul/div[1]/div[4]/a/li/span')
             time.sleep(2)
             self.assertEqual('产业地图 - 产业高质量发展平台', self.driver.title, '用例执行错误')
         except Exception:
@@ -156,8 +148,7 @@ class Test01(unittest.TestCase):
         '''首页跳转创新主体页面'''
         self.driver.implicitly_wait(5)
         try:
-            WebGetDemo.Runmian(self.driver).click('xpath',
-                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[5]/li/div/span')
+            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="app"]/div/header/div[1]/ul/div[1]/div[5]/li/div/i')
             time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '/html/body/div[2]/ul/div[1]/a/li/span')
             time.sleep(2)
@@ -170,8 +161,7 @@ class Test01(unittest.TestCase):
         '''首页跳转创新成果页面'''
         self.driver.implicitly_wait(5)
         try:
-            WebGetDemo.Runmian(self.driver).click('xpath',
-                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[1]/div[5]/li/div/span')
+            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="app"]/div/header/div[1]/ul/div[1]/div[5]/li/div/i')
             time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '/html/body/div[2]/ul/div[2]/a/li/span')
             time.sleep(2)
@@ -185,7 +175,7 @@ class Test01(unittest.TestCase):
         self.driver.implicitly_wait(5)
         try:
             WebGetDemo.Runmian(self.driver).click('xpath',
-                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[3]/div[1]/a/li/span')
+                                                  '//*[@id="app"]/div/header/div[1]/ul/div[3]/div[1]/a/li/span')
             time.sleep(2)
             self.assertEqual('产业链图谱 - 产业高质量发展平台', self.driver.title, '用例执行错误')
         except Exception:
@@ -197,7 +187,7 @@ class Test01(unittest.TestCase):
         self.driver.implicitly_wait(5)
         try:
             WebGetDemo.Runmian(self.driver).click('xpath',
-                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[3]/div[2]/li/div/span')
+                                                  '//*[@id="app"]/div/header/div[1]/ul/div[3]/div[2]/li/div[1]/i')
             time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '/html/body/div[2]/ul/div[1]/a/li/span')
             time.sleep(2)
@@ -211,7 +201,7 @@ class Test01(unittest.TestCase):
         self.driver.implicitly_wait(5)
         try:
             WebGetDemo.Runmian(self.driver).click('xpath',
-                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[3]/div[2]/li/div/span')
+                                                  '//*[@id="app"]/div/header/div[1]/ul/div[3]/div[2]/li/div[1]/i')
             time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '/html/body/div[2]/ul/div[2]/a/li/span')
             time.sleep(2)
@@ -224,8 +214,7 @@ class Test01(unittest.TestCase):
         '''首页跳转开发发展-结构分析页面'''
         self.driver.implicitly_wait(5)
         try:
-            WebGetDemo.Runmian(self.driver).click('xpath',
-                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[3]/div[3]/li/div/span')
+            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="app"]/div/header/div[1]/ul/div[3]/div[3]/li/div/i')
             time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '/html/body/div[2]/ul/div[1]/a/li/span')
             time.sleep(2)
@@ -238,8 +227,7 @@ class Test01(unittest.TestCase):
         '''首页跳转地域分析页面'''
         self.driver.implicitly_wait(5)
         try:
-            WebGetDemo.Runmian(self.driver).click('xpath',
-                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[3]/div[3]/li/div/span')
+            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="app"]/div/header/div[1]/ul/div[3]/div[3]/li/div/i')
             time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '/html/body/div[2]/ul/div[2]/a/li/span')
             time.sleep(2)
@@ -252,8 +240,7 @@ class Test01(unittest.TestCase):
         '''首页跳转企业分析页面'''
         self.driver.implicitly_wait(5)
         try:
-            WebGetDemo.Runmian(self.driver).click('xpath',
-                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[3]/div[3]/li/div/span')
+            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="app"]/div/header/div[1]/ul/div[3]/div[3]/li/div/i')
             time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '/html/body/div[2]/ul/div[3]/a/li/span')
             time.sleep(2)
@@ -262,12 +249,12 @@ class Test01(unittest.TestCase):
             self.add_img()
             raise
 
+    # 
     def test_17(self):
         '''首页跳转总体概览页面'''
         self.driver.implicitly_wait(5)
         try:
-            WebGetDemo.Runmian(self.driver).click('xpath',
-                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[3]/div[4]/li/div/span')
+            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="app"]/div/header/div[1]/ul/div[3]/div[4]/li/div/i')
             time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '/html/body/div[2]/ul/div[1]/a/li/span')
             time.sleep(2)
@@ -276,12 +263,12 @@ class Test01(unittest.TestCase):
             self.add_img()
             raise
 
+    # 
     def test_18(self):
         '''首页跳转结构分析页面'''
         self.driver.implicitly_wait(5)
         try:
-            WebGetDemo.Runmian(self.driver).click('xpath',
-                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[3]/div[4]/li/div/span')
+            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="app"]/div/header/div[1]/ul/div[3]/div[4]/li/div/i')
             time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '/html/body/div[2]/ul/div[2]/a/li/span')
             time.sleep(2)

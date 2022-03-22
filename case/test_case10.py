@@ -23,10 +23,10 @@ class Test10(unittest.TestCase):
         WebGetDemo.Runmian(cls.driver).login('ihqd-test', 'ihqd-test@6688')
         # 消除警告
         warnings.simplefilter('ignore', ResourceWarning)
+
     @classmethod
     def tearDownClass(cls):
         cls.driver.quit()
-        # pass
 
     def setUp(self):
         # # 启动浏览并设置相关选项
@@ -34,7 +34,7 @@ class Test10(unittest.TestCase):
         self.imgs = []
         # WebGetDemo.Runmian(self.driver).open('http://ihd.wanvdata.cn/#/login?redirect=%2Fdashboard')
         # WebGetDemo.Runmian(self.driver).login('ihqd-test', 'ihqd-test@6688')
-        self.driver.refresh()
+
         self.driver.implicitly_wait(5)
 
     def add_img(self):
@@ -43,15 +43,15 @@ class Test10(unittest.TestCase):
         return True
 
     def tearDown(self):
-        # WebGetDemo.Runmian(self.driver).quit()
-        pass
+        self.driver.refresh()
+
     def test_01(self):
         '''开放发展-结构分析-随机切换企业数量统计条件'''
         try:
             time.sleep(3)
             # 点击开放发展
             WebGetDemo.Runmian(self.driver).click('xpath',
-                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[3]/div[3]/li/div/i')
+                                                  '//*[@id="app"]/div/header/div[1]/ul/div[3]/div[3]/li/div[1]/i')
             time.sleep(3)
             # 点击结构分析
             WebGetDemo.Runmian(self.driver).click('xpath', '/html/body/div[2]/ul/div[1]/a/li/span')
@@ -238,14 +238,14 @@ class Test10(unittest.TestCase):
             time.sleep(3)
             # 点击开放发展
             WebGetDemo.Runmian(self.driver).click('xpath',
-                                                  '//*[@id="app"]/div/header[2]/div[1]/ul/div[3]/div[3]/li/div/i')
+                                                  '//*[@id="app"]/div/header/div[1]/ul/div[3]/div[3]/li/div/i')
             time.sleep(3)
             # 点击地域分析
             WebGetDemo.Runmian(self.driver).click('xpath', '/html/body/div[2]/ul/div[2]/a/li/span')
             time.sleep(3)
             # 点击币种下拉框
             WebGetDemo.Runmian(self.driver).click('xpath',
-                                                  '//*[@id="app"]/div/div/section/div/div[2]/div[2]/div/div[1]/span/span/button/span/i')
+                                                  '//*[@id="app"]/div/div/section/div/div[2]/div[2]/div/div[1]/span/button/span')
             time.sleep(2)
             # 随机选择一种币种
             num = random.randint(2, 9)

@@ -31,7 +31,6 @@ class Test02(unittest.TestCase):
         # WebGetDemo.Runmian(self.driver).open('http://ihd.wanvdata.cn/#/login?redirect=%2Fdashboard')
         # WebGetDemo.Runmian(self.driver).login('ihqd-test', 'ihqd-test@6688')
         # pass
-        self.driver.refresh()
         self.driver.implicitly_wait(5)
 
     def add_img(self):
@@ -40,17 +39,16 @@ class Test02(unittest.TestCase):
         return True
 
     def tearDown(self):
-        # WebGetDemo.Runmian(self.driver).quit()
-        pass
+        self.driver.refresh()
 
     def test_01(self):
         '''切换地区-热门城市：上海市'''
         try:
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
+            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/button/span')
             time.sleep(3)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="tip"]/div/ul/span[5]/span')
             time.sleep(3)
-            ys = WebGetDemo.Runmian(self.driver).obtaintest('xpath', '//*[@id="placePop"]/span/button/span')
+            ys = WebGetDemo.Runmian(self.driver).obtaintest('xpath', '//*[@id="placePop"]/button/span')
             self.assertEqual('上海市', ys, '用例执行错误')
         except Exception:
             self.add_img()
@@ -59,11 +57,11 @@ class Test02(unittest.TestCase):
     def test_02(self):
         '''切换地区-热门城市：杭州市'''
         try:
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
+            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/button/span')
             time.sleep(3)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="tip"]/div/ul/span[8]/span')
             time.sleep(3)
-            ys = WebGetDemo.Runmian(self.driver).obtaintest('xpath', '//*[@id="placePop"]/span/button/span')
+            ys = WebGetDemo.Runmian(self.driver).obtaintest('xpath', '//*[@id="placePop"]/button/span')
             t1 = WebGetDemo.Runmian(self.driver).obtaintest('xpath', '//*[@id="leftTopChart"]/div[1]/p[2]/small/span')
             t2 = WebGetDemo.Runmian(self.driver).obtaintest('xpath',
                                                             '//*[@id="bottomLeftChart"]/div[1]/p[1]/small[2]/span')
@@ -78,7 +76,7 @@ class Test02(unittest.TestCase):
         '''切换地区-按省份快捷查看-B'''
         try:
             # 点击切换地区按钮
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
+            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/button')
             time.sleep(3)
             # 点击按省份下的B
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListT"]/span[2]')
@@ -96,7 +94,7 @@ class Test02(unittest.TestCase):
     def test_04(self):
         '''切换地区-按城市快捷查看-F'''
         try:
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/span/button/span')
+            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/button')
             time.sleep(2)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="cityListType"]/div[1]/label[2]')
             time.sleep(2)
