@@ -87,7 +87,7 @@ class Test10(unittest.TestCase):
             time.sleep(3)
             # 点击币种下拉框
             WebGetDemo.Runmian(self.driver).click('xpath',
-                                                  '//*[@id="app"]/div/div/section/div/div[2]/div[2]/div/div[1]/span/span/button/span/i')
+                                                  '//*[@id="app"]/div/div/section/div/div[2]/div[2]/div/div[1]/span/button/span')
             time.sleep(3)
             # 随机选择一种统计类型.
             num = random.randint(1, 9)

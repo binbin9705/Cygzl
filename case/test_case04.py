@@ -1263,7 +1263,7 @@ class Test04(unittest.TestCase):
             time.sleep(3)
             # 点击企业数量指标下拉框
             WebGetDemo.Runmian(self.driver).click('xpath',
-                                                  '//*[@id="pane-整体概况"]/div/div[1]/div[1]/div[1]/span/span/i')
+                                                  '//*[@id="pane-整体概况"]/div/div[1]/div[1]/div[1]/input')
             time.sleep(3)
             # 随机选择一个指标
             num = random.randint(2, 4)
