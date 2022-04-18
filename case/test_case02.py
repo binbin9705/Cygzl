@@ -15,7 +15,8 @@ class Test02(unittest.TestCase):
         cls.driver = webdriver.Chrome(options=WebGetDemo.Runmian(cls).options())
         # cls.imgs = []
         WebGetDemo.Runmian(cls.driver).open('http://ihd.wanvdata.cn/#/login?redirect=%2Fdashboard')
-        WebGetDemo.Runmian(cls.driver).login('ihqd-test', 'ihqd-test@6688')
+        WebGetDemo.Runmian(cls.driver).login(username='ihqd-test', password='ihqd-test@6688')
+        time.sleep(3)
         # 消除警告
         warnings.simplefilter('ignore', ResourceWarning)
 
@@ -31,6 +32,7 @@ class Test02(unittest.TestCase):
         # WebGetDemo.Runmian(self.driver).open('http://ihd.wanvdata.cn/#/login?redirect=%2Fdashboard')
         # WebGetDemo.Runmian(self.driver).login('ihqd-test', 'ihqd-test@6688')
         # pass
+        self.driver.refresh()
         self.driver.implicitly_wait(5)
 
     def add_img(self):
@@ -39,12 +41,12 @@ class Test02(unittest.TestCase):
         return True
 
     def tearDown(self):
-        self.driver.refresh()
+        pass
 
     def test_01(self):
         '''切换地区-热门城市：上海市'''
         try:
-            WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="placePop"]/button/span')
+            WebGetDemo.Runmian(self.driver).click('css', '#placePop > button > span')
             time.sleep(3)
             WebGetDemo.Runmian(self.driver).click('xpath', '//*[@id="tip"]/div/ul/span[5]/span')
             time.sleep(3)
