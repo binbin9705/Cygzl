@@ -13,9 +13,9 @@ class Test03(unittest.TestCase):
     def setUpClass(cls):
         # 启动浏览并设置相关选项
         cls.driver = webdriver.Chrome(options=WebGetDemo.Runmian(cls).options())
-        # cls.imgs = []
         WebGetDemo.Runmian(cls.driver).open('http://ihd.wanvdata.cn/#/login?redirect=%2Fdashboard')
         WebGetDemo.Runmian(cls.driver).login(username='ihqd-test', password='ihqd-test@6688')
+        cls.driver.refresh()
         # 消除警告
         warnings.simplefilter('ignore', ResourceWarning)
 

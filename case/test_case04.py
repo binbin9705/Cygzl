@@ -14,9 +14,9 @@ class Test04(unittest.TestCase):
     def setUpClass(cls):
         # 启动浏览并设置相关选项
         cls.driver = webdriver.Chrome(options=WebGetDemo.Runmian(cls).options())
-        # cls.imgs = []
         WebGetDemo.Runmian(cls.driver).open('http://ihd.wanvdata.cn/#/login?redirect=%2Fdashboard')
         WebGetDemo.Runmian(cls.driver).login(username='ihqd-test', password='ihqd-test@6688')
+        cls.driver.refresh()
         # 消除警告
         warnings.simplefilter('ignore', ResourceWarning)
 
@@ -1354,7 +1354,7 @@ class Test04(unittest.TestCase):
             WebGetDemo.Runmian(self.driver).click('xpath',
                                                   '//*[@id="app"]/div/header/div[1]/ul/div[1]/div[2]/li/div/i')
             time.sleep(3)
-            # 点击行业分析分析
+            # 点击行业分析
             WebGetDemo.Runmian(self.driver).click('xpath',
                                                   '/html/body/div[2]/ul/div[3]/a/li/span')
             time.sleep(3)
@@ -1443,7 +1443,7 @@ class Test04(unittest.TestCase):
             raise
 
     def test_40(self):
-        '''行业分析整体概况页面交互-随机行业展示统计图/清空'''
+        '''行业分析行业分类页面交互-随机行业展示统计图/清空'''
         try:
             # # 点击市场主体下拉框
             # WebGetDemo.Runmian(self.driver).click('css',

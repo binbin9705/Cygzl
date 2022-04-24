@@ -13,9 +13,9 @@ class Test02(unittest.TestCase):
     def setUpClass(cls):
         # 启动浏览并设置相关选项
         cls.driver = webdriver.Chrome(options=WebGetDemo.Runmian(cls).options())
-        # cls.imgs = []
         WebGetDemo.Runmian(cls.driver).open('http://ihd.wanvdata.cn/#/login?redirect=%2Fdashboard')
         WebGetDemo.Runmian(cls.driver).login(username='ihqd-test', password='ihqd-test@6688')
+        cls.driver.refresh()
         time.sleep(3)
         # 消除警告
         warnings.simplefilter('ignore', ResourceWarning)
@@ -32,7 +32,6 @@ class Test02(unittest.TestCase):
         # WebGetDemo.Runmian(self.driver).open('http://ihd.wanvdata.cn/#/login?redirect=%2Fdashboard')
         # WebGetDemo.Runmian(self.driver).login('ihqd-test', 'ihqd-test@6688')
         # pass
-        self.driver.refresh()
         self.driver.implicitly_wait(5)
 
     def add_img(self):
@@ -41,7 +40,7 @@ class Test02(unittest.TestCase):
         return True
 
     def tearDown(self):
-        pass
+        self.driver.refresh()
 
     def test_01(self):
         '''切换地区-热门城市：上海市'''

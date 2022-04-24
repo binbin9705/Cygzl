@@ -24,6 +24,14 @@ class Runmian():
         prefs["credentials_enable_service"] = False
         prefs["profile.password_manager_enabled"] = False
         option.add_experimental_option("prefs", prefs)
+
+        # option = Options()
+        #无头模式
+        # option.add_argument('--headless')
+        #设置指定分辨率
+        # option.add_argument('window-size=1920x1080')
+        # option.add_argument('--disable-gpu')
+        # option.add_argument('--no-sandbox')
         return option
 
     # # 登录
