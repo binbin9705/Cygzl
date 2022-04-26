@@ -54,8 +54,9 @@ class Test04(unittest.TestCase):
                                                   'body > div.el-menu--horizontal > ul > div:nth-child(1) > a > li > span')
             time.sleep(3)
             # 点击统计条件下来选择框
-            WebGetDemo.Runmian(self.driver).click('css',
-                                                  '#app > div > div > section > div > div.localDiv > div.formeList > div > div > span > span > i')
+            # WebGetDemo.Runmian(self.driver).click('css',
+            #                                       '#app > div > div > section > div > div.localDiv > div.formeList > div > div > span > span > i')
+            WebGetDemo.Runmian(self.driver).click('class_names','el-input__inner',2)
             time.sleep(3)
             # 点击年度数据
             WebGetDemo.Runmian(self.driver).click('xpath', '/html/body/div[3]/div[1]/div[1]/ul/li[1]/span')
